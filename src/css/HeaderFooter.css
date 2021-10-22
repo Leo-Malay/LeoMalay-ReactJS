@@ -1,0 +1,15 @@
+.Header,
+.Footer {
+    width: 100%;
+}
+.Header {
+    position: relative;
+    height: 50px;
+}
+.Header #title,
+.Footer #title {
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
