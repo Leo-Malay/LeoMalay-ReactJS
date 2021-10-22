@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AuthRouter = () => {
+  return <div className="Auth">
+    <Route exact path="/" component={}/>
+  </div>
 }
+const StoreRouter = () => {
+  return <div className="Store">
+    <Route exact path="/" component={}/>
+  </div>
+}
+const BlogRouter = () => {
+  return <div className="Blog">
+    <Route exact path="/" component={}/>
+  </div>
+}
+const BankRouter = () => {
+  return <div className="Bank">
+    <Route exact path="/" component={}/>
+  </div>
+}
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Route exact path="/" component={}/>
+            <Route exact path="/Auth" component={AuthRouter}/>
+            <Route exact path="/Store" component={StoreRouter}/>
+            <Route exact path="/Blog" component={BlogRouter}/>
+            <Route exact path="/Bank" component={BankRouter}/>
+        </BrowserRouter>
+    );
+};
 
 export default App;
