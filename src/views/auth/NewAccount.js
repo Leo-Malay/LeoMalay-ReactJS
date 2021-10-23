@@ -1,9 +1,12 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 const NewAccount = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
     };
     return (
         <div className="NewAccount">
+            <Header props={{ title: "LeoAuth", color: "error" }} />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <input type="text" name="fname" placeholder="First Name" />
                 <br />
@@ -18,6 +21,7 @@ const NewAccount = () => {
                 <input type="submit" name="submit" value="Create Account" />
                 <br />
             </form>
+            <Footer props={{ title: "LeoAuth", color: "error" }} />
         </div>
     );
 };

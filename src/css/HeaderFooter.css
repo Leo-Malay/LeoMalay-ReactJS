@@ -4,7 +4,12 @@
 }
 .Header {
     position: relative;
-    height: 50px;
+    height: 60px;
+}
+.Header #title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 .Header #title,
 .Footer #title {
@@ -12,4 +17,13 @@
     font-weight: 600;
     border-radius: 4px;
     padding: 5px 10px;
+    width: fit-content;
+    transition-duration: 2s;
+}
+.Footer {
+    margin-top: 10px;
+}
+.Footer #title,
+.Footer .NavLink {
+    margin-left: 10px;
 }

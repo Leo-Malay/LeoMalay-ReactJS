@@ -1,0 +1,95 @@
+* {
+    --primary: dodgerblue;
+    --secondary: #ff9966;
+    --success: mediumseagreen;
+    --error: tomato;
+    --white: #fff;
+}
+.primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+.success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+.error {
+    background-color: var(--error);
+    border-color: var(--error);
+}
+.primary,
+.secondary,
+.success,
+.error {
+    color: var(--white);
+}
+.primary:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.secondary:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+.success:hover {
+    color: var(--success);
+    border-color: var(--success);
+}
+.error:hover {
+    color: var(--error);
+    border-color: var(--error);
+}
+.primary:hover,
+.secondary:hover,
+.success:hover,
+.error:hover {
+    background-color: var(--white);
+}
+.primary-inv {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.secondary-inv {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+.success-inv {
+    color: var(--success);
+    border-color: var(--success);
+}
+.error-inv {
+    color: var(--error);
+    border-color: var(--error);
+}
+.primary-inv:hover {
+    background-color: var(--primary);
+}
+.secondary-inv:hover {
+    background-color: var(--secondary);
+}
+.success-inv:hover {
+    background-color: var(--success);
+}
+.error-inv:hover {
+    background-color: var(--error);
+}
+.primary-inv:hover,
+.secondary-inv:hover,
+.success-inv:hover,
+.error-inv:hover {
+    color: var(--white);
+}
+.primary,
+.primary-inv,
+.secondary,
+.secondary-inv,
+.error,
+.error-inv,
+.success,
+.success-inv {
+    border: 2px solid;
+}

@@ -1,0 +1,8 @@
+.BlogContainer {
+    text-align: center;
+}
+.BlogContainer #ContainerTitle {
+    color: var(--secondary);
+    font-size: 20px;
+    font-weight: 700;
+}

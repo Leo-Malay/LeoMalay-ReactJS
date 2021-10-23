@@ -1,9 +1,12 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 const UpdatePassword = () => {
     const submitHandler = async (e) => {
         e.preventDefault();
     };
     return (
         <div className="UpdatePassword">
+            <Header props={{ title: "LeoAuth", color: "error" }} />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <input
                     type="password"
@@ -26,6 +29,7 @@ const UpdatePassword = () => {
                 <input type="submit" name="submit" value="Update Password" />
                 <br />
             </form>
+            <Footer props={{ title: "LeoAuth", color: "error" }} />
         </div>
     );
 };

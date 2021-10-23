@@ -1,4 +1,6 @@
 import { BrowserRouter, Route } from "react-router-dom";
+import "./css/App.css";
+import "./css/Color.css";
 import Home from "./views/Home";
 import Login from "./views/auth/Login";
 import Account from "./views/auth/Account";
