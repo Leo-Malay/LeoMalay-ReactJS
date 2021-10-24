@@ -13,3 +13,6 @@ a {
 .Inline {
     display: inline-flex;
 }
+.Center {
+    text-align: center;
+}

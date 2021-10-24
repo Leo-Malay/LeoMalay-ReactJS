@@ -9,6 +9,7 @@ const Login = () => {
         <div className="Login">
             <Header props={{ title: "LeoAuth", color: "error" }} />
             <form method="POST" action="#" onSubmit={submitHandler}>
+                <p id="title">Login</p>
                 <input type="text" name="username" placeholder="Username" />
                 <br />
                 <input type="password" name="password" placeholder="Password" />

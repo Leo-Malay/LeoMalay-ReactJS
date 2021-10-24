@@ -9,6 +9,7 @@ const NewAccount = () => {
         <div className="NewAccount">
             <Header props={{ title: "LeoAuth", color: "error" }} />
             <form method="POST" action="#" onSubmit={submitHandler}>
+                <p id="title">New Account</p>
                 <input type="text" name="fname" placeholder="First Name" />
                 <br />
                 <input type="text" name="lname" placeholder="Last Name" />
@@ -19,7 +20,12 @@ const NewAccount = () => {
                 <br />
                 <input type="password" name="password" placeholder="Password" />
                 <br />
-                <input type="submit" name="submit" value="Create Account" />
+                <input
+                    type="submit"
+                    name="submit"
+                    className="primary"
+                    value="Create Account"
+                />
                 <br />
             </form>
             <Footer props={{ title: "LeoAuth", color: "error" }} />

@@ -5,9 +5,11 @@ const Store = () => {
     return (
         <div className="Store">
             <Header props={{ title: "LeoStore", color: "success" }} />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <div className="Center">
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+            </div>
             <Footer props={{ title: "LeoStore", color: "success" }} />
         </div>
     );

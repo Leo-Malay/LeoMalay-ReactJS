@@ -42,3 +42,6 @@
     border-radius: 50px;
     margin: 2px 10px;
 }
+.ProductCard #Price {
+    padding-top: 5px;
+}
