@@ -15,10 +15,10 @@ const ProductCard = ({ props }) => {
                 </p>
             </div>
             <div id="ButtonGrp">
-                <Link className="primary" to="/Product">
+                <Link className="primary" to="">
                     Add to Cart
                 </Link>
-                <Link className="success" to="">
+                <Link className="success" to={"/Store/Product?id=" + props.id}>
                     Learn More
                 </Link>
             </div>

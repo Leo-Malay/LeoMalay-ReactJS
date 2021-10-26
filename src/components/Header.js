@@ -1,14 +1,33 @@
+import { Link } from "react-router-dom";
 import "../css/HeaderFooter.css";
 import { LinkButton } from "./Element";
 const Header = ({ props }) => {
     const isAuthenticated = false;
     return (
         <div className="Header">
-            <p className={props.color || "primary"} id="title">
-                {props.title || "LeoMalay"}
-            </p>
-            {!isAuthenticated && (
-                <div className="LeftMenu">
+            <Link
+                to={() => {
+                    if (props.type === "Auth") return "/Auth/Account";
+                    if (props.type === "Store") return "/Store";
+                    if (props.type === "Blog") return "/Blog";
+                    return "";
+                }}
+            >
+                <p className={props.color || "primary"} id="title">
+                    {props.title || "LeoMalay"}
+                </p>
+            </Link>
+            <div className="LeftMenu">
+                {props.type === "Store" && (
+                    <LinkButton
+                        props={{
+                            value: "Cart",
+                            to: "/Store/Cart",
+                            color: "primary",
+                        }}
+                    />
+                )}
+                {!isAuthenticated && (
                     <LinkButton
                         props={{
                             value: "Login",
@@ -16,6 +35,8 @@ const Header = ({ props }) => {
                             color: "success",
                         }}
                     />
+                )}
+                {!isAuthenticated && (
                     <LinkButton
                         props={{
                             value: "Register",
@@ -23,10 +44,9 @@ const Header = ({ props }) => {
                             color: "primary",
                         }}
                     />
-                </div>
-            )}
-            {isAuthenticated && (
-                <div className="LeftMenu">
+                )}
+
+                {isAuthenticated && (
                     <LinkButton
                         props={{
                             value: "Account",
@@ -34,6 +54,8 @@ const Header = ({ props }) => {
                             color: "primary",
                         }}
                     />
+                )}
+                {isAuthenticated && (
                     <LinkButton
                         props={{
                             value: "Logout",
@@ -41,8 +63,8 @@ const Header = ({ props }) => {
                             color: "error",
                         }}
                     />
-                </div>
-            )}
+                )}
+            </div>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { LinkButton } from "../components/Element";
 const Home = () => {
     return (
         <div className="Home">
-            <Header props={{ title: "LeoMalay" }} />
+            <Header props={{ title: "LeoMalay", type: "Home" }} />
             <LinkButton
                 props={{
                     color: "success",
@@ -12,7 +12,7 @@ const Home = () => {
                     to: "/Auth/Login",
                 }}
             />
-            <Footer props={{ title: "LeoMalay" }} />
+            <Footer props={{ title: "LeoMalay", type: "Home" }} />
         </div>
     );
 };

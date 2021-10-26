@@ -1,0 +1,10 @@
+.Cart-Container {
+    width: 100%;
+    display: inline-flex;
+}
+.Cart-Container .Left {
+    width: 66%;
+}
+.Cart-Container .Right {
+    width: 35%;
+}

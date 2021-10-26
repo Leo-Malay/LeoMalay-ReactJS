@@ -10,7 +10,7 @@ import Cart from "./views/store/Cart";
 import Product from "./views/store/Product";
 import Store from "./views/store/Store";
 import Blog from "./views/blog/Blog";
-import BlogInfo from "./views/blog/BlogInfo";
+import BlogRead from "./views/blog/BlogRead";
 
 const App = () => {
     return (
@@ -28,7 +28,7 @@ const App = () => {
             <Route exact path="/Store/Product" component={Product} />
             <Route exact path="/Store/Cart" component={Cart} />
             <Route exact path="/Blog" component={Blog} />
-            <Route exact path="/Blog/BlogInfo" component={BlogInfo} />
+            <Route exact path="/Blog/BlogRead" component={BlogRead} />
         </BrowserRouter>
     );
 };
