@@ -11,7 +11,7 @@ import Product from "./views/store/Product";
 import Store from "./views/store/Store";
 import Blog from "./views/blog/Blog";
 import BlogRead from "./views/blog/BlogRead";
-
+import Cafeteria from "./views/cafeteria/Cafeteria";
 const App = () => {
     return (
         <BrowserRouter>
@@ -29,6 +29,7 @@ const App = () => {
             <Route exact path="/Store/Cart" component={Cart} />
             <Route exact path="/Blog" component={Blog} />
             <Route exact path="/Blog/BlogRead" component={BlogRead} />
+            <Route exact path="/Cafeteria" component={Cafeteria} />
         </BrowserRouter>
     );
 };

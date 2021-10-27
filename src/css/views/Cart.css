@@ -1,10 +1,22 @@
 .Cart-Container {
     width: 100%;
     display: inline-flex;
+    text-align: center;
 }
 .Cart-Container .Left {
     width: 66%;
 }
 .Cart-Container .Right {
     width: 35%;
+}
+.Cart-Container .Left #title,
+.Cart-Container .Right #title {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 5px;
+}
+.Cart-Container .Left #subtitle,
+.Cart-Container .Right #subtitle {
+    font-size: 15px;
+    margin: 5px;
 }

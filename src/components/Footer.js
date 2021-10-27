@@ -34,6 +34,13 @@ const Footer = ({ props }) => {
                 <br />
                 <PageLink
                     props={{
+                        value: "Cafeteria",
+                        to: "/Cafeteria",
+                    }}
+                />
+                <br />
+                <PageLink
+                    props={{
                         value: "Blog",
                         to: "/Blog",
                     }}

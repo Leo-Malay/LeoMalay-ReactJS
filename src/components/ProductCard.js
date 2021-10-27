@@ -15,7 +15,7 @@ const ProductCard = ({ props }) => {
                 </p>
             </div>
             <div id="ButtonGrp">
-                <Link className="primary" to="">
+                <Link className="primary" to="/Store">
                     Add to Cart
                 </Link>
                 <Link className="success" to={"/Store/Product?id=" + props.id}>
