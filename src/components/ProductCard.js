@@ -5,20 +5,20 @@ const ProductCard = ({ props }) => {
     return (
         <div className="ProductCard">
             <img src={image} alt="Product" id="Image" />
-            <p id="Name">Iphone12 ProMax</p>
+            <p id="Name">{props?.name}</p>
             <div className="Inline PriceCon">
                 <p className="primary" id="Price">
-                    $12.99
+                    ${props?.price}
                 </p>
                 <p className="secondary" id="Rating">
-                    5&#9733;
+                    {props?.rating}&#9733;
                 </p>
             </div>
             <div id="ButtonGrp">
                 <Link className="primary" to="/Store">
                     Add to Cart
                 </Link>
-                <Link className="success" to={"/Store/Product?id=" + props.id}>
+                <Link className="success" to={"/Store/Product/" + props?.id}>
                     Learn More
                 </Link>
             </div>

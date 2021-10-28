@@ -29,7 +29,7 @@ const App = () => {
             />
             {/* Store */}
             <Route exact path="/Store" component={Store} />
-            <Route exact path="/Store/Product" component={Product} />
+            <Route exact path="/Store/Product/:id" component={Product} />
             <Route exact path="/Store/Cart" component={Cart} />
             <Route exact path="/Store/Order" component={Order} />
             {/* Blog */}

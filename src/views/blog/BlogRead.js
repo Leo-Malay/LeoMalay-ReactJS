@@ -27,7 +27,7 @@ const BlogRead = ({ props }) => {
                     <p id="author">By {Data?.author || "Anonymous"}</p>
                     <p id="date">{Data?.date || "27-Oct-2021"}</p>
                 </div>
-                <div id="description">{Data?.description}</div>
+                <p id="description">{Data?.description}</p>
             </div>
             <Footer
                 props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}

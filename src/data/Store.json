@@ -1,0 +1,63 @@
+[
+    {
+        "id": "100",
+        "name": "Iphone 13 Pro Max",
+        "price": "1299",
+        "rating": "5",
+        "soldBy": "Malay Bhavsar",
+        "isAvailable": true,
+        "description": "Brand New Apple with latest M1 Series processor which can clock upto 400MHz.",
+        "specs": ["16GB RAM", "256GB Storage", "M1 9999 Gen 400MHz Processor"],
+        "reviews": [
+            {
+                "review_id": "1",
+                "auth_id": "1Malay1",
+                "comment": "Awesome Phone with Longer Battery Life than Other smartphones in the Market"
+            }
+        ]
+    },
+    {
+        "id": "101",
+        "name": "Iphone 13 Pro",
+        "price": "1199",
+        "rating": "4.9",
+        "soldBy": "Malay Bhavsar",
+        "isAvailable": true,
+        "description": "",
+        "specs": ["", "", ""],
+        "reviews": [{ "review_id": "", "auth_id": "", "comment": "" }]
+    },
+    {
+        "id": "102",
+        "name": "Iphone 13",
+        "price": "1159",
+        "rating": "5",
+        "soldBy": "Malay Bhavsar",
+        "isAvailable": true,
+        "description": "",
+        "specs": ["", "", ""],
+        "reviews": [{ "review_id": "", "auth_id": "", "comment": "" }]
+    },
+    {
+        "id": "103",
+        "name": "MI Note 12 Pro",
+        "price": "899",
+        "rating": "5",
+        "soldBy": "Malay Bhavsar",
+        "isAvailable": true,
+        "description": "",
+        "specs": ["", "", ""],
+        "reviews": [{ "review_id": "", "auth_id": "", "comment": "" }]
+    },
+    {
+        "id": "104",
+        "name": "MI Note 12",
+        "price": "799",
+        "rating": "4.8",
+        "soldBy": "Malay Bhavsar",
+        "isAvailable": true,
+        "description": "",
+        "specs": ["", "", ""],
+        "reviews": [{ "review_id": "", "auth_id": "", "comment": "" }]
+    }
+]
