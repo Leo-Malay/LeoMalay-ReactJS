@@ -32,3 +32,18 @@
     padding: 5px;
     vertical-align: top !important;
 }
+.ReviewCard {
+    background-color: rgb(245, 245, 245);
+    width: fit-content;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px 0px;
+}
+.ReviewCard #title {
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.ReviewCard #comment {
+    font-size: 12px;
+}

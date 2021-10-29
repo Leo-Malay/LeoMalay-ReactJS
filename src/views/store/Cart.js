@@ -1,8 +1,15 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "../../css/views/Cart.css";
+import StoreCartData from "../../data/StoreCart.json";
 import { LinkButton } from "../../components/Element";
 const Cart = () => {
+    const getCart = (auth_id) => {
+        return StoreCartData.filter(function (StoreCartData) {
+            return StoreCartData.auth_id === auth_id;
+        });
+    };
+    const Data = getCart("Malay")[0];
     return (
         <div className="Cart">
             <Header
@@ -14,27 +21,35 @@ const Cart = () => {
                     <table border={0} style={{ width: "95%", margin: "auto" }}>
                         <tbody>
                             <tr>
-                                <th style={{ width: "65%" }}>Name</th>
+                                <th style={{ width: "55%" }}>Name</th>
+                                <th style={{ width: "15%" }}>Quantity</th>
                                 <th style={{ width: "15%" }}>Cost</th>
                             </tr>
                             <br />
-                            <tr>
-                                <td style={{ width: "65%" }}>
-                                    Iphone 12 Pro Max Grill Plus with Cheese and
-                                    Mayo On the way
-                                </td>
-                                <td style={{ width: "15%" }}>799</td>
-                                <td>
-                                    <LinkButton
-                                        props={{
-                                            value: "X",
-                                            color: "error-inv",
-                                            to: "/Store/Cart",
-                                        }}
-                                    />
-                                </td>
-                            </tr>
-                            <br />
+                            {Data?.items.map((ele) => {
+                                return (
+                                    <tr key={ele.item_id}>
+                                        <td style={{ width: "65%" }}>
+                                            {ele.name}
+                                        </td>
+                                        <td style={{ width: "15%" }}>
+                                            {ele.quantity}
+                                        </td>
+                                        <td style={{ width: "15%" }}>
+                                            {ele.cost}
+                                        </td>
+                                        <td>
+                                            <LinkButton
+                                                props={{
+                                                    value: "X",
+                                                    color: "error-inv",
+                                                    to: "/Store/Cart",
+                                                }}
+                                            />
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
@@ -57,21 +72,21 @@ const Cart = () => {
                                 </th>
                             </tr>
                             <br />
-                            <tr>
-                                <td style={{ width: "60%" }}>
-                                    Iphone 12 Pro Max Grill Plus with Cheese and
-                                    Mayo On the way
-                                </td>
-                                <td style={{ width: "20%" }}>799</td>
-                            </tr>
-                            <tr>
-                                <td style={{ width: "60%" }}>
-                                    Iphone 12 Pro Max Grill Plus with Cheese and
-                                    Mayo On the way
-                                </td>
-                                <td style={{ width: "20%" }}>799</td>
-                            </tr>
-
+                            {Data?.items.map((ele) => {
+                                return (
+                                    <tr key={ele.item_id}>
+                                        <td
+                                            className="itemname"
+                                            style={{ width: "60%" }}
+                                        >
+                                            {ele.name}
+                                        </td>
+                                        <td style={{ width: "20%" }}>
+                                            {ele.quantity * ele.cost}
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                             <tr>
                                 <th style={{ width: "60%" }}>
                                     <br />
@@ -83,7 +98,7 @@ const Cart = () => {
                                 <td style={{ width: "20%" }}>
                                     <br />
                                     <hr />
-                                    totalCost
+                                    {Data?.totalCost}
                                     <hr />
                                 </td>
                             </tr>

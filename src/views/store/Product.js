@@ -4,6 +4,7 @@ import "../../css/views/Product.css";
 import ProductData from "../../data/Store.json";
 import image from "../../assets/iphone.jfif";
 import { useParams } from "react-router";
+import { LinkButton } from "../../components/Element";
 const Product = () => {
     const { id } = useParams();
     const getProduct = (id) => {
@@ -21,6 +22,34 @@ const Product = () => {
                 <p id="title">{Data?.name}</p>
                 <img src={image} alt="Product" />
                 <p id="description">{Data?.description}</p>
+                <br />
+                {Data.isAvailable && (
+                    <LinkButton
+                        props={{
+                            value: "Product is Available",
+                            to: "/Store",
+                            color: "success",
+                        }}
+                    />
+                )}
+                {!Data.isAvailable && (
+                    <LinkButton
+                        props={{
+                            value: "Product is Not Available at the Moment",
+                            to: "/Store",
+                            color: "error",
+                        }}
+                    />
+                )}
+                {Data.isAvailable && (
+                    <LinkButton
+                        props={{
+                            value: "Add to Cart",
+                            to: "/Store",
+                            color: "primary",
+                        }}
+                    />
+                )}
                 <table border={0}>
                     <tbody>
                         <tr>
@@ -50,9 +79,13 @@ const Product = () => {
                             <td>
                                 {Data?.reviews.map((ele) => {
                                     return (
-                                        <p key={ele?.review_id}>
-                                            {ele.auth_id} : {ele.comment}
-                                        </p>
+                                        <div
+                                            className="ReviewCard"
+                                            key={ele?.review_id}
+                                        >
+                                            <p id="title">{ele.auth_id}</p>
+                                            <p id="comment">{ele.comment}</p>
+                                        </div>
                                     );
                                 })}
                             </td>
