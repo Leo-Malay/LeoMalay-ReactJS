@@ -4,7 +4,7 @@ import Profile from "../views/products/social/Profile";
 const SocialRoute = () => {
     return (
         <Switch className="SocialRoute">
-            <Route exact path="/Social/Home" component={Home} />
+            <Route exact path="/Social" component={Home} />
             <Route exact path="/Social/Profile" component={Profile} />
         </Switch>
     );

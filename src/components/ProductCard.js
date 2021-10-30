@@ -7,18 +7,21 @@ const ProductCard = ({ props }) => {
             <img src={image} alt="Product" id="Image" />
             <p id="Name">{props?.name}</p>
             <div className="Inline PriceCon">
-                <p className="primary" id="Price">
+                <p className="primary-nohover" id="Price">
                     ${props?.price}
                 </p>
-                <p className="secondary" id="Rating">
+                <p className="secondary-nohover" id="Rating">
                     {props?.rating}&#9733;
                 </p>
             </div>
             <div id="ButtonGrp">
-                <Link className="primary" to="/Store">
+                <Link className="primary-nohover" to="/Store">
                     Add to Cart
                 </Link>
-                <Link className="success" to={"/Store/Product/" + props?.id}>
+                <Link
+                    className="success-nohover"
+                    to={"/Store/Product/" + props?.id}
+                >
                     Learn More
                 </Link>
             </div>

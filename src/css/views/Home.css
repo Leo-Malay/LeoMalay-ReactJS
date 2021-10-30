@@ -13,3 +13,25 @@
     text-align: justify;
     padding-bottom: 15px;
 }
+.ListElementContainer {
+    text-align: center;
+    flex-wrap: wrap;
+}
+.ListElement {
+    width: 250px;
+    margin: 5px;
+    padding: 15px 5px;
+    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.15);
+    display: inline;
+}
+.ListElement #title {
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px 10px;
+    width: min-content;
+    margin: 5px auto;
+}
+.ListElement #desc {
+    margin: 20px 0px;
+}
