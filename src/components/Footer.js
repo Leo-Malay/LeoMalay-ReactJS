@@ -1,22 +1,9 @@
-import { Link } from "react-router-dom";
 import "../css/HeaderFooter.css";
 import { PageLink } from "./Element";
 const Footer = ({ props }) => {
     return (
         <div className="Footer">
-            <Link
-                to={() => {
-                    if (props.type === "Auth") return "/Auth/Account";
-                    if (props.type === "Store") return "/Store";
-                    if (props.type === "Blog") return "/Blog";
-                    return "";
-                }}
-            >
-                <p className={props.color || "primary"} id="title">
-                    {props.title || "LeoMalay"}
-                </p>
-            </Link>
-            <br />
+            <p id="title">Malay Bhavsar (LeoMalay)</p>
             <div className="NavLink">
                 <PageLink
                     props={{
@@ -24,21 +11,30 @@ const Footer = ({ props }) => {
                         to: "/",
                     }}
                 />
-                <br />
+                <PageLink
+                    props={{
+                        value: "Products",
+                        to: "/ProductHome",
+                    }}
+                />
                 <PageLink
                     props={{
                         value: "Store",
                         to: "/Store",
                     }}
                 />
-                <br />
+                <PageLink
+                    props={{
+                        value: "Social",
+                        to: "/Social",
+                    }}
+                />
                 <PageLink
                     props={{
                         value: "Cafeteria",
                         to: "/Cafeteria",
                     }}
                 />
-                <br />
                 <PageLink
                     props={{
                         value: "Blog",
@@ -46,7 +42,27 @@ const Footer = ({ props }) => {
                     }}
                 />
             </div>
-            <br />
+            <div className="NavLink">
+                <PageLink
+                    props={{
+                        value: "Services",
+                        to: "/ServiceHome",
+                    }}
+                />
+                <PageLink
+                    props={{
+                        value: "Inventory",
+                        to: "/Inventory",
+                    }}
+                />
+                <PageLink
+                    props={{
+                        value: "Pay",
+                        to: "/Pay",
+                    }}
+                />
+            </div>
+            <p id="desc">&copy; 2021 Malay Bhavsar</p>
         </div>
     );
 };

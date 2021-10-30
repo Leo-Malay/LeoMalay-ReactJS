@@ -5,26 +5,34 @@
     --error: tomato;
     --white: #fff;
 }
-.primary {
+.primary,
+.primary-nohover {
     background-color: var(--primary);
     border-color: var(--primary);
 }
-.secondary {
+.secondary,
+.secondary-nohover {
     background-color: var(--secondary);
     border-color: var(--secondary);
 }
-.success {
+.success,
+.success-nohover {
     background-color: var(--success);
     border-color: var(--success);
 }
-.error {
+.error,
+.error-nohover {
     background-color: var(--error);
     border-color: var(--error);
 }
 .primary,
 .secondary,
 .success,
-.error {
+.error,
+.primary-nohover,
+.secondary-nohover,
+.success-nohover,
+.error-nohover {
     color: var(--white);
 }
 .primary:hover {
@@ -49,19 +57,23 @@
 .error:hover {
     background-color: var(--white);
 }
-.primary-inv {
+.primary-inv,
+.primary-inv-nohover {
     color: var(--primary);
     border-color: var(--primary);
 }
-.secondary-inv {
+.secondary-inv,
+.secondary-inv-nohover {
     color: var(--secondary);
     border-color: var(--secondary);
 }
-.success-inv {
+.success-inv,
+.success-inv-nohover {
     color: var(--success);
     border-color: var(--success);
 }
-.error-inv {
+.error-inv,
+.error-inv-nohover {
     color: var(--error);
     border-color: var(--error);
 }
@@ -90,6 +102,14 @@
 .error,
 .error-inv,
 .success,
-.success-inv {
+.success-inv,
+.primary-nohover,
+.primary-inv-nohover,
+.secondary-nohover,
+.secondary-inv-nohover,
+.error-nohover,
+.error-inv-nohover,
+.success-nohover,
+.success-inv-nohover {
     border: 2px solid;
 }

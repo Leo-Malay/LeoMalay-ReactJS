@@ -16,3 +16,12 @@ a {
 .Center {
     text-align: center;
 }
+/** Button */
+.Button,
+#Button {
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 2px;
+    font-weight: 600;
+}

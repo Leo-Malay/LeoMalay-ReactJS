@@ -3,3 +3,10 @@
     padding: 4px 10px;
     margin: 2px;
 }
+a#PageLink {
+    padding: 5px 10px;
+    color: var(--primary);
+}
+#PageLink:hover {
+    background-color: rgb(240, 240, 240);
+}

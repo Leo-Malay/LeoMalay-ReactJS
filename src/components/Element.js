@@ -8,7 +8,11 @@ const LinkButton = ({ props }) => {
     );
 };
 const PageLink = ({ props }) => {
-    return <Link to={props.to}>{props.value}</Link>;
+    return (
+        <Link id="PageLink" to={props.to}>
+            {props.value}
+        </Link>
+    );
 };
 
 export { LinkButton, PageLink };
