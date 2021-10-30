@@ -1,8 +1,8 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import BlogCard from "../../components/BlogCard";
-import "../../css/views/Blog.css";
-import BlogData from "../../data/Blog.json";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import BlogCard from "../../../components/BlogCard";
+import "../../../css/views/products/Blog.css";
+import BlogData from "../../../data/Blog.json";
 const Blog = () => {
     return (
         <div className="Blog">

@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import Cafeteria from "../views/cafeteria/Cafeteria";
+import Cafeteria from "../views/products/cafeteria/Cafeteria";
 const CafeteriaRoute = () => {
     return (
         <Switch className="CafeteriaRoute">

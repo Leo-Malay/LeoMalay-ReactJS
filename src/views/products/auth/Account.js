@@ -1,7 +1,7 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import { useState } from "react";
-import { LinkButton } from "../../components/Element";
+import { LinkButton } from "../../../components/Element";
 const Account = ({ user }) => {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");

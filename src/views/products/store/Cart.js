@@ -1,8 +1,8 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import "../../css/views/Cart.css";
-import StoreCartData from "../../data/StoreCart.json";
-import { LinkButton } from "../../components/Element";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import "../../../css/views/products/Cart.css";
+import StoreCartData from "../../../data/StoreCart.json";
+import { LinkButton } from "../../../components/Element";
 const Cart = () => {
     const getCart = (auth_id) => {
         return StoreCartData.filter(function (StoreCartData) {

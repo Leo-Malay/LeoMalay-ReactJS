@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Cart from "../views/store/Cart";
-import Product from "../views/store/Product";
-import Store from "../views/store/Store";
-import Order from "../views/store/Order";
+import Cart from "../views/products/store/Cart";
+import Product from "../views/products/store/Product";
+import Store from "../views/products/store/Store";
+import Order from "../views/products/store/Order";
 const StoreRoute = () => {
     return (
         <Switch className="StoreRoute">

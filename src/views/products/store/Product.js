@@ -1,10 +1,10 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import "../../css/views/Product.css";
-import ProductData from "../../data/Store.json";
-import image from "../../assets/iphone.jfif";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import "../../../css/views/products/Product.css";
+import ProductData from "../../../data/Store.json";
+import image from "../../../assets/iphone.jfif";
 import { useParams } from "react-router";
-import { LinkButton } from "../../components/Element";
+import { LinkButton } from "../../../components/Element";
 const Product = () => {
     const { id } = useParams();
     const getProduct = (id) => {

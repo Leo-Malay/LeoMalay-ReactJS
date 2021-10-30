@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Login from "../views/auth/Login";
-import Account from "../views/auth/Account";
-import NewAccount from "../views/auth/NewAccount";
-import UpdatePassword from "../views/auth/UpdatePassword";
+import Login from "../views/products/auth/Login";
+import Account from "../views/products/auth/Account";
+import NewAccount from "../views/products/auth/NewAccount";
+import UpdatePassword from "../views/products/auth/UpdatePassword";
 const AuthRoute = () => {
     return (
         <Switch className="AuthRoute">

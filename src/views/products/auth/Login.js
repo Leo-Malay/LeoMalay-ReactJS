@@ -1,6 +1,6 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import "../../css/components/Input.css";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import "../../../css/components/Input.css";
 import { useState } from "react";
 const Login = () => {
     const [username, setUsername] = useState("");

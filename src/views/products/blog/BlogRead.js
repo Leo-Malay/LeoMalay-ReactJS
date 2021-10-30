@@ -1,8 +1,8 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import "../../css/views/BlogRead.css";
-import image from "../../assets/iphone.jfif";
-import BlogData from "../../data/Blog.json";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import "../../../css/views/products/BlogRead.css";
+import image from "../../../assets/iphone.jfif";
+import BlogData from "../../../data/Blog.json";
 import { useParams } from "react-router";
 const BlogRead = ({ props }) => {
     const { id } = useParams();

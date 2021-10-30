@@ -1,7 +1,7 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import ProductCard from "../../components/ProductCard";
-import StoreData from "../../data/Store.json";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import ProductCard from "../../../components/ProductCard";
+import StoreData from "../../../data/Store.json";
 const Store = () => {
     return (
         <div className="Store">

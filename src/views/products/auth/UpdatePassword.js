@@ -1,5 +1,5 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import { useState } from "react";
 const UpdatePassword = () => {
     const [username, setUsername] = useState("");
