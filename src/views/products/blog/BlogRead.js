@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 import "../../../css/views/products/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
 import BlogData from "../../../data/Blog.json";
@@ -29,9 +28,6 @@ const BlogRead = ({ props }) => {
                 </div>
                 <p id="description">{Data?.description}</p>
             </div>
-            <Footer
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../css/views/Home.css";
 import { LinkButton } from "../components/Element";
 const Home = () => {
@@ -77,7 +76,6 @@ const Home = () => {
                     }}
                 />
             </div>
-            <Footer props={{ title: "LeoMalay", type: "Home" }} />
         </div>
     );
 };

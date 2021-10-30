@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 import ProductCard from "../../../components/ProductCard";
 import StoreData from "../../../data/Store.json";
 const Store = () => {
@@ -23,9 +22,6 @@ const Store = () => {
                     );
                 })}
             </div>
-            <Footer
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
         </div>
     );
 };

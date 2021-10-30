@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 const BlogWrite = () => {
     const submitHandler = (e) => {
         e.preventDefault();
@@ -36,9 +35,6 @@ const BlogWrite = () => {
                     style={{ width: "40%" }}
                 />
             </form>
-            <Footer
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
         </div>
     );
 };

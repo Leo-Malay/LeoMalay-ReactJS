@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 import "../../../css/components/Input.css";
 import { useState } from "react";
 const Login = () => {
@@ -43,9 +42,6 @@ const Login = () => {
                 />
                 <br />
             </form>
-            <Footer
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
         </div>
     );
 };

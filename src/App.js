@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import "./css/App.css";
 import "./css/Color.css";
+import Footer from "./components/Footer";
 import Home from "./views/Home";
 import AuthRoute from "./routes/Auth";
 import BlogRoute from "./routes/Blog";
@@ -22,6 +23,8 @@ const App = () => {
             <StoreRoute />
             {/** Service Based */}
             <InventoryRoute />
+            {/** Footer */}
+            <Footer />
         </BrowserRouter>
     );
 };

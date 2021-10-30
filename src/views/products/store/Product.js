@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+
 import "../../../css/views/products/Product.css";
 import ProductData from "../../../data/Store.json";
 import image from "../../../assets/iphone.jfif";
@@ -93,9 +93,6 @@ const Product = () => {
                     </tbody>
                 </table>
             </div>
-            <Footer
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
         </div>
     );
 };

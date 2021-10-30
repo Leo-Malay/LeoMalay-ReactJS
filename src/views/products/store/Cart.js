@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+
 import "../../../css/views/products/Cart.css";
 import StoreCartData from "../../../data/StoreCart.json";
 import { LinkButton } from "../../../components/Element";
@@ -114,9 +114,6 @@ const Cart = () => {
                     />
                 </div>
             </div>
-            <Footer
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
         </div>
     );
 };

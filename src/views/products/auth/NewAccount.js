@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+
 import "../../../css/components/Input.css";
 import { useState } from "react";
 const NewAccount = () => {
@@ -84,9 +84,6 @@ const NewAccount = () => {
                 />
                 <br />
             </form>
-            <Footer
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
         </div>
     );
 };

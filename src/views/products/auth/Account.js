@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 import { useState } from "react";
 import { LinkButton } from "../../../components/Element";
 const Account = ({ user }) => {
@@ -200,9 +199,6 @@ const Account = ({ user }) => {
                     value="Update"
                 />
             </form>
-            <Footer
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
         </div>
     );
 };
