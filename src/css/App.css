@@ -16,6 +16,7 @@ a {
 }
 .Inline {
     display: inline-flex;
+    flex-wrap: wrap;
 }
 .Center {
     text-align: center;

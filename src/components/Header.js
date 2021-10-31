@@ -27,6 +27,15 @@ const Header = ({ props }) => {
                         }}
                     />
                 )}
+                {props.type === "Store" && (
+                    <LinkButton
+                        props={{
+                            value: "Order",
+                            to: "/Store/Order",
+                            color: "primary",
+                        }}
+                    />
+                )}
                 {!isAuthenticated && (
                     <LinkButton
                         props={{
