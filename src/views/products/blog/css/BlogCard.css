@@ -15,8 +15,6 @@
 }
 .BlogCard #title {
     text-align: left !important;
-    font-size: 18px;
-    font-weight: 600;
     padding: 10px;
     white-space: nowrap;
     overflow: hidden;
@@ -29,8 +27,6 @@
 }
 .BlogCard #author,
 .BlogCard #date {
-    font-size: 12px;
     padding: 5px 10px;
-    font-weight: 600;
     margin-bottom: 5px;
 }

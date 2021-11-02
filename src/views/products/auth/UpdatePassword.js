@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-
 import { useState } from "react";
 const UpdatePassword = () => {
     const [username, setUsername] = useState("");
@@ -17,7 +16,8 @@ const UpdatePassword = () => {
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p id="title">Update Password</p>
+                <p className="fs10 bold">Update Password</p>
+                <br />
                 <input
                     type="hidden"
                     name="username"
@@ -60,7 +60,7 @@ const UpdatePassword = () => {
                 <input
                     type="submit"
                     name="submit"
-                    className="error"
+                    className="error-nohover"
                     value="Update Password"
                 />
                 <br />

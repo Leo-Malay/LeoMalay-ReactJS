@@ -8,8 +8,6 @@
 }
 .BlogRead .BlogRead-section #title {
     text-align: justify !important;
-    font-size: 40px;
-    font-weight: 600;
     padding: 10px;
 }
 .BlogRead .BlogRead-section #subCard {
@@ -22,12 +20,12 @@
 }
 .BlogRead .BlogRead-section #author,
 .BlogRead .BlogRead-section #date {
-    font-size: 15px;
     padding: 5px 10px;
-    font-weight: 600;
     margin-bottom: 5px;
 }
 .BlogRead .BlogRead-section #description {
-    font-size: 16px;
     margin-top: 20px;
+    line-height: 25px;
+    letter-spacing: 0.75px;
+    word-spacing: 3px;
 }

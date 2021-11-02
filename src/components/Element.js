@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../css/components/LinkButton.css";
+import "./css/LinkButton.css";
 const LinkButton = ({ props }) => {
     return (
         <Link className={props.color + " LinkButton"} to={props.to}>

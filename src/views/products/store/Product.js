@@ -1,6 +1,5 @@
 import Header from "../../../components/Header";
-
-import "../../../css/views/products/Product.css";
+import "./css/Product.css";
 import ProductData from "../../../data/Store.json";
 import image from "../../../assets/iphone.jfif";
 import { useParams } from "react-router";
@@ -19,9 +18,13 @@ const Product = () => {
                 props={{ title: "LeoStore", color: "success", type: "Store" }}
             />
             <div className="Product-section">
-                <p id="title">{Data?.name}</p>
+                <p className="fs14 bold" id="title">
+                    {Data?.name}
+                </p>
                 <img src={image} alt="Product" />
-                <p id="description">{Data?.description}</p>
+                <p className="fs3" id="description">
+                    {Data?.description}
+                </p>
                 <br />
                 {Data.isAvailable && (
                     <LinkButton
@@ -54,19 +57,19 @@ const Product = () => {
                     <tbody>
                         <tr>
                             <th>Price</th>
-                            <td>${Data?.price}</td>
+                            <td className="fs3">${Data?.price}</td>
                         </tr>
                         <tr>
                             <th>Rating</th>
-                            <td>{Data?.rating}&#9733;</td>
+                            <td className="fs3">{Data?.rating}&#9733;</td>
                         </tr>
                         <tr>
                             <th>Sold By</th>
-                            <td>{Data?.soldBy}</td>
+                            <td className="fs3">{Data?.soldBy}</td>
                         </tr>
                         <tr>
                             <th>Specification</th>
-                            <td>
+                            <td className="fs3">
                                 <ul>
                                     {Data?.specs.map((ele, i) => {
                                         return <li key={i}>{ele}</li>;
@@ -83,8 +86,12 @@ const Product = () => {
                                             className="ReviewCard"
                                             key={ele?.review_id}
                                         >
-                                            <p id="title">{ele.auth_id}</p>
-                                            <p id="comment">{ele.comment}</p>
+                                            <p className="fs3 bold" id="title">
+                                                {ele.auth_id}
+                                            </p>
+                                            <p className="fs3" id="comment">
+                                                {ele.comment}
+                                            </p>
                                         </div>
                                     );
                                 })}

@@ -1,6 +1,6 @@
 import Header from "../../../components/Header";
-import BlogCard from "../../../components/BlogCard";
-import "../../../css/views/products/Blog.css";
+import BlogCard from "./components/BlogCard";
+import "./css/Blog.css";
 import BlogData from "../../../data/Blog.json";
 const Blog = () => {
     return (

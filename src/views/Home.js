@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import "../css/views/Home.css";
+import "../css/Home.css";
 import { LinkButton } from "../components/Element";
 const Home = () => {
     return (

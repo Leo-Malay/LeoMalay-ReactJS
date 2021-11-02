@@ -1,6 +1,7 @@
 import Header from "../../../components/Header";
 import { useState } from "react";
 import { LinkButton } from "../../../components/Element";
+import "./css/Account.css";
 const Account = ({ user }) => {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
@@ -17,10 +18,9 @@ const Account = ({ user }) => {
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />
             <p
+                className="fs15 bold"
                 style={{
                     textAlign: "center",
-                    fontSize: 45,
-                    fontWeight: 600,
                     marginTop: 40,
                     marginBottom: 40,
                 }}
@@ -28,13 +28,15 @@ const Account = ({ user }) => {
                 Welcome{" "}
                 {(user?.fname || "Guest") + " " + (user?.lname || "User")}
             </p>
-            <form style={{ width: 375 }}>
-                <p id="title">General</p>
+
+            <form>
+                <p className="fs10 bold">General</p>
                 <table
                     border={0}
                     style={{
                         margin: "auto",
                         textAlign: "left",
+                        paddingTop: 12,
                     }}
                 >
                     <tbody>
@@ -82,7 +84,7 @@ const Account = ({ user }) => {
                 <input
                     type="submit"
                     name="submit"
-                    className="success"
+                    className="success-nohover"
                     value="Update"
                 />
                 <br />
@@ -102,13 +104,14 @@ const Account = ({ user }) => {
                     }}
                 />
             </form>
-            <form style={{ width: 375 }}>
-                <p id="title">Address</p>
+            <form>
+                <p className="fs10 bold">Address</p>
                 <table
                     border={0}
                     style={{
                         margin: "auto",
                         textAlign: "left",
+                        paddingTop: 12,
                     }}
                 >
                     <tbody>
@@ -195,7 +198,7 @@ const Account = ({ user }) => {
                 <input
                     type="submit"
                     name="submit"
-                    className="success"
+                    className="success-nohover"
                     value="Update"
                 />
             </form>

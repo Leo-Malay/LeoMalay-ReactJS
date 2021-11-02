@@ -1,6 +1,5 @@
 import Header from "../../../components/Header";
-
-import "../../../css/views/products/Cart.css";
+import "./css/Cart.css";
 import StoreCartData from "../../../data/StoreCart.json";
 import { LinkButton } from "../../../components/Element";
 const Cart = () => {
@@ -17,7 +16,9 @@ const Cart = () => {
             />
             <div className="Cart-Container">
                 <div className="Left">
-                    <p id="title">Cart</p>
+                    <p className="fs11 bold" id="title">
+                        Cart
+                    </p>
                     <table border={0} style={{ width: "95%", margin: "auto" }}>
                         <tbody>
                             <tr>
@@ -25,7 +26,6 @@ const Cart = () => {
                                 <th style={{ width: "15%" }}>Quantity</th>
                                 <th style={{ width: "15%" }}>Cost</th>
                             </tr>
-                            <br />
                             {Data?.items.map((ele) => {
                                 return (
                                     <tr key={ele.item_id}>
@@ -55,7 +55,9 @@ const Cart = () => {
                 </div>
                 <div className="Right">
                     <hr />
-                    <p id="title">LeoStore</p>
+                    <p className="fs11 bold" id="title">
+                        LeoStore
+                    </p>
                     <p id="subtitle">By Malay Bhavsar (Leo-Malay)</p>
                     <table border={0}>
                         <tbody>

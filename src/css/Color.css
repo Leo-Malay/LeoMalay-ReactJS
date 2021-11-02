@@ -4,6 +4,7 @@
     --success: mediumseagreen;
     --error: tomato;
     --white: #fff;
+    --black: #000;
 }
 .primary,
 .primary-nohover {

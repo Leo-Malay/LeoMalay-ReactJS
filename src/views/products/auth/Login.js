@@ -1,6 +1,6 @@
 import Header from "../../../components/Header";
-import "../../../css/components/Input.css";
 import { useState } from "react";
+import "./css/Input.css";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -13,7 +13,8 @@ const Login = () => {
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p id="title">Login</p>
+                <p className="fs10 bold">Login</p>
+                <br />
                 <input
                     type="text"
                     name="username"
@@ -38,7 +39,7 @@ const Login = () => {
                     type="submit"
                     name="submit"
                     value="Login"
-                    className="success"
+                    className="success-nohover"
                 />
                 <br />
             </form>

@@ -10,16 +10,31 @@ html {
     width: 100%;
     overflow-x: hidden;
 }
-a {
+a,
+button {
     text-decoration: none;
     color: inherit;
 }
+.section {
+    margin: 10px 30px;
+    padding: 10px 20px;
+}
 .Inline {
     display: inline-flex;
-    flex-wrap: wrap;
 }
-.Center {
+/* Text Align */
+.Center,
+.AlignCenter {
     text-align: center;
+}
+.AlignLeft {
+    text-align: left;
+}
+.AlignRight {
+    text-align: right;
+}
+.AlignJustify {
+    text-align: justify;
 }
 /** Button */
 .Button,

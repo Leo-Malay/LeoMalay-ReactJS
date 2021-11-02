@@ -1,6 +1,5 @@
 import Header from "../../../components/Header";
-
-import "../../../css/components/Input.css";
+import "./css/Input.css";
 import { useState } from "react";
 const NewAccount = () => {
     const [fname, setFname] = useState("");
@@ -19,7 +18,8 @@ const NewAccount = () => {
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p id="title">New Account</p>
+                <p className="fs10 bold">New Account</p>
+                <br />
                 <input
                     type="text"
                     name="fname"
@@ -66,6 +66,7 @@ const NewAccount = () => {
                     autoComplete="new-password"
                     required
                 />
+                <br />
                 <input
                     type="password"
                     name="cpassword"
@@ -79,7 +80,7 @@ const NewAccount = () => {
                 <input
                     type="submit"
                     name="submit"
-                    className="primary"
+                    className="primary-nohover"
                     value="Create Account"
                 />
                 <br />

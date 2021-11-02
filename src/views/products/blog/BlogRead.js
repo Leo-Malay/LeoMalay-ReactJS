@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import "../../../css/views/products/BlogRead.css";
+import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
 import BlogData from "../../../data/Blog.json";
 import { useParams } from "react-router";
@@ -18,15 +18,21 @@ const BlogRead = ({ props }) => {
             />
             <div className="BlogRead-section">
                 <img src={image} alt="Blog" />
-                <p id="title">
+                <p className="fs17 bold" id="title">
                     {Data?.title ||
                         "A simple cheezy way to say good bye to anyone!"}
                 </p>
                 <div className="Inline" id="subCard">
-                    <p id="author">By {Data?.author || "Anonymous"}</p>
-                    <p id="date">{Data?.date || "27-Oct-2021"}</p>
+                    <p className="fs3 bold" id="author">
+                        By {Data?.author || "Anonymous"}
+                    </p>
+                    <p className="fs3 bold" id="date">
+                        {Data?.date || "27-Oct-2021"}
+                    </p>
                 </div>
-                <p id="description">{Data?.description}</p>
+                <p className="fs4" id="description">
+                    {Data?.description}
+                </p>
             </div>
         </div>
     );

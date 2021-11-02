@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import HomeListElement from "../../components/HomeListElement";
-import "../../css/views/Home.css";
+import "../../css/Home.css";
 const ProductHome = () => {
     return (
         <div className="ProductHome">

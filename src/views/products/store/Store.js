@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import ProductCard from "../../../components/ProductCard";
+import ProductCard from "./components/ProductCard";
 import StoreData from "../../../data/Store.json";
 const Store = () => {
     return (

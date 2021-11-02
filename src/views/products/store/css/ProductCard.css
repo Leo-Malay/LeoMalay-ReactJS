@@ -1,26 +1,25 @@
 .ProductCard {
     width: 300px;
-    height: 400px;
+    height: fit-content;
     margin: 10px;
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.15);
     display: inline-block;
     text-align: center;
     overflow: hidden;
+    padding-bottom: 10px;
 }
 .ProductCard #Image {
     height: 250px;
     object-fit: cover;
 }
 .ProductCard #Name {
-    font-size: 18px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .ProductCard #Price,
 .ProductCard #Rating {
-    font-size: 15px;
     border: 2px solid;
     width: fit-content;
 }
@@ -28,7 +27,6 @@
 .ProductCard #Price,
 .ProductCard #Rating {
     padding: 4px 20px;
-    font-weight: 600;
     text-align: left !important;
 }
 .ProductCard #ButtonGrp a {
@@ -38,8 +36,7 @@
 .ProductCard #ButtonGrp a,
 .ProductCard #Price,
 .ProductCard #Rating {
-    transition-duration: 1s;
-    border-radius: 50px;
+    border-radius: 4px;
     margin: 2px 10px;
 }
 .ProductCard #Price {

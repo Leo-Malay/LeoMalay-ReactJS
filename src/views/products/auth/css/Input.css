@@ -1,0 +1,19 @@
+form {
+    margin: 20px auto;
+    padding: 20px 5px;
+    text-align: center;
+    font-weight: 600;
+}
+input {
+    width: 300px;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1.5px solid rgb(0, 0, 0, 0.3);
+    font-weight: 600;
+    font-size: 14px;
+}
+input[type="submit"],
+input[type="button"] {
+    width: 200px;
+}
