@@ -1,0 +1,19 @@
+.StoreIndex .sec1,
+.StoreIndex .sec2,
+.StoreIndex .sec3 {
+    padding: 10vw 5vw;
+    color: var(--white);
+}
+.StoreIndex .sec1,
+.StoreIndex .sec3 {
+    background-color: var(--success);
+}
+.StoreIndex .sec2 {
+    background-color: var(--black);
+}
+.StoreIndex .sec4 {
+    padding: 10vw 5vw;
+}
+.StoreIndex .title {
+    font-size: 10vw;
+}

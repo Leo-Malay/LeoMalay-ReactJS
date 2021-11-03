@@ -20,7 +20,7 @@ const Footer = ({ props }) => {
                 <PageLink
                     props={{
                         value: "Store",
-                        to: "/Store",
+                        to: "/Store/Index",
                     }}
                 />
                 <PageLink
@@ -38,7 +38,7 @@ const Footer = ({ props }) => {
                 <PageLink
                     props={{
                         value: "Blog",
-                        to: "/Blog",
+                        to: "/Blog/Index",
                     }}
                 />
             </div>
@@ -58,7 +58,7 @@ const Footer = ({ props }) => {
                 <PageLink
                     props={{
                         value: "Pay",
-                        to: "/Pay",
+                        to: "/Pay/Index",
                     }}
                 />
             </div>

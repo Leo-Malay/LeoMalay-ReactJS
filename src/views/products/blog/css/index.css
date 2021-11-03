@@ -1,0 +1,19 @@
+.BlogIndex .sec1,
+.BlogIndex .sec2,
+.BlogIndex .sec3 {
+    padding: 10vw 5vw;
+    color: var(--white);
+}
+.BlogIndex .sec1,
+.BlogIndex .sec3 {
+    background-color: var(--secondary);
+}
+.BlogIndex .sec2 {
+    background-color: var(--black);
+}
+.BlogIndex .sec4 {
+    padding: 10vw 5vw;
+}
+.BlogIndex .title {
+    font-size: 10vw;
+}
