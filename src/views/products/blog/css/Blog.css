@@ -4,3 +4,6 @@
 .BlogContainer #ContainerTitle {
     color: var(--secondary);
 }
+.preview {
+    padding: 0vw 3vw;
+}

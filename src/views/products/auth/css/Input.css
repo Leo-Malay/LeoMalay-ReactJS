@@ -4,7 +4,9 @@ form {
     text-align: center;
     font-weight: 600;
 }
-input {
+input,
+select,
+option {
     width: 300px;
     padding: 10px 15px;
     margin: 5px;

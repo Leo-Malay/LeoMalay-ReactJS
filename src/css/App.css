@@ -50,3 +50,13 @@ button {
     padding: 0.5vw 1vw;
     border: none;
 }
+.CategoryContainer {
+    padding: 1vw;
+}
+.CategoryContainer .category,
+.FilterHeading .category {
+    padding: 5px;
+    width: fit-content;
+    display: inline-flex;
+    cursor: pointer;
+}
