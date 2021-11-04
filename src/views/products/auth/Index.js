@@ -1,32 +1,41 @@
+import Header from "../../../components/Header";
+import "./css/index.css";
 const Index = () => {
     return (
-        <div className="Index">
-            <div className="section">
-                <p className="fs17 bold Center">
-                    Tired of Making New Account for New Service?
-                </p>
-                <p className="fs12 bold Center">
-                    Let me Introduce you to LeoAuth. It allows you to use one
-                    account across all serices and products offered By LeoMalay
-                </p>
-            </div>
-            <div className="section">
-                <p className="fs12 bold">Why LeoAuth?</p>
-                <p className="fs6">
-                    Lets you use differet services and products offered by
-                    LeoMalay for free safely.
+        <div className="AuthIndex">
+            <Header
+                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
+            />
+            <div className="sec1">
+                <p className="AlignCenter title bold">LeoAuth</p>
+                <p className="AlignCenter fs12 bold">
+                    One Account for all of our Services
                 </p>
             </div>
-            <div className="section">
-                <p className="fs12 bold">What type of Data is Stored?</p>
-                <p className="fs6">
+            <div className="sec2">
+                <p className="AlignLeft fs17 bold">Why?</p>
+                <br />
+                <p className="AlignLeft fs6">
+                    Safe {"&"} Secure
+                    <br />
+                    <br />
+                    Use LeoProducts {"&"} LeoServices for Free
+                    <br />
+                    <br />
+                    Enhanced Privacy and Safety measures
+                </p>
+            </div>
+            <div className="sec3">
+                <p className="AlignLeft fs17 bold">Data Stored by Us!</p>
+                <br />
+                <p className="AlignJustify fs6">
                     Here at LeoAuth, We will store personal but ultra basic
                     details which includes your Name, Email, Mobile, Address,
                     City, State{" & "}Country along with your Username {"& "}
-                    Password.
-                    <br />
-                    We also store your Credit/Debit Card Info if you opt for
-                    LeoPay service.
+                    Password. We may also store your Credit/Debit Card Info if
+                    you opt for certain services. Also you may need to provide
+                    your scanned photo of goverment issued certificate or
+                    identity card for some services.
                 </p>
             </div>
         </div>

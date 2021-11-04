@@ -45,3 +45,8 @@ button {
     margin: 2px;
     font-weight: 600;
 }
+.IndexButton {
+    width: 20vw;
+    padding: 0.5vw 1vw;
+    border: none;
+}

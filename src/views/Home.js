@@ -1,80 +1,98 @@
 import Header from "../components/Header";
 import "../css/Home.css";
-import { LinkButton } from "../components/Element";
 const Home = () => {
     return (
-        <div className="Home">
+        <div className="HomeIndex">
             <Header props={{ title: "LeoMalay", type: "Home" }} />
-            <div className="section" id="1">
-                <p id="title">
-                    HELLO WORLD
-                    <br />
-                    WELCOME TO LEOMALAY
-                </p>
-                <p id="desc">
-                    My Primary Aim is to connect everything to a single source.
-                    Just like the sun is the main source of our energy. I wanted
-                    to develop a Sun for the people of this very own beautiful
-                    earth.
+            <div className="sec1">
+                <p className="AlignCenter title bold">LeoMalay</p>
+                <p className="AlignCenter fs15 bold">Malay Bhavsar</p>
+            </div>
+            <div className="sec2">
+                <p className="AlignCenter title bold">What</p>
+                <p className="AlignJustify fs10 bold">
+                    Hello World. I have made this website after observing the
+                    world connecting too rapidly but still having some diversity
+                    in the range of services offered by the companies. So to
+                    cope up with the fast changing world, I hereby like you to
+                    introduce to LeoMalay which is a compliation of all the
+                    services offered over the internet. From Shopping to Paying,
+                    From SocialMedia to Cafeteria, From Yesterday to Tomorrow. I
+                    plan on developing all the services from scratch.
                 </p>
             </div>
-            <div className="section" id="2">
-                <p id="title">
-                    LOOKING FOR A SHOP,
-                    <br />
-                    TO BUY YOUR DAILY NEEDS?
+            <div className="sec3">
+                <p className="AlignCenter title bold">Why</p>
+                <p className="AlignJustify fs10 bold">
+                    I am developing all of this services, as I will be able to
+                    learn how to manage such a large project and will be able to
+                    learn many differet things. I am using ReactJS for the
+                    Front-End and ExpressJS along with MongoDB as a database for
+                    the BackEnd. Am Also Palnning on developing all the mobile
+                    apps for the services and products available on the website.
                 </p>
-                <p id="desc">
-                    A one stop store, where you'll be able to buy all the basic
-                    items required on day to day basis. And the good thing is it
-                    will be delivered to you within one day! Also you can
-                    subscribe to items to be delivered to you daily.
-                </p>
-                <LinkButton
-                    props={{
-                        value: "Visit Store",
-                        color: "success",
-                        to: "/Store",
-                    }}
-                />
             </div>
-            <div className="section" id="3">
-                <p id="title">
-                    I'LL BET YOU'RE HUNGRY!
+            <div className="sec4">
+                <p className="AlignLeft fs17 bold">
+                    Wanna See My Other Projects?
+                </p>
+                <p className="AlignLeft fs6 bold">Head over to my GitHub.</p>
+                <div className="AlignLeft">
                     <br />
-                    ORDER NOW :)
-                </p>
-                <p id="desc">
-                    Hello Sir what would you like to order? We have Burgers,
-                    Sandwich, Pizza, Tea {"&"} Coffee. Get it cooking right
-                    away, just need to place an order.
-                </p>
-                <LinkButton
-                    props={{
-                        value: "Visit Cafeteria",
-                        color: "error",
-                        to: "/Cafeteria",
-                    }}
-                />
-            </div>
-            <div className="section" id="4">
-                <p id="title">
-                    KNOWLEDGE IS POWER!
+                    <a
+                        className="IndexButton primary"
+                        href="https://github.com/Leo-Malay"
+                    >
+                        GitHub
+                    </a>
                     <br />
-                    WANNA READ AMAZING BLOGS?
+                </div>
+                <br />
+                <br />
+                <p className="AlignRight fs17 bold">Wanna Hire Me?</p>
+                <p className="AlignRight fs6 bold">
+                    Send me a mail, I would be very happy to work
+                    <br /> with you/your company
                 </p>
-                <p id="desc">
-                    I sure do agree with the saying that goes, "Pen is more
-                    powerful than a sword". Thus keep reading and keep learning.
-                    Success is achieved by those who are life long learners.
+                <div className="AlignRight">
+                    <br />
+                    <a
+                        className="IndexButton primary"
+                        href="mailto:malaybhavsar.290@gmail.com"
+                    >
+                        Mail
+                    </a>
+                    <br />
+                </div>
+                <br />
+                <br />
+                <p className="AlignLeft fs17 bold">Want Help?</p>
+                <p className="AlignLeft fs6 bold">
+                    I am always ready to help. you can contact me
+                    <br /> via Mail, LinkedIn, Instagram
                 </p>
-                <LinkButton
-                    props={{
-                        value: "Visit Blogs",
-                        color: "secondary",
-                        to: "/Blog",
-                    }}
-                />
+                <div className="AlignLeft">
+                    <br />
+                    <a
+                        className="IndexButton primary"
+                        href="mailto:malaybhavsar.290@gmail.com"
+                    >
+                        Mail
+                    </a>
+                    <a
+                        className="IndexButton primary"
+                        href="https://www.linkedin.com/in/leo-malay-bhavsar/"
+                    >
+                        LinkedIn
+                    </a>
+                    <a
+                        className="IndexButton primary"
+                        href="https://www.instagram.com/leo_malay.29/"
+                    >
+                        Instagram
+                    </a>
+                    <br />
+                </div>
             </div>
         </div>
     );

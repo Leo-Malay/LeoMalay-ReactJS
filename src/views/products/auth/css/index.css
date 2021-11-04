@@ -1,0 +1,19 @@
+.AuthIndex .sec1,
+.AuthIndex .sec2,
+.AuthIndex .sec3 {
+    padding: 10vw 5vw;
+    color: var(--white);
+}
+.AuthIndex .sec1,
+.AuthIndex .sec3 {
+    background-color: var(--error);
+}
+.AuthIndex .sec2 {
+    background-color: var(--black);
+}
+.AuthIndex .sec4 {
+    padding: 10vw 5vw;
+}
+.AuthIndex .title {
+    font-size: 10vw;
+}
