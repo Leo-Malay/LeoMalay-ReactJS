@@ -1,0 +1,46 @@
+.SocialPost {
+    width: 500px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 15px 0px rgb(0, 0, 0, 0.15);
+}
+.SocialPost .head {
+    padding: 5px 15px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+}
+.SocialPost .head .avatar {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1.5px solid rgb(236, 8, 160);
+    display: inline-block;
+    vertical-align: middle;
+}
+.SocialPost .head .name {
+    padding-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.SocialPost .body {
+}
+.SocialPost .foot .ButtonContainer button {
+    width: 33%;
+    padding: 10px 0px;
+    border: none;
+}
+.SocialPost .foot .LikeContainer {
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.SocialPost .foot .CommentContainer {
+    padding: 5px;
+}
+.SocialPost .foot .CommentContainer .Comment {
+    background-color: rgb(240, 240, 240);
+    margin: 3px;
+    padding: 7px 10px;
+    border-radius: 5px;
+}
+.SocialPost .foot .CommentContainer .Comment p.name {
+    padding-bottom: 5px;
+}
