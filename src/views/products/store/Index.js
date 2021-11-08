@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../../../components/Header";
 import "./css/index.css";
 const Index = () => {
@@ -9,6 +10,12 @@ const Index = () => {
             <div className="sec1">
                 <p className="AlignCenter fs17 bold">Welcome to the</p>
                 <p className="AlignCenter title bold">LeoStore</p>
+                <br />
+                <center>
+                    <Link className="AlignCenter success-nohover" to="/Store">
+                        Visit Store Now
+                    </Link>
+                </center>
             </div>
             <div className="sec2">
                 <p className="AlignLeft fs13 bold">Easy {"&"} Fast</p>

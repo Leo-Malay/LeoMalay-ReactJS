@@ -35,6 +35,7 @@
 .success-nohover,
 .error-nohover {
     color: var(--white);
+    border: none;
 }
 .primary:hover {
     color: var(--primary);

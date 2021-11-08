@@ -7,9 +7,11 @@ const Header = ({ props }) => {
         <div className="Header">
             <Link
                 to={() => {
-                    if (props.type === "Auth") return "/Auth/Account";
+                    if (props.type === "Auth") return "/Auth";
                     if (props.type === "Store") return "/Store";
                     if (props.type === "Blog") return "/Blog";
+                    if (props.type === "Social") return "/Social";
+                    if (props.type === "Pay") return "/Pay";
                     return "";
                 }}
             >
@@ -33,6 +35,15 @@ const Header = ({ props }) => {
                             value: "Order",
                             to: "/Store/Order",
                             color: "primary",
+                        }}
+                    />
+                )}
+                {props.type === "Blog" && (
+                    <LinkButton
+                        props={{
+                            value: "Write",
+                            to: "/Blog/BlogWrite",
+                            color: "secondary",
                         }}
                     />
                 )}

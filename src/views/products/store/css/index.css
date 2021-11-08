@@ -17,3 +17,6 @@
 .StoreIndex .title {
     font-size: 10vw;
 }
+.StoreIndex a {
+    padding: 5px 20px;
+}

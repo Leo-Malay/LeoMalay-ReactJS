@@ -17,3 +17,6 @@
 .BlogIndex .title {
     font-size: 10vw;
 }
+.BlogIndex a {
+    padding: 5px 20px;
+}

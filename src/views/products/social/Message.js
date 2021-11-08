@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
-const Index = () => {
+const Message = () => {
     return (
-        <div className="SocialIndex">
+        <div className="Message">
             <Header
                 props={{
                     title: "LeoSocial",
@@ -12,4 +12,4 @@ const Index = () => {
         </div>
     );
 };
-export default Index;
+export default Message;

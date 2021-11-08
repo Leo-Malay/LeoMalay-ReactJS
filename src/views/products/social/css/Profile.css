@@ -1,0 +1,21 @@
+.Profile .desc {
+    width: 300px;
+    margin: 10px auto;
+}
+.Profile .desc .avatar {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.Profile .desc {
+    margin: 10px auto;
+}
+.Profile .buttonContainer button {
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+}
+.Profile .desc .box {
+    width: 100px;
+}

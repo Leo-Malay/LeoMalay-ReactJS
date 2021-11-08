@@ -35,7 +35,7 @@ const SocialPost = ({ props }) => {
                     src={props.avatar && imagePost}
                     alt="Profile Pic"
                 />
-                <Link className="name bold" to={"/Profile/" + props.id}>
+                <Link className="name bold" to={"Social/Profile/" + props.id}>
                     {props.fname + " " + props.lname}
                 </Link>
             </div>
