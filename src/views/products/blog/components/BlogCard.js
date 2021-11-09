@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BlogCard = ({ props }) => {
     return (
         <div className="BlogCard">
-            <Link to={"/Blog/BlogRead/" + props.id}>
+            <Link to={"/Blog/Read/" + props.id}>
                 <img src={image} alt="Blog" />
                 <p className="fs5 bold" id="title">
                     {props.title}
@@ -14,7 +14,10 @@ const BlogCard = ({ props }) => {
                         By {props.author || "Anonymous"}
                     </p>
                     <p className="fs2 bold" id="date">
-                        {props.date}
+                        {new Date(props.date).toLocaleDateString()}
+                    </p>
+                    <p className="fs2 bold" id="like">
+                        {props.like.length}❤️
                     </p>
                 </div>
             </Link>

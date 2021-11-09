@@ -20,13 +20,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.BlogCard #date {
+.BlogCard #date,
+.BlogCard #like {
     text-align: right;
     margin-right: 0;
+}
+.BlogCard #date {
     margin-left: auto;
 }
 .BlogCard #author,
-.BlogCard #date {
+.BlogCard #date,
+.BlogCard #like {
     padding: 5px 10px;
     margin-bottom: 5px;
 }

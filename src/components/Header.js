@@ -42,7 +42,7 @@ const Header = ({ props }) => {
                     <LinkButton
                         props={{
                             value: "Write",
-                            to: "/Blog/BlogWrite",
+                            to: "/Blog/Write",
                             color: "secondary",
                         }}
                     />

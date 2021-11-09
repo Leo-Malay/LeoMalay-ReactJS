@@ -1,0 +1,22 @@
+.SocialIndex .sec1,
+.SocialIndex .sec2,
+.SocialIndex .sec3 {
+    padding: 10vw 5vw;
+    color: var(--white);
+}
+.SocialIndex .sec1,
+.SocialIndex .sec3 {
+    background-color: var(--primary);
+}
+.SocialIndex .sec2 {
+    background-color: var(--black);
+}
+.SocialIndex .sec4 {
+    padding: 10vw 5vw;
+}
+.SocialIndex .title {
+    font-size: 10vw;
+}
+.SocialIndex a {
+    padding: 5px 20px;
+}

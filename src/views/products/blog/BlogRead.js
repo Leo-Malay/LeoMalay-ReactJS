@@ -1,15 +1,24 @@
 import Header from "../../../components/Header";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
-import BlogData from "../../../data/Blog.json";
+//import BlogData from "../../../data/Blog.json";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import Store from "../../../Store";
+import { Home } from "./redux/blogActions";
 const BlogRead = ({ props }) => {
     const { id } = useParams();
+    const BlogData = useSelector((state) => state.blog.data);
     const getBlog = (id) => {
+        if (BlogData === undefined) return [{}];
         return BlogData.filter(function (BlogData) {
-            return BlogData.id === id;
+            return BlogData._id === id;
         });
     };
+    useEffect(() => {
+        if (BlogData === undefined) Store.dispatch(Home());
+    }, [BlogData]);
     const Data = getBlog(id)[0];
     return (
         <div className="BlogRead">
@@ -27,11 +36,20 @@ const BlogRead = ({ props }) => {
                         By {Data?.author || "Anonymous"}
                     </p>
                     <p className="fs3 bold" id="date">
-                        {Data?.date || "27-Oct-2021"}
+                        {new Date(Data?.date).toLocaleDateString() ||
+                            "27-Oct-2021"}
                     </p>
                 </div>
                 <p className="fs4" id="description">
-                    {Data?.description}
+                    {Data?.description?.split("#newPara$").map((ele, i) => {
+                        return (
+                            <p className="AlignJustify fs4 preview" key={i}>
+                                {ele}
+                                <br />
+                                <br />
+                            </p>
+                        );
+                    })}
                 </p>
             </div>
         </div>
