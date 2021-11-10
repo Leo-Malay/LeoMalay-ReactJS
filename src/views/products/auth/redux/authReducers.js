@@ -1,4 +1,7 @@
-export const authReducer = (state = {}, action) => {
+export const authReducer = (
+    state = { isLoading: false, isAuthenticated: false },
+    action
+) => {
     switch (action.type) {
         case "LOGIN_SUCCESS":
             return {

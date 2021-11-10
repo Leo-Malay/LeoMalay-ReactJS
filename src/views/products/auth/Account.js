@@ -2,6 +2,8 @@ import Header from "../../../components/Header";
 import { useState } from "react";
 import { LinkButton } from "../../../components/Element";
 import "./css/Account.css";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router";
 const Account = ({ user }) => {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
@@ -12,8 +14,10 @@ const Account = ({ user }) => {
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
     const [pincode, setPincode] = useState("");
+    const { isAuthenticated } = useSelector((state) => state.auth);
     return (
         <div className="Account">
+            {!isAuthenticated && <Redirect to="/Auth/Login" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

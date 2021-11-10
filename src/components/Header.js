@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/HeaderFooter.css";
 import { LinkButton } from "./Element";
 const Header = ({ props }) => {
-    const isAuthenticated = false;
+    const { isAuthenticated } = useSelector((state) => state.auth);
     return (
         <div className="Header">
             <Link
