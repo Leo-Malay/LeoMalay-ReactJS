@@ -1,19 +1,26 @@
 import Header from "../../../components/Header";
 import "./css/Input.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { newAccount } from "./redux/authActions";
+import { Redirect } from "react-router";
 const NewAccount = () => {
+    const dispatch = useDispatch();
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [cpassword, setCpassword] = useState("");
+    const { isAuthenticated } = useSelector((state) => state.auth);
     const submitHandler = async (e) => {
         e.preventDefault();
         if (password !== cpassword) return alert("Both Password Must Match!");
+        dispatch(newAccount(fname, lname, email, username, password));
     };
     return (
         <div className="NewAccount">
+            {isAuthenticated && <Redirect to="/Auth/Account" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

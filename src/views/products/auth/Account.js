@@ -1,10 +1,13 @@
 import Header from "../../../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LinkButton } from "../../../components/Element";
 import "./css/Account.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
+import { updateAccount } from "./redux/authActions";
 const Account = ({ user }) => {
+    const dispatch = useDispatch();
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -14,7 +17,21 @@ const Account = ({ user }) => {
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
     const [pincode, setPincode] = useState("");
-    const { isAuthenticated } = useSelector((state) => state.auth);
+    const addressUpdateHandler = (e) => {
+        e.preventDefault();
+        dispatch(updateAccount(al1, al2, city, state, country, pincode));
+    };
+    useEffect(() => {
+        if (data?.fname) setFname(data?.fname);
+        if (data?.lname) setLname(data?.lname);
+        if (data?.email) setEmail(data?.email);
+        if (data?.al1) setAl1(data?.al1);
+        if (data?.al2) setAl2(data?.al2);
+        if (data?.city) setCity(data?.city);
+        if (data?.state) setState(data?.state);
+        if (data?.country) setCountry(data?.country);
+        if (data?.pincode) setPincode(data?.pincode);
+    }, [data]);
     return (
         <div className="Account">
             {!isAuthenticated && <Redirect to="/Auth/Login" />}
@@ -104,11 +121,11 @@ const Account = ({ user }) => {
                     props={{
                         value: "Delete Account",
                         color: "error-inv",
-                        to: "/Auth/Account",
+                        to: "/Auth/RemoveAccount",
                     }}
                 />
             </form>
-            <form>
+            <form method="POST" action="#" onSubmit={addressUpdateHandler}>
                 <p className="fs10 bold">Address</p>
                 <table
                     border={0}

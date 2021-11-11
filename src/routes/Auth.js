@@ -4,6 +4,7 @@ import Login from "../views/products/auth/Login";
 import Account from "../views/products/auth/Account";
 import NewAccount from "../views/products/auth/NewAccount";
 import UpdatePassword from "../views/products/auth/UpdatePassword";
+import RemoveAccount from "../views/products/auth/RemoveAccount";
 const AuthRoute = () => {
     return (
         <Switch className="AuthRoute">
@@ -16,6 +17,7 @@ const AuthRoute = () => {
                 path="/Auth/UpdatePassword"
                 component={UpdatePassword}
             />
+            <Route exact path="/Auth/RemoveAccount" component={RemoveAccount} />
         </Switch>
     );
 };

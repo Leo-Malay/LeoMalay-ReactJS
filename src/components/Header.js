@@ -1,9 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/HeaderFooter.css";
+import { logout } from "../views/products/auth/redux/authActions";
 import { LinkButton } from "./Element";
 const Header = ({ props }) => {
     const { isAuthenticated } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    const logoutHandler = (e) => {
+        e.preventDefault();
+        dispatch(logout());
+    };
     return (
         <div className="Header">
             <Link
@@ -77,13 +83,13 @@ const Header = ({ props }) => {
                     />
                 )}
                 {isAuthenticated && (
-                    <LinkButton
-                        props={{
-                            value: "Logout",
-                            to: "/",
-                            color: "error",
-                        }}
-                    />
+                    <button
+                        value="Logout"
+                        className="error LinkButton fs4"
+                        onClick={logoutHandler}
+                    >
+                        Logout
+                    </button>
                 )}
             </div>
         </div>
