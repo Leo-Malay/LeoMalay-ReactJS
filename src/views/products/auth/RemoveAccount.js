@@ -1,15 +1,25 @@
 import Header from "../../../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router";
+import { removeAccount } from "./redux/authActions";
 const RemoveAccount = () => {
+    const dispatch = useDispatch();
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
     const [username, setUsername] = useState("");
     const [Password, setPassword] = useState("");
     const [cPassword, setCPassword] = useState("");
     const submitHandler = async (e) => {
         e.preventDefault();
         if (Password !== cPassword) return alert("Both Password Must Match!");
+        dispatch(removeAccount(Password));
     };
+    useEffect(() => {
+        if (data?.username) setUsername(data?.username);
+    }, [data]);
     return (
-        <div className="UpdatePassword">
+        <div className="RemoveAccount">
+            {!isAuthenticated && <Redirect to="/Auth/Login" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

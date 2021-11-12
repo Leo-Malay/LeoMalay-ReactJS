@@ -1,6 +1,10 @@
 import Header from "../../../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router";
 const UpdatePassword = () => {
+    const dispatch = useDispatch();
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
     const [username, setUsername] = useState("");
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -10,8 +14,12 @@ const UpdatePassword = () => {
         if (newPassword !== cNewPassword)
             return alert("Both Password Must Match!");
     };
+    useEffect(() => {
+        if (data?.username) setUsername(data?.username);
+    }, [data]);
     return (
         <div className="UpdatePassword">
+            {!isAuthenticated && <Redirect to="/Auth/Login" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

@@ -95,6 +95,7 @@ export const removeAccount = (password) => async (dispatch) => {
                 withCredentials: true,
             }
         );
+        console.log(res.data);
         if (res.data.success) dispatch({ type: "REMOVE_ACCOUNT_SUCCESS" });
         else dispatch({ type: "REMOVE_ACCOUNT_FAILURE" });
     } catch (error) {
