@@ -15,7 +15,7 @@ const Blog = () => {
         if (BlogData === undefined) return [];
         if (filter === "") return BlogData;
         return BlogData.filter((BlogData) => {
-            return BlogData.category === filter;
+            return BlogData.category.toUpperCase() === filter;
         });
     };
     return (

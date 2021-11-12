@@ -1,13 +1,12 @@
 import Header from "../../../components/Header";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
-//import BlogData from "../../../data/Blog.json";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Store from "../../../Store";
 import { Home } from "./redux/blogActions";
-const BlogRead = ({ props }) => {
+const BlogRead = () => {
     const { id } = useParams();
     const BlogData = useSelector((state) => state.blog.data);
     const getBlog = (id) => {

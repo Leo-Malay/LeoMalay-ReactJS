@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router";
 import Header from "../../../components/Header";
+import { Write } from "./redux/blogActions";
 const BlogWrite = () => {
+    const dispatch = useDispatch();
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
+    const [BlogSubmit, setBlogSubmit] = useState(false);
     const [title, setTitle] = useState("");
     const [thumbnail, setThumbnail] = useState("");
     const [author, setAuthor] = useState("");
@@ -8,11 +14,17 @@ const BlogWrite = () => {
     const [description, setDescription] = useState("");
     const submitHandler = (e) => {
         e.preventDefault();
-        const data = { title, thumbnail, author, category, description };
-        console.log(data);
+        dispatch(Write(thumbnail, title, category, author, description));
+        setBlogSubmit(true);
     };
+    useEffect(() => {
+        if (data?.fname && data?.lname)
+            setAuthor(data?.fname + " " + data?.lname);
+    }, [data]);
     return (
         <div className="BlogWrite">
+            {!isAuthenticated && <Redirect to="/Auth/Login" />}
+            {BlogSubmit && <Redirect to="/Blog" />}
             <Header
                 props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
             />
@@ -38,7 +50,6 @@ const BlogWrite = () => {
                     value={thumbnail}
                     onChange={(e) => setThumbnail(e.target.value)}
                     placeholder="URL of Thumbnail Image"
-                    required
                     style={{ width: "80%" }}
                 />
                 <br />
@@ -58,7 +69,7 @@ const BlogWrite = () => {
                     required
                     style={{ width: "80%" }}
                 >
-                    <option value="" disabled selected>
+                    <option value="" disabled key={-1}>
                         Choose an Category
                     </option>
                     {["Algorithm", "UI/UX", "Technology", "Frameworks"].map(
@@ -101,7 +112,7 @@ const BlogWrite = () => {
             <br />
             {description.split("#newPara$").map((ele, i) => {
                 return (
-                    <p className="AlignJustify fs4 preview">
+                    <p className="AlignJustify fs4 preview" key={i}>
                         {ele}
                         <br />
                         <br />
