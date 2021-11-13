@@ -1,23 +1,48 @@
 import Header from "../../../components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/Input.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
 import { Redirect } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuthenticated } = useSelector((state) => state.auth);
+    const { isAuthenticated, err } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
     const submitHandler = async (e) => {
         e.preventDefault();
         dispatch(login(username, password));
     };
+    useEffect(() => {
+        if (err !== undefined)
+            toast.error(err, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        dispatch({ type: "CLEAR_ERR" });
+    }, [err, dispatch]);
     return (
         <div className="Login">
             {isAuthenticated && <Redirect to="/Auth/Account" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
+            />
+            <ToastContainer
+                position="bottom-left"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Login</p>

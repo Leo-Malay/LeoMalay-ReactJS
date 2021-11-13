@@ -12,7 +12,7 @@ export const login = (username, password) => async (dispatch) => {
             }
         );
         if (res.data.success) dispatch({ type: "LOGIN_SUCCESS" });
-        else dispatch({ type: "LOGIN_FAILURE" });
+        else dispatch({ type: "LOGIN_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
     }
@@ -25,7 +25,7 @@ export const logout = () => async (dispatch) => {
         });
 
         if (res.data.success) dispatch({ type: "LOGOUT_SUCCESS" });
-        else dispatch({ type: "LOGOUT_FAILURE" });
+        else dispatch({ type: "LOGOUT_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
     }
@@ -44,7 +44,7 @@ export const newAccount =
 
             if (res.data.success)
                 dispatch({ type: "NEW_ACCOUNT_SUCCESS", data: res.data.data });
-            else dispatch({ type: "NEW_ACCOUNT_FAILURE", data: {} });
+            else dispatch({ type: "NEW_ACCOUNT_FAILURE", data: res.data.msg });
         } catch (error) {
             console.log(error);
         }
@@ -58,7 +58,7 @@ export const account = () => async (dispatch) => {
 
         if (res.data.success)
             dispatch({ type: "ACCOUNT_FETCH_SUCCESS", data: res.data.data });
-        else dispatch({ type: "ACCOUNT_FETCH_FAILURE", data: {} });
+        else dispatch({ type: "ACCOUNT_FETCH_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
     }
@@ -74,30 +74,54 @@ export const updateAccount =
                     withCredentials: true,
                 }
             );
-
+            console.log(res);
             if (res.data.success) {
                 dispatch(account());
                 dispatch({
                     type: "UPDATE_ACCOUNT_SUCCESS",
+                    data: res.data.msg,
                 });
-            } else dispatch({ type: "UPDATE_ACCOUNT_FAILURE" });
+            } else
+                dispatch({
+                    type: "UPDATE_ACCOUNT_FAILURE",
+                    data: res.data.msg,
+                });
         } catch (error) {
             console.log(error);
         }
     };
-export const removeAccount = (password) => async (dispatch) => {
-    dispatch({ type: "REMOVE_ACCOUNT_REQUEST" });
+export const updatePassword = (password, newPassword) => async (dispatch) => {
+    dispatch({ type: "UPDATE_PASSWORD_REQUEST" });
     try {
-        const res = await axios.delete(
-            url + "/Auth/RemoveAccount",
-            { password },
+        const res = await axios.put(
+            url + "/Auth/UpdatePassword",
+            { password, newPassword },
             {
                 withCredentials: true,
             }
         );
-        console.log(res.data);
-        if (res.data.success) dispatch({ type: "REMOVE_ACCOUNT_SUCCESS" });
-        else dispatch({ type: "REMOVE_ACCOUNT_FAILURE" });
+        if (res.data.success)
+            dispatch({
+                type: "UPDATE_PASSWORD_SUCCESS",
+                data: res.data.msg,
+            });
+        else dispatch({ type: "UPDATE_PASSWORD_FAILURE", data: res.data.msg });
+    } catch (error) {
+        console.log(error);
+    }
+};
+export const removeAccount = (password) => async (dispatch) => {
+    dispatch({ type: "REMOVE_ACCOUNT_REQUEST" });
+    try {
+        const res = await axios.delete(url + "/Auth/RemoveAccount", {
+            data: { password },
+            withCredentials: true,
+        });
+        if (res.data.success)
+            dispatch({
+                type: "REMOVE_ACCOUNT_SUCCESS",
+            });
+        else dispatch({ type: "REMOVE_ACCOUNT_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
     }

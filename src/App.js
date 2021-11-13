@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./css/App.css";
 import "./css/Color.css";
 import "./css/FontSize.css";
+import "react-toastify/dist/ReactToastify.css";
 /** Importing Routes */
 import AuthRoute from "./routes/Auth";
 import BlogRoute from "./routes/Blog";

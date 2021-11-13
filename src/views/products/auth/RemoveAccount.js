@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { removeAccount } from "./redux/authActions";
+import { ToastContainer, toast } from "react-toastify";
 const RemoveAccount = () => {
     const dispatch = useDispatch();
-    const { isAuthenticated, data } = useSelector((state) => state.auth);
+    const { isAuthenticated, data, err } = useSelector((state) => state.auth);
     const [username, setUsername] = useState("");
     const [Password, setPassword] = useState("");
     const [cPassword, setCPassword] = useState("");
@@ -16,12 +17,34 @@ const RemoveAccount = () => {
     };
     useEffect(() => {
         if (data?.username) setUsername(data?.username);
-    }, [data]);
+        if (err !== undefined)
+            toast.error(err, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        dispatch({ type: "CLEAR_ERR" });
+    }, [data, err, dispatch]);
     return (
         <div className="RemoveAccount">
             {!isAuthenticated && <Redirect to="/Auth/Login" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
+            />
+            <ToastContainer
+                position="bottom-left"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Remove Account</p>
