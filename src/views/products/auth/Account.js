@@ -58,7 +58,7 @@ const Account = ({ user }) => {
     }, [data, dispatch, err, suc]);
     return (
         <div className="Account">
-            {!isAuthenticated && <Redirect to="/Auth/Login" />}
+            {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

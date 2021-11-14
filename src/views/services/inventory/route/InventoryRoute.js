@@ -1,8 +1,8 @@
 /** Inventory Service */
 import { Switch, Route } from "react-router-dom";
-import Dashboard from "../views/services/inventory/Dashboard";
-import Billing from "../views/services/inventory/Billing";
-import Stock from "../views/services/inventory/Stock";
+import Dashboard from "../Dashboard";
+import Billing from "../Billing";
+import Stock from "../Stock";
 
 const InventoryRoute = () => {
     return (

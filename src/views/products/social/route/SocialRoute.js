@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Index from "../views/products/social/Index";
-import Home from "../views/products/social/Home";
-import Profile from "../views/products/social/Profile";
-import Message from "../views/products/social/Message";
+import Index from "../Index";
+import Home from "../Home";
+import Profile from "../Profile";
+import Message from "../Message";
 const SocialRoute = () => {
     return (
         <Switch className="SocialRoute">

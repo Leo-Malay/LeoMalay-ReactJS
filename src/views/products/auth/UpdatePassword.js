@@ -46,7 +46,7 @@ const UpdatePassword = () => {
     }, [data, err, suc, dispatch]);
     return (
         <div className="UpdatePassword">
-            {!isAuthenticated && <Redirect to="/Auth/Login" />}
+            {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

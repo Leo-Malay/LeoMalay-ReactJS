@@ -31,7 +31,7 @@ const RemoveAccount = () => {
     }, [data, err, dispatch]);
     return (
         <div className="RemoveAccount">
-            {!isAuthenticated && <Redirect to="/Auth/Login" />}
+            {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
             />

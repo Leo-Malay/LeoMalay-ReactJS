@@ -1,11 +1,13 @@
 import Header from "../../../components/Header";
 import "./css/Input.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newAccount } from "./redux/authActions";
-import { Redirect } from "react-router";
+import { Redirect, useHistory, useParams } from "react-router";
 const NewAccount = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const { redirect } = useParams();
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -18,6 +20,13 @@ const NewAccount = () => {
         if (password !== cpassword) return alert("Both Password Must Match!");
         dispatch(newAccount(fname, lname, email, username, password));
     };
+    useEffect(() => {
+        if (isAuthenticated) {
+            if (redirect !== "0")
+                return history.push(decodeURIComponent(redirect));
+            else return history.push("/Auth/Account");
+        }
+    }, [history, redirect, isAuthenticated]);
     return (
         <div className="NewAccount">
             {isAuthenticated && <Redirect to="/Auth/Account" />}

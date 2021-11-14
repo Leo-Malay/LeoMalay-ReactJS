@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import "./css/Input.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
-import { Redirect } from "react-router";
+import { useHistory, useParams } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 const Login = () => {
+    const { redirect } = useParams();
+    const history = useHistory();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const { isAuthenticated, err } = useSelector((state) => state.auth);
@@ -14,6 +16,7 @@ const Login = () => {
         e.preventDefault();
         dispatch(login(username, password));
     };
+    console.log(redirect, decodeURIComponent(redirect));
     useEffect(() => {
         if (err !== undefined)
             toast.error(err, {
@@ -26,12 +29,21 @@ const Login = () => {
                 progress: undefined,
             });
         dispatch({ type: "CLEAR_ERR" });
-    }, [err, dispatch]);
+        if (isAuthenticated) {
+            if (redirect !== "0")
+                return history.push(decodeURIComponent(redirect));
+            else return history.push("/Auth/Account");
+        }
+    }, [err, dispatch, isAuthenticated, redirect, history]);
     return (
         <div className="Login">
-            {isAuthenticated && <Redirect to="/Auth/Account" />}
             <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
+                props={{
+                    title: "LeoAuth",
+                    color: "error",
+                    type: "Auth",
+                    redirect,
+                }}
             />
             <ToastContainer
                 position="bottom-left"

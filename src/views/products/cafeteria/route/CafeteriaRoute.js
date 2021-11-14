@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
-import Index from "../views/products/cafeteria/Index";
-import Cafeteria from "../views/products/cafeteria/Cafeteria";
+import Index from "../Index";
+import Cafeteria from "../Cafeteria";
 const CafeteriaRoute = () => {
     return (
         <Switch className="CafeteriaRoute">

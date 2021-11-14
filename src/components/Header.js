@@ -58,7 +58,9 @@ const Header = ({ props }) => {
                     <LinkButton
                         props={{
                             value: "Login",
-                            to: "/Auth/Login",
+                            to:
+                                "/Auth/Login/" +
+                                (encodeURIComponent(props.redirect) || "0"),
                             color: "success",
                         }}
                     />
@@ -67,7 +69,9 @@ const Header = ({ props }) => {
                     <LinkButton
                         props={{
                             value: "Register",
-                            to: "/Auth/NewAccount",
+                            to:
+                                "/Auth/NewAccount" +
+                                (encodeURIComponent(props.redirect) || "0"),
                             color: "primary",
                         }}
                     />

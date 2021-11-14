@@ -1,9 +1,9 @@
 import { Switch, Route } from "react-router-dom";
-import Index from "../views/products/blog/Index";
-import Blog from "../views/products/blog/Blog";
-import Dashboard from "../views/products/blog/Dashboard";
-import BlogRead from "../views/products/blog/BlogRead";
-import BlogWrite from "../views/products/blog/BlogWrite";
+import Index from "../Index";
+import Blog from "../Blog";
+import Dashboard from "../Dashboard";
+import BlogRead from "../BlogRead";
+import BlogWrite from "../BlogWrite";
 const BlogRoute = () => {
     return (
         <Switch className="BlogRoute">

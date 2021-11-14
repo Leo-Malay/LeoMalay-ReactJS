@@ -3,7 +3,9 @@ import "../css/Home.css";
 const Home = () => {
     return (
         <div className="HomeIndex">
-            <Header props={{ title: "LeoMalay", type: "Home" }} />
+            <Header
+                props={{ title: "LeoMalay", type: "Home", redirect: "/" }}
+            />
             <div className="sec1">
                 <p className="AlignCenter title bold">LeoMalay</p>
                 <p className="AlignCenter fs15 bold">Malay Bhavsar</p>

@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom";
-import Dashboard from "../views/services/pay/Dashboard";
-import Merchant from "../views/services/pay/Merchant";
-import Client from "../views/services/pay/Client";
-import Index from "../views/services/pay/Index";
+import Dashboard from "../Dashboard";
+import Merchant from "../Merchant";
+import Client from "../Client";
+import Index from "../Index";
 const PayRoute = () => {
     return (
         <Switch className="PayRoute">
