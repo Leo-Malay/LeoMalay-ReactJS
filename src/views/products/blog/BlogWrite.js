@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
-import Header from "../../../components/Header";
+import BlogHeader from "./components/BlogHeader";
 import { Write } from "./redux/blogActions";
 const BlogWrite = () => {
     const dispatch = useDispatch();
@@ -25,9 +25,7 @@ const BlogWrite = () => {
         <div className="BlogWrite">
             {!isAuthenticated && <Redirect to="/Auth/Login" />}
             {BlogSubmit && <Redirect to="/Blog" />}
-            <Header
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
+            <BlogHeader />
             <form
                 action="#"
                 method="POST"

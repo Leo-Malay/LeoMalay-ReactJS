@@ -1,4 +1,4 @@
-import Header from "../../../components/Header";
+import StoreHeader from "./components/StoreHeader";
 import "./css/Order.css";
 import OrderData from "../../../data/StoreOrder.json";
 import OrderCard from "./components/OrderCard";
@@ -22,9 +22,7 @@ const Order = () => {
     const previousOrder = getPreviousOrder();
     return (
         <div className="Order">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="section AlignCenter" id="current-orders">
                 <p className="fs12 bold" id="Ordertitle">
                     Orders

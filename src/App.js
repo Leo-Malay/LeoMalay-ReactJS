@@ -5,13 +5,13 @@ import "./css/Color.css";
 import "./css/FontSize.css";
 import "react-toastify/dist/ReactToastify.css";
 /** Importing Routes */
-import AuthRoute from "./views/products/auth";
-import BlogRoute from "./views/products/blog";
-import CafeteriaRoute from "./views/products/cafeteria";
-import StoreRoute from "./views/products/store";
-import SocialRoute from "./views/products/social";
-import InventoryRoute from "./views/services/inventory";
-import PayRoute from "./views/services/pay";
+import AuthRoute from "./views/products/auth/route/AuthRoute";
+import BlogRoute from "./views/products/blog/route/BlogRoute";
+import CafeteriaRoute from "./views/products/cafeteria/route/CafeteriaRoute";
+import StoreRoute from "./views/products/store/route/StoreRoute";
+import SocialRoute from "./views/products/social/route/SocialRoute";
+import InventoryRoute from "./views/services/inventory/route/InventoryRoute";
+import PayRoute from "./views/services/pay/route/PayRoute";
 /** Importing Views */
 import ServiceHome from "./views/services/ServiceHome";
 import ProductHome from "./views/products/ProductHome";

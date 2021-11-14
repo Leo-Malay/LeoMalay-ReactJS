@@ -1,4 +1,4 @@
-import Header from "../../../components/Header";
+import StoreHeader from "./components/StoreHeader";
 import "./css/Product.css";
 import ProductData from "../../../data/Store.json";
 import image from "../../../assets/iphone.jfif";
@@ -14,9 +14,7 @@ const Product = () => {
     const Data = getProduct(id)[0];
     return (
         <div className="Product">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="Product-section">
                 <p className="fs14 bold" id="title">
                     {Data?.name}

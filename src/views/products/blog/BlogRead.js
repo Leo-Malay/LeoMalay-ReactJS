@@ -1,9 +1,9 @@
-import Header from "../../../components/Header";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import BlogHeader from "./components/BlogHeader";
 import Store from "../../../Store";
 import { Home } from "./redux/blogActions";
 const BlogRead = () => {
@@ -21,9 +21,7 @@ const BlogRead = () => {
     const Data = getBlog(id)[0];
     return (
         <div className="BlogRead">
-            <Header
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
+            <BlogHeader />
             <div className="BlogRead-section">
                 <img src={image} alt="Blog" />
                 <p className="fs17 bold" id="title">

@@ -1,4 +1,4 @@
-import Header from "../../../components/Header";
+import StoreHeader from "./components/StoreHeader";
 import "./css/Cart.css";
 import StoreCartData from "../../../data/StoreCart.json";
 import { LinkButton } from "../../../components/Element";
@@ -11,9 +11,7 @@ const Cart = () => {
     const Data = getCart("Malay")[0];
     return (
         <div className="Cart">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="Cart-Container">
                 <div className="Left">
                     <p className="fs11 bold" id="title">

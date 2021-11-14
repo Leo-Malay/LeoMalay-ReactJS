@@ -1,16 +1,16 @@
-import Header from "../../../components/Header";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Home } from "./redux/blogActions";
+import BlogHeader from "./components/BlogHeader";
 import BlogCard from "./components/BlogCard";
 import "./css/Blog.css";
-import { useEffect, useState } from "react";
-import Store from "../../../Store";
-import { Home } from "./redux/blogActions";
-import { useSelector } from "react-redux";
 const Blog = () => {
+    const dispatch = useDispatch();
     const [filter, setFilter] = useState("");
     const BlogData = useSelector((state) => state.blog.data);
     useEffect(() => {
-        if (BlogData === undefined) Store.dispatch(Home());
-    }, [BlogData]);
+        if (BlogData === undefined) dispatch(Home());
+    }, [BlogData, dispatch]);
     const renderData = () => {
         if (BlogData === undefined) return [];
         if (filter === "") return BlogData;
@@ -20,9 +20,7 @@ const Blog = () => {
     };
     return (
         <div className="Blog">
-            <Header
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
+            <BlogHeader />
             <div className="CategoryContainer AlignCenter">
                 <p className="category fs2 primary-nohover">
                     Filter by Catergory

@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import Header from "../../../components/Header";
+import StoreHeader from "./components/StoreHeader";
 import "./css/index.css";
 const Index = () => {
     return (
         <div className="StoreIndex">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="sec1">
                 <p className="AlignCenter fs17 bold">Welcome to the</p>
                 <p className="AlignCenter title bold">LeoStore</p>

@@ -1,4 +1,4 @@
-import Header from "../../../components/Header";
+import StoreHeader from "./components/StoreHeader";
 import ProductCard from "./components/ProductCard";
 import StoreData from "../../../data/Store.json";
 const Store = () => {
@@ -15,9 +15,7 @@ const Store = () => {
     getCategoryDict(StoreData);
     return (
         <div className="Store">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="Center">
                 {Object.keys(dict).map((ele, i) => {
                     return (

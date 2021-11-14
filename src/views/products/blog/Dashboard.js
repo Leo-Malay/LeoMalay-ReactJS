@@ -1,10 +1,8 @@
-import Header from "../../../components/Header";
+import BlogHeader from "./components/BlogHeader";
 const Dashboard = () => {
     return (
         <div className="BlogDashboard">
-            <Header
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
+            <BlogHeader />
         </div>
     );
 };

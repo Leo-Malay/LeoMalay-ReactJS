@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import Header from "../../../components/Header";
+import BlogHeader from "./components/BlogHeader";
 import "./css/index.css";
 const Index = () => {
     return (
         <div className="BlogIndex">
-            <Header
-                props={{ title: "LeoBlog", color: "secondary", type: "Blog" }}
-            />
+            <BlogHeader />
             <div className="sec1">
                 <p className="AlignCenter title bold">LeoBlog</p>
                 <p className="AlignCenter fs15 bold">
