@@ -1,14 +1,8 @@
-import Header from "../../../components/Header";
+import SocialHeader from "./components/SocialHeader";
 const Message = () => {
     return (
         <div className="Message">
-            <Header
-                props={{
-                    title: "LeoSocial",
-                    color: "primary",
-                    type: "Social",
-                }}
-            />
+            <SocialHeader />
         </div>
     );
 };

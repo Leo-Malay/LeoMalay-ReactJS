@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "../../../../components/Header";
+import StoreHeader from "../components/StoreHeader";
 const VendorProduct = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
@@ -23,9 +23,7 @@ const VendorProduct = () => {
     };
     return (
         <div className="vendorProduct">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <form
                 action="#"
                 method="post"

@@ -1,10 +1,8 @@
-import Header from "../../../../components/Header";
+import StoreHeader from "../components/StoreHeader";
 const VendorOrder = () => {
     return (
         <div className="vendorOrder">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader />
             <div className="PendingOrders"></div>
             <div className="PreviousOrder"></div>
         </div>

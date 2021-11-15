@@ -1,11 +1,9 @@
-import Header from "../../../../components/Header";
+import StoreHeader from "../components/StoreHeader"
 import "../css/vendorDashboard.css";
 const VendorDashboard = () => {
     return (
         <div className="vendorDashboard">
-            <Header
-                props={{ title: "LeoStore", color: "success", type: "Store" }}
-            />
+            <StoreHeader/>
             <div className="InfoPanel Inline">
                 <div className="InfoPanelCard error-nohover PendingOrder">
                     <p className="fs4 bold">Pending Order</p>

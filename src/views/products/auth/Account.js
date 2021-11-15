@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updateAccount } from "./redux/authActions";
 import { ToastContainer, toast } from "react-toastify";
-const Account = ({ user }) => {
+const Account = () => {
     const dispatch = useDispatch();
     const { isAuthenticated, data, err, suc } = useSelector(
         (state) => state.auth
@@ -82,7 +82,7 @@ const Account = ({ user }) => {
                 }}
             >
                 Welcome{" "}
-                {(user?.fname || "Guest") + " " + (user?.lname || "User")}
+                {(data?.fname || "Guest") + " " + (data?.lname || "User")}
             </p>
 
             <form>

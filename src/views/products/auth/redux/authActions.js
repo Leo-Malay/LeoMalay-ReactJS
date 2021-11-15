@@ -1,8 +1,13 @@
 import axios from "axios";
 const url = "http://localhost:8501";
-
+const errHandler = (type, dispatch) => {
+    dispatch({
+        type,
+        data: "Unable to connect to server",
+    });
+};
 export const login = (username, password) => async (dispatch) => {
-    dispatch({ type: "LOGIN_REQUEST" });
+    dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.post(
             url + "/Auth/Login",
@@ -14,11 +19,11 @@ export const login = (username, password) => async (dispatch) => {
         if (res.data.success) dispatch({ type: "LOGIN_SUCCESS" });
         else dispatch({ type: "LOGIN_FAILURE", data: res.data.msg });
     } catch (error) {
-        console.log(error);
+        errHandler("LOGIN_FAILURE", dispatch);
     }
 };
 export const logout = () => async (dispatch) => {
-    dispatch({ type: "LOGOUT_REQUEST" });
+    dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.get(url + "/Auth/Logout", {
             withCredentials: true,
@@ -28,11 +33,12 @@ export const logout = () => async (dispatch) => {
         else dispatch({ type: "LOGOUT_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
+        errHandler("LOGOUT_FAILURE", dispatch);
     }
 };
 export const newAccount =
     (fname, lname, email, username, password) => async (dispatch) => {
-        dispatch({ type: "NEW_ACCOUNT_REQUEST" });
+        dispatch({ type: "AUTH_REQUEST" });
         try {
             const res = await axios.post(
                 url + "/Auth/NewAccount",
@@ -46,11 +52,11 @@ export const newAccount =
                 dispatch({ type: "NEW_ACCOUNT_SUCCESS", data: res.data.data });
             else dispatch({ type: "NEW_ACCOUNT_FAILURE", data: res.data.msg });
         } catch (error) {
-            console.log(error);
+            errHandler("NEW_ACCOUNT_FAILURE", dispatch);
         }
     };
 export const account = () => async (dispatch) => {
-    dispatch({ type: "ACCOUNT_FETCH_REQUEST" });
+    dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.get(url + "/Auth/Account", {
             withCredentials: true,
@@ -60,12 +66,12 @@ export const account = () => async (dispatch) => {
             dispatch({ type: "ACCOUNT_FETCH_SUCCESS", data: res.data.data });
         else dispatch({ type: "ACCOUNT_FETCH_FAILURE", data: res.data.msg });
     } catch (error) {
-        console.log(error);
+        errHandler("ACCOUNT_FETCH_FAILURE", dispatch);
     }
 };
 export const updateAccount =
     (al1, al2, city, state, country, pincode) => async (dispatch) => {
-        dispatch({ type: "UPDATE_ACCOUNT_REQUEST" });
+        dispatch({ type: "AUTH_REQUEST" });
         try {
             const res = await axios.put(
                 url + "/Auth/UpdateAccount",
@@ -87,11 +93,11 @@ export const updateAccount =
                     data: res.data.msg,
                 });
         } catch (error) {
-            console.log(error);
+            errHandler("UPDATE_ACCOUNT_FAILURE", dispatch);
         }
     };
 export const updatePassword = (password, newPassword) => async (dispatch) => {
-    dispatch({ type: "UPDATE_PASSWORD_REQUEST" });
+    dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.put(
             url + "/Auth/UpdatePassword",
@@ -107,11 +113,11 @@ export const updatePassword = (password, newPassword) => async (dispatch) => {
             });
         else dispatch({ type: "UPDATE_PASSWORD_FAILURE", data: res.data.msg });
     } catch (error) {
-        console.log(error);
+        errHandler("UPDATE_PASSWORD_FAILURE", dispatch);
     }
 };
 export const removeAccount = (password) => async (dispatch) => {
-    dispatch({ type: "REMOVE_ACCOUNT_REQUEST" });
+    dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.delete(url + "/Auth/RemoveAccount", {
             data: { password },
@@ -124,5 +130,6 @@ export const removeAccount = (password) => async (dispatch) => {
         else dispatch({ type: "REMOVE_ACCOUNT_FAILURE", data: res.data.msg });
     } catch (error) {
         console.log(error);
+        errHandler("REMOVE_ACCOUNT_FAILURE", dispatch);
     }
 };

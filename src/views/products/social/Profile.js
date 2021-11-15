@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import SocialPost from "./components/Post";
-import Header from "../../../components/Header";
+import SocialHeader from "./components/SocialHeader";
 import "./css/Profile.css";
 import image from "../../../assets/iphone.jfif";
 const Profile = () => {
@@ -8,13 +8,7 @@ const Profile = () => {
     console.log("Viewing Profile having id", id);
     return (
         <div className="Profile">
-            <Header
-                props={{
-                    title: "LeoSocial",
-                    color: "primary",
-                    type: "Social",
-                }}
-            />
+            <SocialHeader />
             <center>
                 <div className="desc">
                     <img src={image} alt="Profile Pic" className="avatar" />

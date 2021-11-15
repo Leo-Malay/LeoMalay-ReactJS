@@ -1,15 +1,9 @@
-import Header from "../../../components/Header";
+import SocialHeader from "./components/SocialHeader";
 import SocialPost from "./components/Post";
 const Home = () => {
     return (
         <div className="Home">
-            <Header
-                props={{
-                    title: "LeoSocial",
-                    color: "primary",
-                    type: "Social",
-                }}
-            />
+            <SocialHeader />
             <div className="SocialPostContainer AlignCenter">
                 <SocialPost
                     props={{

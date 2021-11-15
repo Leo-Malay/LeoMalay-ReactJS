@@ -1,13 +1,13 @@
+import { useEffect } from "react";
+import { useParams } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import BlogHeader from "./components/BlogHeader";
+import { Home } from "./redux/blogActions";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
-import { useParams } from "react-router";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import BlogHeader from "./components/BlogHeader";
-import Store from "../../../Store";
-import { Home } from "./redux/blogActions";
 const BlogRead = () => {
     const { id } = useParams();
+    const dispatch = useDispatch();
     const BlogData = useSelector((state) => state.blog.data);
     const getBlog = (id) => {
         if (BlogData === undefined) return [{}];
@@ -16,8 +16,8 @@ const BlogRead = () => {
         });
     };
     useEffect(() => {
-        if (BlogData === undefined) Store.dispatch(Home());
-    }, [BlogData]);
+        if (BlogData === undefined) dispatch(Home());
+    }, [BlogData, dispatch]);
     const Data = getBlog(id)[0];
     return (
         <div className="BlogRead">

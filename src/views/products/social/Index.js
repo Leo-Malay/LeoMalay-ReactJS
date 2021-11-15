@@ -1,16 +1,10 @@
-import Header from "../../../components/Header";
+import SocialHeader from "./components/SocialHeader";
 import { Link } from "react-router-dom";
 import "./css/index.css";
 const Index = () => {
     return (
         <div className="SocialIndex">
-            <Header
-                props={{
-                    title: "LeoSocial",
-                    color: "primary",
-                    type: "Social",
-                }}
-            />
+            <SocialHeader />
             <div className="sec1">
                 <p className="AlignCenter fs17 bold">Meet. Connect. Grow.</p>
                 <p className="AlignCenter title bold">LeoSocial</p>

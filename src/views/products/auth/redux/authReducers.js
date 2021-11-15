@@ -54,13 +54,7 @@ export const authReducer = (
                 data: {},
                 isLoading: false,
             };
-        case "LOGIN_REQUEST":
-        case "LOGOUT_REQUEST":
-        case "NEW_ACCOUNT_REQUEST":
-        case "ACCOUNT_FETCH_REQUEST":
-        case "UPDATE_ACCOUNT_REQUEST":
-        case "UPDATE_PASSWORD_REQUEST":
-        case "REMOVE_ACCOUNT_REQUEST":
+        case "AUTH_REQUEST":
             return {
                 ...state,
                 isLoading: true,

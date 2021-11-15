@@ -10,13 +10,14 @@ const Login = () => {
     const history = useHistory();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuthenticated, err } = useSelector((state) => state.auth);
+    const { isAuthenticated, err, isLoading } = useSelector(
+        (state) => state.auth
+    );
     const dispatch = useDispatch();
     const submitHandler = async (e) => {
         e.preventDefault();
         dispatch(login(username, password));
     };
-    console.log(redirect, decodeURIComponent(redirect));
     useEffect(() => {
         if (err !== undefined)
             toast.error(err, {
@@ -82,7 +83,7 @@ const Login = () => {
                 <input
                     type="submit"
                     name="submit"
-                    value="Login"
+                    value={isLoading ? "..." : "Login"}
                     className="success-nohover"
                 />
                 <br />

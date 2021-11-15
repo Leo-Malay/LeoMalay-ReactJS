@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Home } from "./redux/blogActions";
 import BlogHeader from "./components/BlogHeader";
 import BlogCard from "./components/BlogCard";
+import { Home } from "./redux/blogActions";
 import "./css/Blog.css";
 const Blog = () => {
     const dispatch = useDispatch();
