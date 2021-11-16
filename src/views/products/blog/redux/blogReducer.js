@@ -1,7 +1,6 @@
 export const blogReducer = (state = {}, action) => {
     switch (action.type) {
-        case "GET_HOME_REQUEST":
-        case "WRITE_REQUEST":
+        case "BLOG_REQUEST":
             return {
                 ...state,
                 isLoading: true,
@@ -20,10 +19,16 @@ export const blogReducer = (state = {}, action) => {
             };
         case "WRITE_SUCCESS":
         case "WRITE_FAILURE":
+        case "LIKE_SUCCESS":
+        case "LIKE_FAILURE":
             return {
                 ...state,
                 isLoading: false,
             };
+        case "BLOG_FETCH_SUCCESS":
+            return { ...state, blog: action.data, isLoading: false };
+        case "BLOG_FETCH_FAILURE":
+            return { ...state, blog: {}, isLoading: false };
         default:
             return state;
     }

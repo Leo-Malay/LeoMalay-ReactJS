@@ -1,44 +1,50 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import BlogHeader from "./components/BlogHeader";
-import { Home } from "./redux/blogActions";
+import { Blog, Home, Like } from "./redux/blogActions";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
 const BlogRead = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
-    const BlogData = useSelector((state) => state.blog.data);
-    const getBlog = (id) => {
-        if (BlogData === undefined) return [{}];
-        return BlogData.filter(function (BlogData) {
-            return BlogData._id === id;
-        });
+    const BlogData = useSelector((state) => state.blog.blog);
+    const userEmail = useSelector((state) => state.auth?.data?.email);
+    const [like, setLike] = useState(false);
+    const likeHandler = (e) => {
+        e.preventDefault();
+        dispatch(Like(like, id));
+        dispatch(Blog(id));
+        dispatch(Home());
     };
     useEffect(() => {
-        if (BlogData === undefined) dispatch(Home());
-    }, [BlogData, dispatch]);
-    const Data = getBlog(id)[0];
+        if (BlogData === undefined) dispatch(Blog(id));
+        if (BlogData?.like) {
+            if (BlogData?.like.includes(userEmail)) setLike(true);
+            else setLike(false);
+        }
+    }, [BlogData, userEmail, id, dispatch]);
+
     return (
         <div className="BlogRead">
             <BlogHeader />
             <div className="BlogRead-section">
                 <img src={image} alt="Blog" />
                 <p className="fs17 bold" id="title">
-                    {Data?.title ||
+                    {BlogData?.title ||
                         "A simple cheezy way to say good bye to anyone!"}
                 </p>
                 <div className="Inline" id="subCard">
                     <p className="fs3 bold" id="author">
-                        By {Data?.author || "Anonymous"}
+                        By {BlogData?.author || "Anonymous"}
                     </p>
                     <p className="fs3 bold" id="date">
-                        {new Date(Data?.date).toLocaleDateString() ||
+                        {new Date(BlogData?.date).toLocaleDateString() ||
                             "27-Oct-2021"}
                     </p>
                 </div>
-                <p className="fs4" id="description">
-                    {Data?.description?.split("#newPara$").map((ele, i) => {
+                <div className="fs4" id="description">
+                    {BlogData?.description?.split("#newPara$").map((ele, i) => {
                         return (
                             <p className="AlignJustify fs4 preview" key={i}>
                                 {ele}
@@ -47,7 +53,18 @@ const BlogRead = () => {
                             </p>
                         );
                     })}
-                </p>
+                </div>
+            </div>
+            <div className="LikeContainer AlignCenter">
+                <input
+                    type="button"
+                    value={like ? "Unlike" : "Like"}
+                    className={
+                        like ? "error-inv-nohover" : "success-inv-nohover"
+                    }
+                    style={{ backgroundColor: "#fff" }}
+                    onClick={likeHandler}
+                />
             </div>
         </div>
     );
