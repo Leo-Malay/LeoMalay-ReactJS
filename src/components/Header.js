@@ -14,7 +14,7 @@ const Header = ({ props }) => {
         <div className="Header">
             <Link
                 to={() => {
-                    if (props.type === "Auth") return "/Auth";
+                    if (props.type === "Auth") return "/Auth/Index";
                     if (props.type === "Store") return "/Store";
                     if (props.type === "Blog") return "/Blog";
                     if (props.type === "Social") return "/Social";
