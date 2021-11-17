@@ -70,7 +70,7 @@ const Header = ({ props }) => {
                         props={{
                             value: "Register",
                             to:
-                                "/Auth/NewAccount" +
+                                "/Auth/NewAccount/" +
                                 (encodeURIComponent(props.redirect) || "0"),
                             color: "primary",
                         }}

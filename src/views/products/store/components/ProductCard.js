@@ -1,14 +1,13 @@
 import "../css/ProductCard.css";
 import image from "../../../../assets/iphone.jfif";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { AddCart } from "../redux/storeAction";
 const ProductCard = ({ props }) => {
+    const dispatch = useDispatch();
     const AddToCartHandler = (e) => {
         e.preventDefault();
-        console.log(
-            "ID:",
-            e.target.attributes.value.value,
-            "has been added to your cart"
-        );
+        dispatch(AddCart(e.target.attributes.value.value));
     };
     return (
         <div className="ProductCard">
@@ -21,7 +20,7 @@ const ProductCard = ({ props }) => {
                     ${props?.price}
                 </p>
                 <p className="secondary-nohover fs3 bold" id="Rating">
-                    {props?.rating}&#9733;
+                    {props?.rating === -1 ? "" : props?.rating}&#9733;
                 </p>
             </div>
             <div id="ButtonGrp">

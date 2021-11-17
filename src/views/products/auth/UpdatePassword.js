@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updatePassword } from "./redux/authActions";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const UpdatePassword = () => {
     const dispatch = useDispatch();
     const { isAuthenticated, data, err, suc } = useSelector(
@@ -49,17 +49,6 @@ const UpdatePassword = () => {
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
-            <ToastContainer
-                position="bottom-left"
-                autoClose={5000}
-                hideProgressBar
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss={false}
-                draggable
-                pauseOnHover
             />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Update Password</p>

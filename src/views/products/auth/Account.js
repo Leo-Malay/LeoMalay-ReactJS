@@ -5,7 +5,7 @@ import "./css/Account.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updateAccount } from "./redux/authActions";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const Account = () => {
     const dispatch = useDispatch();
     const { isAuthenticated, data, err, suc } = useSelector(
@@ -61,17 +61,6 @@ const Account = () => {
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <Header
                 props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
-            <ToastContainer
-                position="bottom-left"
-                autoClose={5000}
-                hideProgressBar
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss={false}
-                draggable
-                pauseOnHover
             />
             <p
                 className="fs15 bold"

@@ -4,7 +4,7 @@ import "./css/Input.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
 import { useHistory, useParams } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 const Login = () => {
     const { redirect } = useParams();
     const history = useHistory();
@@ -46,17 +46,7 @@ const Login = () => {
                     redirect,
                 }}
             />
-            <ToastContainer
-                position="bottom-left"
-                autoClose={5000}
-                hideProgressBar
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss={false}
-                draggable
-                pauseOnHover
-            />
+
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Login</p>
                 <br />

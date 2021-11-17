@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import StoreHeader from "../components/StoreHeader";
+import { AddProduct } from "../redux/storeAction";
 const VendorProduct = () => {
+    const dispatch = useDispatch();
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
@@ -8,18 +11,20 @@ const VendorProduct = () => {
     const [description, setDescription] = useState("");
     const [specs, setSpecs] = useState("");
     const [availableUnit, setAvailableUnit] = useState("");
+    const [isAvailable, setIsAvailable] = useState("");
     const submitHandler = (e) => {
         e.preventDefault();
-        const data = {
-            name,
-            price,
-            image,
-            category,
-            description,
-            specs,
-            availableUnit,
-        };
-        console.log(data);
+        dispatch(
+            AddProduct(
+                name,
+                price,
+                image,
+                category,
+                description,
+                specs.split(","),
+                availableUnit
+            )
+        );
     };
     return (
         <div className="vendorProduct">
@@ -115,6 +120,24 @@ const VendorProduct = () => {
                                     placeholder="Specs(Comma seperated value)"
                                     required
                                 />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Is Available</th>
+                            <td>
+                                <select
+                                    value={isAvailable}
+                                    onChange={(e) =>
+                                        setIsAvailable(e.target.value)
+                                    }
+                                    required
+                                >
+                                    <option value="" disabled>
+                                        Choose from following
+                                    </option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>

@@ -1,14 +1,42 @@
 import StoreHeader from "./components/StoreHeader";
 import "./css/Cart.css";
-import StoreCartData from "../../../data/StoreCart.json";
 import { LinkButton } from "../../../components/Element";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { Cart as cartAction, RemoveCart } from "./redux/storeAction";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 const Cart = () => {
-    const getCart = (auth_id) => {
-        return StoreCartData.filter(function (StoreCartData) {
-            return StoreCartData.auth_id === auth_id;
-        });
+    const dispatch = useDispatch();
+    const { cart, err, suc } = useSelector((state) => state.store);
+    const removeHandler = (e) => {
+        e.preventDefault();
+        dispatch(RemoveCart(e.target.attributes.value.value));
     };
-    const Data = getCart("Malay")[0];
+    useEffect(() => {
+        if (cart === undefined) dispatch(cartAction());
+        if (err !== undefined)
+            toast.error(err, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        if (suc !== undefined)
+            toast.success(suc, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        dispatch({ type: "STORE_ERRSUC_CLEAR" });
+    }, [dispatch, cart, err, suc]);
     return (
         <div className="Cart">
             <StoreHeader />
@@ -24,30 +52,38 @@ const Cart = () => {
                                 <th style={{ width: "15%" }}>Quantity</th>
                                 <th style={{ width: "15%" }}>Cost</th>
                             </tr>
-                            {Data?.items.map((ele) => {
-                                return (
-                                    <tr key={ele.item_id}>
-                                        <td style={{ width: "65%" }}>
-                                            {ele.name}
-                                        </td>
-                                        <td style={{ width: "15%" }}>
-                                            {ele.quantity}
-                                        </td>
-                                        <td style={{ width: "15%" }}>
-                                            {ele.cost}
-                                        </td>
-                                        <td>
-                                            <LinkButton
-                                                props={{
-                                                    value: "X",
-                                                    color: "error-inv",
-                                                    to: "/Store/Cart",
-                                                }}
-                                            />
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                            {cart !== undefined &&
+                                cart.map((ele) => {
+                                    return (
+                                        <tr key={ele.productId}>
+                                            <td style={{ width: "65%" }}>
+                                                {ele.productName}
+                                            </td>
+                                            <td style={{ width: "15%" }}>
+                                                {ele.qty}
+                                            </td>
+                                            <td style={{ width: "15%" }}>
+                                                {ele.price}
+                                            </td>
+                                            <td>
+                                                <Link
+                                                    className="error-nohover"
+                                                    to="/Store/Cart"
+                                                    onClick={removeHandler}
+                                                    value={ele.productId}
+                                                    style={{
+                                                        paddingRight: 5,
+                                                        paddingLeft: 5,
+                                                        paddingBottom: 3,
+                                                        paddingTop: 3,
+                                                    }}
+                                                >
+                                                    x
+                                                </Link>
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                         </tbody>
                     </table>
                 </div>
@@ -71,22 +107,22 @@ const Cart = () => {
                                     <hr />
                                 </th>
                             </tr>
-                            <br />
-                            {Data?.items.map((ele) => {
-                                return (
-                                    <tr key={ele.item_id}>
-                                        <td
-                                            className="itemname"
-                                            style={{ width: "60%" }}
-                                        >
-                                            {ele.name}
-                                        </td>
-                                        <td style={{ width: "20%" }}>
-                                            {ele.quantity * ele.cost}
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                            {cart !== undefined &&
+                                cart.map((ele) => {
+                                    return (
+                                        <tr key={ele.productId}>
+                                            <td
+                                                className="itemname"
+                                                style={{ width: "60%" }}
+                                            >
+                                                {ele.productName}
+                                            </td>
+                                            <td style={{ width: "20%" }}>
+                                                {ele.qty * ele.price}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                             <tr>
                                 <th style={{ width: "60%" }}>
                                     <br />
@@ -98,7 +134,7 @@ const Cart = () => {
                                 <td style={{ width: "20%" }}>
                                     <br />
                                     <hr />
-                                    {Data?.totalCost}
+                                    {cart?.totalCost}
                                     <hr />
                                 </td>
                             </tr>

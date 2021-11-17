@@ -1,4 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 /** Importing General CSS */
 import "./css/App.css";
 import "./css/Color.css";
@@ -43,6 +44,18 @@ const App = () => {
             <PayRoute />
             {/** Footer */}
             <Footer />
+            {/* Toast Notifier */}
+            <ToastContainer
+                position="bottom-left"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss={false}
+                draggable
+                pauseOnHover
+            />
         </BrowserRouter>
     );
 };

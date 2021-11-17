@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import BlogHeader from "./components/BlogHeader";
-import { Blog, Home, Like } from "./redux/blogActions";
+import { Blog, Like } from "./redux/blogActions";
 import "./css/BlogRead.css";
 import image from "../../../assets/iphone.jfif";
 const BlogRead = () => {
@@ -15,7 +15,6 @@ const BlogRead = () => {
         e.preventDefault();
         dispatch(Like(like, id));
         dispatch(Blog(id));
-        dispatch(Home());
     };
     useEffect(() => {
         if (BlogData === undefined) dispatch(Blog(id));
