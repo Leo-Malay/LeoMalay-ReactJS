@@ -10,7 +10,10 @@ const Index = () => {
                 <p className="AlignCenter title bold">LeoStore</p>
                 <br />
                 <center>
-                    <Link className="AlignCenter success-nohover" to="/Store">
+                    <Link
+                        className="AlignCenter success-nohover btn"
+                        to="/Store"
+                    >
                         Visit Store Now
                     </Link>
                 </center>

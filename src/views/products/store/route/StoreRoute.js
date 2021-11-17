@@ -13,20 +13,12 @@ const StoreRoute = () => {
             <Route exact path="/Store/Index" component={Index} />
             <Route exact path="/Store" component={Store} />
             <Route exact path="/Store/Product/:id" component={Product} />
-            <Route exact path="/Store/Cart" component={Cart} />
-            <Route exact path="/Store/Order" component={Order} />
+            <Route path="/Store/Cart" component={Cart} />
+            <Route path="/Store/Order" component={Order} />
             {/* Vendor Page */}
-            <Route
-                exact
-                path="/Store/Vendor/Dashboard"
-                component={VendorDashboard}
-            />
-            <Route
-                exact
-                path="/Store/Vendor/Product"
-                component={VendorProduct}
-            />
-            <Route exact path="/Store/Vendor/Order" component={VendorOrder} />
+            <Route path="/Store/Vendor/Dashboard" component={VendorDashboard} />
+            <Route path="/Store/Vendor/Product" component={VendorProduct} />
+            <Route path="/Store/Vendor/Order" component={VendorOrder} />
         </Switch>
     );
 };

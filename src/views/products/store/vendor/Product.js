@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import StoreHeader from "../components/StoreHeader";
 import { AddProduct } from "../redux/storeAction";
+import { ProtectedRoute } from "../../../../Security";
 const VendorProduct = () => {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
@@ -28,6 +29,7 @@ const VendorProduct = () => {
     };
     return (
         <div className="vendorProduct">
+            <ProtectedRoute props={{ path: "/Store/Vendor/Product" }} />
             <StoreHeader />
             <form
                 action="#"

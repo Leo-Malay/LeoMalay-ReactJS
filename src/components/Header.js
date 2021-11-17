@@ -87,13 +87,13 @@ const Header = ({ props }) => {
                     />
                 )}
                 {isAuthenticated && (
-                    <button
-                        value="Logout"
-                        className="error LinkButton fs4"
+                    <Link
+                        to="/"
+                        className="error LinkButton"
                         onClick={logoutHandler}
                     >
                         Logout
-                    </button>
+                    </Link>
                 )}
             </div>
         </div>

@@ -17,13 +17,17 @@ export const Home = () => async (dispatch) => {
         dispatch({ type: "STORE_HOME_FAILURE", data: "Unable to fetch data" });
     }
 };
-export const Product = () => async (dispatch) => {
+export const Product = (productId) => async (dispatch) => {
     try {
-        const res = await axios.get(url + "", { withCredentials: true });
-        if (res.data.success) dispatch({ type: "_SUCCESS" });
-        else dispatch({ type: "_FAILURE" });
+        const res = await axios.get(url + "/Store/Product", {
+            params: { productId },
+            withCredentials: true,
+        });
+        if (res.data.success)
+            dispatch({ type: "PRODUCT_FETCH_SUCCESS", data: res.data.data[0] });
+        else dispatch({ type: "PRODUCT_FETCH_FAILURE" });
     } catch (error) {
-        dispatch({ type: "_FAILURE" });
+        dispatch({ type: "PRODCUT_FETCH_FAILURE" });
     }
 };
 export const Cart = () => async (dispatch) => {
@@ -32,26 +36,28 @@ export const Cart = () => async (dispatch) => {
             withCredentials: true,
         });
         if (res.data.success)
-            dispatch({ type: "CART_SUCCESS", data: res.data.data });
+            dispatch({ type: "CART_FETCH_SUCCESS", data: res.data.data });
         else dispatch({ type: "CART_FETCH_FAILURE" });
     } catch (error) {
         dispatch({ type: "CART_FETCH_FAILURE" });
     }
 };
-export const AddCart = (productId, qty) => async (dispatch) => {
-    try {
-        const res = await axios.post(
-            url + "/Store/AddCart",
-            { productId, qty },
-            { withCredentials: true }
-        );
-        if (res.data.success)
-            dispatch({ type: "CART_SUCCESS", data: res.data.data });
-        else dispatch({ type: "CART_UPDATE_FAILURE" });
-    } catch (error) {
-        dispatch({ type: "CART_UPDATE_FAILURE" });
-    }
-};
+export const AddCart =
+    (productId, qty = 1) =>
+    async (dispatch) => {
+        try {
+            const res = await axios.post(
+                url + "/Store/AddCart",
+                { productId, qty },
+                { withCredentials: true }
+            );
+            if (res.data.success)
+                dispatch({ type: "CART_SUCCESS", data: res.data.data });
+            else dispatch({ type: "CART_UPDATE_FAILURE" });
+        } catch (error) {
+            dispatch({ type: "CART_UPDATE_FAILURE" });
+        }
+    };
 export const RemoveCart = (productId) => async (dispatch) => {
     try {
         const res = await axios.delete(url + "/Store/RemoveCart", {

@@ -1,9 +1,11 @@
-import StoreHeader from "../components/StoreHeader"
+import StoreHeader from "../components/StoreHeader";
 import "../css/vendorDashboard.css";
+import { ProtectedRoute } from "../../../../Security";
 const VendorDashboard = () => {
     return (
         <div className="vendorDashboard">
-            <StoreHeader/>
+            <ProtectedRoute props={{ path: "/Store/Vendor/Dashboard" }} />
+            <StoreHeader />
             <div className="InfoPanel Inline">
                 <div className="InfoPanelCard error-nohover PendingOrder">
                     <p className="fs4 bold">Pending Order</p>

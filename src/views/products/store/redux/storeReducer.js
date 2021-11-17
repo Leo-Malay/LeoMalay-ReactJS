@@ -22,6 +22,25 @@ export const storeReducer = (state = {}, action) => {
                 totalCost: action.data.totalCost,
                 suc: "Action Successful",
             };
+        case "PRODUCT_FETCH_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                product: action.data,
+            };
+        case "PRODUCT_FETCH_FAILURE":
+            return {
+                ...state,
+                isLoading: false,
+                err: "Unable to fetch your Product",
+            };
+        case "CART_FETCH_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                cart: action.data.cart,
+                totalCost: action.data.totalCost,
+            };
         case "CART_FETCH_FAILURE":
             return {
                 ...state,

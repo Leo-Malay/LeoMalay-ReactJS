@@ -2,6 +2,7 @@ import StoreHeader from "./components/StoreHeader";
 import "./css/Order.css";
 import OrderData from "../../../data/StoreOrder.json";
 import OrderCard from "./components/OrderCard";
+import { ProtectedRoute } from "../../../Security";
 const Order = () => {
     const getPendingOrder = () => {
         return OrderData.filter((OrderData) => {
@@ -22,14 +23,15 @@ const Order = () => {
     const previousOrder = getPreviousOrder();
     return (
         <div className="Order">
+            <ProtectedRoute props={{ path: "/Store/Order" }} />
             <StoreHeader />
             <div className="section AlignCenter" id="current-orders">
                 <p className="fs12 bold" id="Ordertitle">
                     Orders
                 </p>
                 <div className="OrderContainer">
-                    {pendingOrder.map((ele) => {
-                        return <OrderCard ele={ele} />;
+                    {pendingOrder.map((ele, i) => {
+                        return <OrderCard key={i} ele={ele} />;
                     })}
                 </div>
             </div>
@@ -38,8 +40,8 @@ const Order = () => {
                     Previous Orders
                 </p>
                 <div className="OrderContainer">
-                    {previousOrder.map((ele) => {
-                        return <OrderCard ele={ele} />;
+                    {previousOrder.map((ele, i) => {
+                        return <OrderCard key={i} ele={ele} />;
                     })}
                 </div>
             </div>

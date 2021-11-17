@@ -3,16 +3,13 @@ import "./css/Cart.css";
 import { LinkButton } from "../../../components/Element";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Cart as cartAction, RemoveCart } from "./redux/storeAction";
+import CartItem from "./components/CartItem";
+import { Cart as cartAction } from "./redux/storeAction";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { ProtectedRoute } from "../../../Security";
 const Cart = () => {
     const dispatch = useDispatch();
-    const { cart, err, suc } = useSelector((state) => state.store);
-    const removeHandler = (e) => {
-        e.preventDefault();
-        dispatch(RemoveCart(e.target.attributes.value.value));
-    };
+    const { cart, err, suc, totalCost } = useSelector((state) => state.store);
     useEffect(() => {
         if (cart === undefined) dispatch(cartAction());
         if (err !== undefined)
@@ -39,6 +36,7 @@ const Cart = () => {
     }, [dispatch, cart, err, suc]);
     return (
         <div className="Cart">
+            <ProtectedRoute props={{ path: "/Store/Cart" }} />
             <StoreHeader />
             <div className="Cart-Container">
                 <div className="Left">
@@ -53,9 +51,10 @@ const Cart = () => {
                                 <th style={{ width: "15%" }}>Cost</th>
                             </tr>
                             {cart !== undefined &&
-                                cart.map((ele) => {
+                                cart.map((ele, i) => {
                                     return (
-                                        <tr key={ele.productId}>
+                                        <CartItem props={ele} key={i} />
+                                        /*<tr key={ele.productId}>
                                             <td style={{ width: "65%" }}>
                                                 {ele.productName}
                                             </td>
@@ -82,6 +81,7 @@ const Cart = () => {
                                                 </Link>
                                             </td>
                                         </tr>
+                                        */
                                     );
                                 })}
                         </tbody>
@@ -134,7 +134,7 @@ const Cart = () => {
                                 <td style={{ width: "20%" }}>
                                     <br />
                                     <hr />
-                                    {cart?.totalCost}
+                                    {totalCost || 0}
                                     <hr />
                                 </td>
                             </tr>

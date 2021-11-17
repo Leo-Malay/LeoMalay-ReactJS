@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import BlogHeader from "./components/BlogHeader";
 import { Write } from "./redux/blogActions";
+import { ProtectedRoute } from "../../../Security";
 const BlogWrite = () => {
     const dispatch = useDispatch();
-    const { isAuthenticated, data } = useSelector((state) => state.auth);
+    const data = useSelector((state) => state.auth.data);
     const [BlogSubmit, setBlogSubmit] = useState(false);
     const [title, setTitle] = useState("");
     const [thumbnail, setThumbnail] = useState("");
@@ -23,7 +24,7 @@ const BlogWrite = () => {
     }, [data]);
     return (
         <div className="BlogWrite">
-            {!isAuthenticated && <Redirect to="/Auth/Login" />}
+            <ProtectedRoute props={{ path: "/Blog/Write" }} />
             {BlogSubmit && <Redirect to="/Blog" />}
             <BlogHeader />
             <form

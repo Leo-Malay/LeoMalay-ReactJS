@@ -1,75 +1,100 @@
 import StoreHeader from "./components/StoreHeader";
 import "./css/Product.css";
-import ProductData from "../../../data/Store.json";
 import image from "../../../assets/iphone.jfif";
 import { useParams } from "react-router";
-import { LinkButton } from "../../../components/Element";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { AddCart, Product as productAction } from "./redux/storeAction";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 const Product = () => {
     const { id } = useParams();
-    const getProduct = (id) => {
-        return ProductData.filter(function (ProductData) {
-            return ProductData.id === id;
-        });
+    const { product, err, suc } = useSelector((state) => state.store);
+    const dispatch = useDispatch();
+    const AddToCartHandler = (e) => {
+        e.preventDefault();
+        dispatch(AddCart(e.target.attributes.value.value, 1));
     };
-    const Data = getProduct(id)[0];
+    useEffect(() => {
+        if (product === undefined || product._id !== id)
+            dispatch(productAction(id));
+        if (err !== undefined)
+            toast.error(err, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        if (suc !== undefined)
+            toast.success(suc, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        dispatch({ type: "STORE_ERRSUC_CLEAR" });
+    }, [dispatch, id, suc, err, product]);
     return (
         <div className="Product">
             <StoreHeader />
             <div className="Product-section">
                 <p className="fs14 bold" id="title">
-                    {Data?.name}
+                    {product?.name}
                 </p>
                 <img src={image} alt="Product" />
                 <p className="fs3" id="description">
-                    {Data?.description}
+                    {product?.description}
                 </p>
                 <br />
-                {Data.isAvailable && (
-                    <LinkButton
-                        props={{
-                            value: "Product is Available",
-                            to: "/Store",
-                            color: "success",
-                        }}
+                {product?.isAvailable && (
+                    <input
+                        type="button"
+                        value="Product is Available"
+                        className="primary-nohover LinkButton"
                     />
                 )}
-                {!Data.isAvailable && (
-                    <LinkButton
-                        props={{
-                            value: "Product is Not Available at the Moment",
-                            to: "/Store",
-                            color: "error",
-                        }}
+                {!product?.isAvailable && (
+                    <input
+                        type="button"
+                        value="Product is Not Available at the Moment"
+                        className="error-nohover LinkButton"
                     />
                 )}
-                {Data.isAvailable && (
-                    <LinkButton
-                        props={{
-                            value: "Add to Cart",
-                            to: "/Store",
-                            color: "primary",
-                        }}
-                    />
+                {product?.isAvailable && (
+                    <Link
+                        value={product?._id}
+                        to="/Store"
+                        className="success-nohover LinkButton"
+                        onClick={AddToCartHandler}
+                    >
+                        Add to Cart
+                    </Link>
                 )}
                 <table border={0}>
                     <tbody>
                         <tr>
                             <th>Price</th>
-                            <td className="fs3">${Data?.price}</td>
+                            <td className="fs3">${product?.price}</td>
                         </tr>
                         <tr>
                             <th>Rating</th>
-                            <td className="fs3">{Data?.rating}&#9733;</td>
+                            <td className="fs3">{product?.rating}&#9733;</td>
                         </tr>
                         <tr>
                             <th>Sold By</th>
-                            <td className="fs3">{Data?.soldBy}</td>
+                            <td className="fs3">{product?.soldBy}</td>
                         </tr>
                         <tr>
                             <th>Specification</th>
                             <td className="fs3">
                                 <ul>
-                                    {Data?.specs.map((ele, i) => {
+                                    {product?.specs.map((ele, i) => {
                                         return <li key={i}>{ele}</li>;
                                     })}
                                 </ul>
@@ -78,7 +103,7 @@ const Product = () => {
                         <tr>
                             <th>Reviews</th>
                             <td>
-                                {Data?.reviews.map((ele) => {
+                                {product?.reviews.map((ele) => {
                                     return (
                                         <div
                                             className="ReviewCard"

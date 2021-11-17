@@ -1,13 +1,17 @@
 import "../css/ProductCard.css";
 import image from "../../../../assets/iphone.jfif";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import { AddCart } from "../redux/storeAction";
 const ProductCard = ({ props }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     const AddToCartHandler = (e) => {
         e.preventDefault();
-        dispatch(AddCart(e.target.attributes.value.value));
+        if (!isAuthenticated) history.push("/Auth/Login/%2FStore");
+        else dispatch(AddCart(e.target.attributes.value.value, 1));
     };
     return (
         <div className="ProductCard">

@@ -12,7 +12,10 @@ const Index = () => {
                 </p>
                 <br />
                 <center>
-                    <Link className="AlignCenter secondary-nohover" to="/Blog">
+                    <Link
+                        className="AlignCenter secondary-nohover btn"
+                        to="/Blog"
+                    >
                         Visit Blog Now
                     </Link>
                 </center>
