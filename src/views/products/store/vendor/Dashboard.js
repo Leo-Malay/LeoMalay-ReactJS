@@ -1,5 +1,5 @@
 import StoreHeader from "../components/StoreHeader";
-import "../css/vendorDashboard.css";
+import "../css/VendorDashboard.css";
 import { ProtectedRoute } from "../../../../Security";
 const VendorDashboard = () => {
     return (

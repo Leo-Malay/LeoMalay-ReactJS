@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import StoreHeader from "./components/StoreHeader";
-import "./css/index.css";
+import "./css/Index.css";
 const Index = () => {
     return (
         <div className="StoreIndex">

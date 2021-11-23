@@ -1,6 +1,5 @@
 import StoreHeader from "./components/StoreHeader";
 import "./css/Order.css";
-import OrderData from "../../../data/StoreOrder.json";
 import OrderCard from "./components/OrderCard";
 import { ProtectedRoute } from "../../../Security";
 const Order = () => {
