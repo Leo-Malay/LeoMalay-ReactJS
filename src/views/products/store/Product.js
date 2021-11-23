@@ -1,5 +1,4 @@
 import StoreHeader from "./components/StoreHeader";
-import "./css/Product.css";
 import image from "../../../assets/iphone.jfif";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";

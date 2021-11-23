@@ -14,13 +14,21 @@ export const storeReducer = (state = {}, action) => {
                 isLoading: false,
                 err: "Unable to Fetch Data",
             };
-        case "CART_SUCCESS":
+        case "ADD_CART_SUCCESS":
             return {
                 ...state,
                 isLoading: false,
                 cart: action.data.cart,
                 totalCost: action.data.totalCost,
-                suc: "Action Successful",
+                suc: "Added to Cart",
+            };
+        case "REMOVE_CART_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                cart: action.data.cart,
+                totalCost: action.data.totalCost,
+                suc: "Removed from Cart",
             };
         case "PRODUCT_FETCH_SUCCESS":
             return {
@@ -46,6 +54,44 @@ export const storeReducer = (state = {}, action) => {
                 ...state,
                 isLoading: false,
                 err: "Unable to Fetch your Cart",
+            };
+        case "ORDER_FETCH_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                order: action.data,
+            };
+        case "ORDER_FETCH_FAILURE":
+            return {
+                ...state,
+                isLoading: false,
+                err: action.data,
+            };
+        case "ORDER_PLACE_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                order_id: action.data,
+            };
+        case "ORDER_PLACE_FAILURE":
+            return {
+                ...state,
+                isLoading: false,
+                err: action.data,
+                order_id: undefined,
+            };
+        case "ORDER_CANCEL_SUCCESS":
+            return {
+                ...state,
+                isLoading: false,
+                order_id: action.data,
+            };
+        case "ORDER_CANCEL_FAILURE":
+            return {
+                ...state,
+                isLoading: false,
+                err: action.data,
+                order_id: undefined,
             };
         case "CART_UPDATE_FAILURE":
             return {

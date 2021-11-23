@@ -1,36 +1,25 @@
 import { useState } from "react";
-import { useParams } from "react-router";
-
+import "./css/gateway.css";
 const Gateway = () => {
-    const { clientToken, merchantToken } = useParams();
-    const [leoPayId, setLeoPayId] = useState("");
-    const [pin, setPin] = useState("");
-    const submitHandler = (e) => {
-        e.preventDefault();
-    };
+    const [payType, setPayType] = useState();
     return (
         <div className="Gateway">
-            <form method="POST" action="#" onSubmit={submitHandler}>
-                <input type="hidden" value={clientToken} />
-                <br />
-                <input type="hidden" value={merchantToken} />
-                <br />
-                <input
-                    type="text"
-                    value={leoPayId}
-                    onChange={(e) => setLeoPayId(e.target.value)}
-                    placeholder="Leo-Pay-ID"
-                />
-                <br />
-                <input
-                    type="password"
-                    value={pin}
-                    onChange={(e) => setPin(e.target.value)}
-                    placeholder="Pin"
-                />
-                <br />
-                <input type="submit" value="Pay" className="primary-nohover" />
+            <form action="#" method="POST" className="PayType">
+                <div className="RadioContainer">
+                    <input type="radio" name="payType" value="Credit Card" />
+                    <label>Credit Card</label>
+                </div>
+                <div className="RadioContainer">
+                    <input type="radio" name="payType" value="Debit Card" />
+                    <label>Debit Card</label>
+                </div>
+                <div className="RadioContainer">
+                    <input type="radio" name="payType" value="UPI" />
+                    <label>UPI</label>
+                </div>
             </form>
+            <form action="#" method="POST" className="Card"></form>
+            <form action="#" method="POST" className="UPI"></form>
         </div>
     );
 };

@@ -1,4 +1,3 @@
-import "../css/ProductCard.css";
 import image from "../../../../assets/iphone.jfif";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";

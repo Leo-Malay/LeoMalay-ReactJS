@@ -1,5 +1,8 @@
 import StoreHeader from "../components/StoreHeader";
+<<<<<<< Updated upstream
 import "../css/VendorDashboard.css";
+=======
+>>>>>>> Stashed changes
 import { ProtectedRoute } from "../../../../Security";
 const VendorDashboard = () => {
     return (

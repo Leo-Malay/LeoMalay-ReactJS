@@ -4,28 +4,9 @@
     display: inline-flex;
     flex-wrap: wrap;
 }
-.Order .OrderDetails {
-    width: 40%;
-    padding: 10px;
-    margin: 10px auto;
-    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.15);
-}
-.Order .OrderDetails table {
-    width: 100%;
-    padding: 5px;
-}
-.Order .OrderDetails table tr td,
-.Order .OrderDetails table tr th {
-    padding: 3px 1px;
-}
 /* For Mobile View */
 @media only screen and (max-width: 600px) {
     .Order .OrderContainer {
         margin: 5px;
-    }
-    .Order .OrderDetails {
-        width: 100%;
-        padding: 5px;
-        margin: 5px auto;
     }
 }

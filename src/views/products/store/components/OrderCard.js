@@ -1,55 +1,92 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import { LinkButton } from "../../../../components/Element";
-const OrderCard = ({ ele }) => {
+import { CancelOrder, Order } from "../redux/storeAction";
+const OrderCard = ({ props }) => {
+    const dispatch = useDispatch();
+    const { err, suc } = useSelector((state) => state.store);
+    const cancelHandler = async (e) => {
+        e.preventDefault();
+        await dispatch(CancelOrder(props?._id));
+        await dispatch(Order());
+    };
+    useEffect(() => {
+        if (err !== undefined)
+            toast.error(err, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        if (suc !== undefined)
+            toast.success(suc, {
+                position: "bottom-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        dispatch({ type: "STORE_ERRSUC_CLEAR" });
+    }, [dispatch, err, suc]);
     return (
-        <div className=" AlignLeft OrderDetails" key={ele.id}>
-            <table>
+        <div className=" AlignLeft OrderCard" key={props?._id}>
+            <table id="head">
                 <thead>
                     <tr>
-                        <th style={{ width: "20%" }}>OrderId</th>
-                        <td style={{ width: "80%" }}>{ele.id}</td>
+                        <th>OrderId</th>
+                        <td>{props?._id}</td>
                     </tr>
                     <tr>
-                        <th style={{ width: "20%" }}>Address</th>
-                        <td style={{ width: "80%" }}>{ele.address}</td>
+                        <th>Address</th>
+                        <td>{props?.address}</td>
                     </tr>
                 </thead>
+            </table>
+
+            <table id="body">
                 <tbody>
                     <tr key={-1}>
-                        <th style={{ width: "60%" }}>Name</th>
-                        <th style={{ width: "20%" }}>Quantity</th>
-                        <th style={{ width: "20%" }}>Cost</th>
+                        <th id="col1">Name</th>
+                        <th id="col2">Quantity</th>
+                        <th id="col3">Cost</th>
                     </tr>
-                    {ele.items.map((item, i) => {
+                    {props?.order.map((item) => {
                         return (
-                            <tr key={i}>
-                                <td style={{ width: "60%" }}>{item.name}</td>
-                                <td style={{ width: "20%" }}>
-                                    {item.quantity}
-                                </td>
-                                <td style={{ width: "20%" }}>{item.cost}</td>
+                            <tr key={item?.productId}>
+                                <td id="col1">{item?.productName}</td>
+                                <td id="col2">{item?.qty}</td>
+                                <td id="col3">{item?.price}</td>
                             </tr>
                         );
                     })}
                 </tbody>
+            </table>
+
+            <table id="foot">
                 <tfoot>
                     <tr>
-                        <th style={{ width: "30%" }}>Total Cost</th>
-                        <td style={{ width: "70%" }}>{ele.totalCost}</td>
+                        <th>Total Cost</th>
+                        <td>{props?.totalCost}</td>
                     </tr>
                     <tr>
-                        <th style={{ width: "30%" }}>PayId(Type)</th>
-                        <td style={{ width: "70%" }}>
-                            {ele.payRefId + " (" + ele.payType + ")"}
-                        </td>
+                        <th>PayId(Type)</th>
+                        <td>{props?.payId + " (" + props?.payType + ")"}</td>
                     </tr>
                     <tr>
-                        <th style={{ width: "30%" }}>PayDate</th>
-                        <td style={{ width: "70%" }}>{ele.payDate}</td>
+                        <th>PayDate</th>
+                        <td>{props?.payDate}</td>
                     </tr>
                     <tr>
-                        <th style={{ width: "30%" }}>Status</th>
-                        <td style={{ width: "70%" }}>
-                            {ele.outForDelivery && (
+                        <th>Status</th>
+                        <td>
+                            {props?.outForDelivery && (
                                 <LinkButton
                                     props={{
                                         value: "Out for Delivery",
@@ -58,7 +95,7 @@ const OrderCard = ({ ele }) => {
                                     }}
                                 />
                             )}
-                            {ele.pending && (
+                            {props?.pending && (
                                 <LinkButton
                                     props={{
                                         value: "Pending",
@@ -67,7 +104,17 @@ const OrderCard = ({ ele }) => {
                                     }}
                                 />
                             )}
-                            {ele.isDelivered && (
+                            {props?.pending && (
+                                <Link
+                                    to="/Store/Order"
+                                    onClick={cancelHandler}
+                                    className="error-nohover"
+                                    style={{ padding: 4 }}
+                                >
+                                    Cancel Order
+                                </Link>
+                            )}
+                            {props?.isDelivered && (
                                 <LinkButton
                                     props={{
                                         value: "Delivered",
@@ -76,7 +123,7 @@ const OrderCard = ({ ele }) => {
                                     }}
                                 />
                             )}
-                            {ele.isCancelled && (
+                            {props?.isCancelled && (
                                 <LinkButton
                                     props={{
                                         value: "Cancelled",

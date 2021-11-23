@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
 import { useHistory, useParams } from "react-router";
 import { toast } from "react-toastify";
+import Input from "../../../components/Input";
 const Login = () => {
     const { redirect } = useParams();
     const history = useHistory();
@@ -50,6 +51,7 @@ const Login = () => {
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Login</p>
                 <br />
+                <Input props={{ type: "text", label: "Text here" }} />
                 <input
                     type="text"
                     name="username"

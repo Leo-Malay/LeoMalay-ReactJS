@@ -1,9 +1,11 @@
 form {
     margin: 20px auto;
+    position: absolute;
     padding: 20px 5px;
     text-align: center;
     font-weight: 600;
 }
+/*
 input,
 select,
 option,
@@ -20,3 +22,4 @@ input[type="submit"],
 input[type="button"] {
     width: 200px;
 }
+*/

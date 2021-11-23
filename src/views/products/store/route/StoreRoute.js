@@ -7,6 +7,14 @@ import Order from "../Order";
 import VendorDashboard from "../vendor/Dashboard";
 import VendorProduct from "../vendor/Product";
 import VendorOrder from "../vendor/Order";
+// Importing the CSS.
+import "../css/Cart.css";
+import "../css/Index.css";
+import "../css/Order.css";
+import "../css/OrderCard.css";
+import "../css/Product.css";
+import "../css/ProductCard.css";
+import "../css/VendorDashboard.css";
 const StoreRoute = () => {
     return (
         <Switch className="StoreRoute">
