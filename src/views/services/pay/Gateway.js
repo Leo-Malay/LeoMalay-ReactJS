@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./css/gateway.css";
 const Gateway = () => {
-    const [payType, setPayType] = useState();
+    // const [payType, setPayType] = useState();
     return (
         <div className="Gateway">
             <form action="#" method="POST" className="PayType">

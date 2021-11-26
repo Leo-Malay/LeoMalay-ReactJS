@@ -17,3 +17,31 @@
 .AuthIndex .title {
     font-size: 10vw;
 }
+/* PC */
+@media only screen and (min-width: 600px) {
+    .AuthIndex .sec1,
+    .AuthIndex .sec2,
+    .AuthIndex .sec3 {
+        padding: 10vw 5vw;
+    }
+    .AuthIndex .sec4 {
+        padding: 10vw 5vw;
+    }
+    .AuthIndex .title {
+        font-size: 10vw;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .AuthIndex .sec1,
+    .AuthIndex .sec2,
+    .AuthIndex .sec3 {
+        padding: 10vw 5vw;
+    }
+    .AuthIndex .sec4 {
+        padding: 10vw 5vw;
+    }
+    .AuthIndex .title {
+        font-size: 20vw;
+    }
+}

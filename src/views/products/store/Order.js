@@ -1,8 +1,4 @@
 import StoreHeader from "./components/StoreHeader";
-<<<<<<< Updated upstream
-import "./css/Order.css";
-=======
->>>>>>> Stashed changes
 import OrderCard from "./components/OrderCard";
 import { ProtectedRoute } from "../../../Security";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,7 +1,6 @@
 import Header from "../../../components/Header";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../../components/Element";
-import "./css/Account.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updateAccount } from "./redux/authActions";

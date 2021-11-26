@@ -1,5 +1,4 @@
 import Header from "../../../components/Header";
-import "./css/index.css";
 const Index = () => {
     return (
         <div className="AuthIndex">

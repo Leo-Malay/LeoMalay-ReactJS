@@ -1,11 +1,10 @@
 import Header from "../../../components/Header";
 import { useEffect, useState } from "react";
-import "./css/Input.css";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
 import { useHistory, useParams } from "react-router";
 import { toast } from "react-toastify";
-import Input from "../../../components/Input";
+import { Link } from "react-router-dom";
 const Login = () => {
     const { redirect } = useParams();
     const history = useHistory();
@@ -47,11 +46,9 @@ const Login = () => {
                     redirect,
                 }}
             />
-
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p className="fs10 bold">Login</p>
+                <p id="Header">Login</p>
                 <br />
-                <Input props={{ type: "text", label: "Text here" }} />
                 <input
                     type="text"
                     name="username"
@@ -79,6 +76,13 @@ const Login = () => {
                     className="success-nohover"
                 />
                 <br />
+                <Link to={"/Auth/NewAccount/" + redirect} className="fs3">
+                    New Here? Register Now
+                </Link>
+                <br />
+                <Link to="/Auth/ForgotPassword" className="fs3">
+                    Forgot Password? Click Here
+                </Link>
             </form>
         </div>
     );

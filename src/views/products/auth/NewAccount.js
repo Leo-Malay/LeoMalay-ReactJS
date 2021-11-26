@@ -1,5 +1,5 @@
 import Header from "../../../components/Header";
-import "./css/Input.css";
+
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newAccount } from "./redux/authActions";
