@@ -11,12 +11,7 @@ const Footer = ({ props }) => {
                         to: "/",
                     }}
                 />
-                <PageLink
-                    props={{
-                        value: "Products",
-                        to: "/ProductHome",
-                    }}
-                />
+
                 <PageLink
                     props={{
                         value: "Store",
@@ -29,12 +24,7 @@ const Footer = ({ props }) => {
                         to: "/Social",
                     }}
                 />
-                <PageLink
-                    props={{
-                        value: "Cafeteria",
-                        to: "/Cafeteria",
-                    }}
-                />
+
                 <PageLink
                     props={{
                         value: "Blog",
@@ -42,26 +32,7 @@ const Footer = ({ props }) => {
                     }}
                 />
             </div>
-            <div className="NavLink">
-                <PageLink
-                    props={{
-                        value: "Services",
-                        to: "/ServiceHome",
-                    }}
-                />
-                <PageLink
-                    props={{
-                        value: "Inventory",
-                        to: "/Inventory",
-                    }}
-                />
-                <PageLink
-                    props={{
-                        value: "Pay",
-                        to: "/Pay/Index",
-                    }}
-                />
-            </div>
+
             <p id="desc">&copy; 2021 Malay Bhavsar</p>
         </div>
     );

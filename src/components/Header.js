@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/HeaderFooter.css";
-import { logout } from "../views/products/auth/redux/authActions";
+import { logout } from "../views/auth/redux/authActions";
 import { LinkButton } from "./Element";
 const Header = ({ props }) => {
     const { isAuthenticated } = useSelector((state) => state.auth);
