@@ -2,7 +2,11 @@ import StoreHeader from "./components/StoreHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import CartItem from "./components/CartItem";
-import { Cart as cartAction, PlaceOrder } from "./redux/storeAction";
+import {
+    Cart as cartAction,
+    PlaceOrder,
+    Order as orderAction,
+} from "./redux/storeAction";
 import { toast } from "react-toastify";
 import { ProtectedRoute } from "../../Security";
 import { useHistory } from "react-router";
@@ -24,7 +28,8 @@ const Cart = () => {
                 )
             );
             await dispatch(cartAction());
-            await history.push("/Store/Order");
+            await dispatch(orderAction());
+            history.push("/Store/Order");
         } else {
             toast.error("Add some items in cart to continue", {
                 position: "bottom-left",

@@ -1,31 +1,86 @@
-.BlogRead-section {
-    margin: 40px 50px;
-}
 .BlogRead .BlogRead-section img {
-    width: 100%;
-    height: 300px !important;
     object-fit: contain;
 }
 .BlogRead .BlogRead-section #title {
     text-align: justify !important;
-    padding: 10px;
+    font-weight: 600;
 }
-.BlogRead .BlogRead-section #subCard {
-    width: 100%;
-}
+
 .BlogRead .BlogRead-section #date {
     text-align: right;
-    margin-right: 0;
-    margin-left: auto;
 }
-.BlogRead .BlogRead-section #author,
-.BlogRead .BlogRead-section #date {
-    padding: 5px 10px;
-    margin-bottom: 5px;
+.BlogRead .LikeContainer input {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff;
 }
-.BlogRead .BlogRead-section #description {
-    margin-top: 20px;
-    line-height: 25px;
-    letter-spacing: 0.75px;
-    word-spacing: 3px;
+/* PC */
+@media only screen and (min-width: 600px) {
+    .BlogRead-section {
+        margin: 40px 50px;
+    }
+    .BlogRead .BlogRead-section img {
+        width: 100%;
+        height: 300px !important;
+    }
+    .BlogRead .BlogRead-section #title {
+        font-size: 40px;
+        padding: 10px;
+    }
+    .BlogRead .BlogRead-section #subCard {
+        width: 100%;
+    }
+    .BlogRead .BlogRead-section #date {
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .BlogRead .BlogRead-section #author,
+    .BlogRead .BlogRead-section #date {
+        padding: 5px 10px;
+        margin-bottom: 5px;
+    }
+    .BlogRead .BlogRead-section #description {
+        margin-top: 20px;
+        line-height: 25px;
+        letter-spacing: 0.75px;
+        word-spacing: 3px;
+    }
+    .BlogRead .LikeContainer input {
+        padding: 5px 50px;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .BlogRead-section {
+        margin: 10px;
+    }
+    .BlogRead .BlogRead-section img {
+        width: 100%;
+        height: 250px !important;
+    }
+    .BlogRead .BlogRead-section #title {
+        font-size: 25px;
+        padding: 5px;
+    }
+    .BlogRead .BlogRead-section #subCard {
+        width: 100%;
+    }
+    .BlogRead .BlogRead-section #date {
+        margin-right: 0;
+        margin-left: auto;
+    }
+    .BlogRead .BlogRead-section #author,
+    .BlogRead .BlogRead-section #date {
+        padding: 15px 5px;
+        margin-bottom: 5px;
+    }
+    .BlogRead .BlogRead-section #description {
+        margin-top: 5px;
+        line-height: 25px;
+        letter-spacing: 0.75px;
+        word-spacing: 2px;
+    }
+    .BlogRead .LikeContainer input {
+        padding: 5px 50px;
+    }
 }

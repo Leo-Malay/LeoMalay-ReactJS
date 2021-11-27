@@ -70,7 +70,6 @@ const Account = () => {
                 Welcome{" "}
                 {(data?.fname || "Guest") + " " + (data?.lname || "User")}
             </p>
-
             <form>
                 <p id="Header">General</p>
                 <input
@@ -81,6 +80,7 @@ const Account = () => {
                     placeholder="First Name"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="lname"
@@ -89,6 +89,7 @@ const Account = () => {
                     placeholder="Last Name"
                     required
                 />
+                <br />
                 <input
                     type="email"
                     name="email"
@@ -97,12 +98,14 @@ const Account = () => {
                     placeholder="Email"
                     required
                 />
+                <br />
                 <input
                     type="submit"
                     name="submit"
                     className="success-nohover"
                     value="Update"
                 />
+                <br />
                 <br />
                 <br />
                 <LinkButton
@@ -131,6 +134,7 @@ const Account = () => {
                     placeholder="Address Line 1"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="al2"
@@ -139,6 +143,7 @@ const Account = () => {
                     placeholder="Address Line 2"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="city"
@@ -147,6 +152,7 @@ const Account = () => {
                     placeholder="City"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="state"
@@ -155,6 +161,7 @@ const Account = () => {
                     placeholder="State"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="country"
@@ -163,6 +170,7 @@ const Account = () => {
                     placeholder="Country"
                     required
                 />
+                <br />
                 <input
                     type="text"
                     name="pincode"
@@ -171,6 +179,7 @@ const Account = () => {
                     placeholder="Postal Code"
                     required
                 />
+                <br />
                 <input
                     type="submit"
                     name="submit"

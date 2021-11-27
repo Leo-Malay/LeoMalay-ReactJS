@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import BlogHeader from "./components/BlogHeader";
-import { Blog, Like } from "./redux/blogActions";
+import { Blog, Like, Home } from "./redux/blogActions";
 import "./css/BlogRead.css";
 import image from "../../assets/iphone.jfif";
 const BlogRead = () => {
@@ -11,10 +11,11 @@ const BlogRead = () => {
     const BlogData = useSelector((state) => state.blog.blog);
     const userEmail = useSelector((state) => state.auth?.data?.email);
     const [like, setLike] = useState(false);
-    const likeHandler = (e) => {
+    const likeHandler = async (e) => {
         e.preventDefault();
-        dispatch(Like(like, id));
-        dispatch(Blog(id));
+        await dispatch(Like(like, id));
+        await dispatch(Blog(id));
+        await dispatch(Home());
     };
     useEffect(() => {
         if (BlogData === undefined) dispatch(Blog(id));
@@ -29,7 +30,7 @@ const BlogRead = () => {
             <BlogHeader />
             <div className="BlogRead-section">
                 <img src={image} alt="Blog" />
-                <p className="fs17 bold" id="title">
+                <p id="title">
                     {BlogData?.title ||
                         "A simple cheezy way to say good bye to anyone!"}
                 </p>
@@ -61,7 +62,6 @@ const BlogRead = () => {
                     className={
                         like ? "error-inv-nohover" : "success-inv-nohover"
                     }
-                    style={{ backgroundColor: "#fff" }}
                     onClick={likeHandler}
                 />
             </div>

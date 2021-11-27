@@ -1,0 +1,81 @@
+.BlogRoute form {
+    text-align: center;
+    font-weight: 600;
+}
+.BlogRoute input,
+.BlogRoute select,
+.BlogRoute option,
+.BlogRoute textarea {
+    border-radius: 2px;
+    border: 1px solid rgb(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+.BlogRoute input[type="submit"],
+.BlogRoute input[type="button"] {
+    border-width: 2px;
+    border-color: inherit;
+}
+.BlogRoute form a {
+    font-weight: 300;
+}
+/* PC */
+@media only screen and (min-width: 600px) {
+    .BlogRoute form {
+        margin: 20px auto;
+        padding: 20px 5px;
+    }
+    .BlogRoute form #Header {
+        font-size: 40px;
+    }
+    .BlogRoute form #Desc {
+        font-size: 15px;
+    }
+    .BlogRoute form input,
+    .BlogRoute form select,
+    .BlogRoute form option,
+    .BlogRoute form textarea {
+        width: 80%;
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 14px;
+    }
+    .BlogRoute form input[type="submit"],
+    .BlogRoute form input[type="button"] {
+        width: 200px;
+    }
+    .BlogRoute form a {
+        font-size: 15px;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .BlogRoute form {
+        margin: 50px 0px;
+        width: 100%;
+    }
+    .BlogRoute form #Header {
+        font-size: 35px;
+    }
+    .BlogRoute form #Desc {
+        font-size: 14px;
+    }
+    .BlogRoute form input,
+    .BlogRoute form select,
+    .BlogRoute form option,
+    .BlogRoute form textarea {
+        width: 80%;
+        margin: 5px auto;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+    .BlogRoute form input[type="submit"],
+    .BlogRoute form input[type="button"] {
+        width: 60%;
+    }
+    .BlogRoute form a {
+        position: relative;
+        font-size: 18px;
+        margin: 10px;
+        padding: 10px;
+    }
+}

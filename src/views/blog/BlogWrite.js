@@ -4,6 +4,7 @@ import { Redirect } from "react-router";
 import BlogHeader from "./components/BlogHeader";
 import { Write } from "./redux/blogActions";
 import { ProtectedRoute } from "../../Security";
+import "./css/Input.css";
 const BlogWrite = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.auth.data);
@@ -27,12 +28,9 @@ const BlogWrite = () => {
             <ProtectedRoute props={{ path: "/Blog/Write" }} />
             {BlogSubmit && <Redirect to="/Blog" />}
             <BlogHeader />
-            <form
-                action="#"
-                method="POST"
-                onSubmit={submitHandler}
-                style={{ width: "80%" }}
-            >
+            <form action="#" method="POST" onSubmit={submitHandler}>
+                <p id="Header">Write New Blog</p>
+                <br />
                 <input
                     type="text"
                     name="title"
@@ -40,7 +38,6 @@ const BlogWrite = () => {
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
-                    style={{ width: "80%" }}
                 />
                 <br />
                 <input
@@ -49,7 +46,6 @@ const BlogWrite = () => {
                     value={thumbnail}
                     onChange={(e) => setThumbnail(e.target.value)}
                     placeholder="URL of Thumbnail Image"
-                    style={{ width: "80%" }}
                 />
                 <br />
                 <input
@@ -59,14 +55,13 @@ const BlogWrite = () => {
                     onChange={(e) => setAuthor(e.target.value)}
                     placeholder="Name of Author"
                     required
-                    style={{ width: "80%" }}
                 />
+                <br />
                 <select
                     name="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     required
-                    style={{ width: "80%" }}
                 >
                     <option value="" disabled key={-1}>
                         Choose an Category
@@ -91,19 +86,13 @@ const BlogWrite = () => {
                     placeholder="Start Typing Here... #newPara$ ---> For New Paragraph"
                     minLength={200}
                     required
-                    style={{ width: "80%", padding: 10, borderRadius: 5 }}
                 />
                 <p className="fs2 bold">
                     Length: {description.replaceAll(" ", "").length}, Words:{" "}
                     {description.split(" ").length}
                 </p>
                 <br />
-                <input
-                    type="submit"
-                    name="Submit"
-                    className="success"
-                    style={{ width: "40%" }}
-                />
+                <input type="submit" name="Submit" className="success" />
             </form>
             <br />
             <br />
