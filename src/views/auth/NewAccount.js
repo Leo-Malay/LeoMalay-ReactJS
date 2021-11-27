@@ -1,9 +1,9 @@
 import AuthHeader from "./component/AuthHeader";
-
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newAccount } from "./redux/authActions";
 import { Redirect, useHistory, useParams } from "react-router";
+import { Link } from "react-router-dom";
 const NewAccount = () => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -32,7 +32,7 @@ const NewAccount = () => {
             {isAuthenticated && <Redirect to="/Auth/Account" />}
             <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p className="fs10 bold">New Account</p>
+                <p id="Header">New Account</p>
                 <br />
                 <input
                     type="text"
@@ -98,6 +98,9 @@ const NewAccount = () => {
                     value="Create Account"
                 />
                 <br />
+                <Link to={"/Auth/Login/" + redirect}>
+                    Already have Account? Click Here
+                </Link>
             </form>
         </div>
     );

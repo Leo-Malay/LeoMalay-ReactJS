@@ -34,7 +34,7 @@ const RemoveAccount = () => {
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p className="fs10 bold">Remove Account</p>
+                <p id="Header">Remove Account</p>
                 <br />
                 <input
                     type="hidden"

@@ -9,7 +9,6 @@ const UpdatePassword = () => {
     const { isAuthenticated, data, err, suc } = useSelector(
         (state) => state.auth
     );
-    const [username, setUsername] = useState("");
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [cNewPassword, setCNewPassword] = useState("");
@@ -20,7 +19,6 @@ const UpdatePassword = () => {
         dispatch(updatePassword(oldPassword, newPassword));
     };
     useEffect(() => {
-        if (data?.username) setUsername(data?.username);
         if (err !== undefined)
             toast.error(err, {
                 position: "bottom-left",
@@ -49,17 +47,8 @@ const UpdatePassword = () => {
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
             <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p className="fs10 bold">Update Password</p>
+                <p id="Header">Update Password</p>
                 <br />
-                <input
-                    type="hidden"
-                    name="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    placeholder="Username"
-                    autoComplete="username"
-                    required
-                />
                 <input
                     type="password"
                     name="oldpassword"
@@ -69,7 +58,6 @@ const UpdatePassword = () => {
                     autoComplete="current-password"
                     required
                 />
-                <br />
                 <input
                     type="password"
                     name="newpassword"
@@ -79,7 +67,6 @@ const UpdatePassword = () => {
                     autoComplete="new-password"
                     required
                 />
-                <br />
                 <input
                     type="password"
                     name="cnewpassword"

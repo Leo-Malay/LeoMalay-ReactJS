@@ -10,7 +10,6 @@ const ForgotPassword = () => {
     const [showCode, setShowCode] = useState(true);
     const [password, setPassword] = useState("");
     const [cPassword, setCPassword] = useState("");
-
     const submitHandler = async (e) => {
         e.preventDefault();
         if (showCode) setShowCode(!showCode);
@@ -41,15 +40,14 @@ const ForgotPassword = () => {
         dispatch({ type: "CLEAR_ERR" });
     }, [data, err, suc, dispatch]);
     return (
-        <div className="UpdatePassword">
+        <div className="ForgotPassword">
             <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
-                <p className="fs10 bold">
+                <p id="Header">
                     {showCode ? "Confirm Code" : "Update Password"}
                 </p>
-
                 {showCode && (
-                    <p className="fs2">
+                    <p id="Desc">
                         <br />
                         We have sent you an email containing the code on your
                         registered Email Address.
@@ -66,6 +64,7 @@ const ForgotPassword = () => {
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
                         placeholder="Code"
+                        autoComplete="off"
                         required
                     />
                 )}
@@ -80,7 +79,7 @@ const ForgotPassword = () => {
                             autoComplete="new-password"
                             required
                         />
-                        <br />
+
                         <input
                             type="password"
                             name="cpassword"
@@ -92,7 +91,6 @@ const ForgotPassword = () => {
                         />
                     </div>
                 )}
-                <br />
                 <input
                     type="submit"
                     name="submit"

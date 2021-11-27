@@ -69,11 +69,11 @@ const Login = () => {
                     className="success-nohover"
                 />
                 <br />
-                <Link to={"/Auth/NewAccount/" + redirect} className="fs3">
+                <Link to={"/Auth/NewAccount/" + redirect}>
                     New Here? Register Now
                 </Link>
                 <br />
-                <Link to="/Auth/ForgotPassword" className="fs3">
+                <Link to="/Auth/ForgotPassword">
                     Forgot Password? Click Here
                 </Link>
             </form>
