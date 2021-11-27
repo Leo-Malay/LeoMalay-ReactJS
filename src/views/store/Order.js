@@ -7,8 +7,7 @@ import { Order as orderAction } from "./redux/storeAction";
 import { toast } from "react-toastify";
 const Order = () => {
     const dispatch = useDispatch();
-    const { order, suc, err } = useSelector((state) => state.store);
-    console.log(order);
+    const { order, suc, err, trial } = useSelector((state) => state.store);
     const getPendingOrder = () => {
         if (order)
             return order.filter((o) => {
@@ -24,7 +23,10 @@ const Order = () => {
     const pendingOrder = getPendingOrder();
     const previousOrder = getPreviousOrder();
     useEffect(() => {
-        if (!order) dispatch(orderAction());
+        if (!order && trial < 2) {
+            dispatch(orderAction());
+            dispatch({ type: "STORE_INC_TRIAL" });
+        }
         if (err !== undefined)
             toast.error(err, {
                 position: "bottom-left",
@@ -46,10 +48,10 @@ const Order = () => {
                 progress: undefined,
             });
         dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, order, suc, err]);
+    }, [dispatch, order, suc, err, trial]);
     return (
         <div className="Order">
-            <ProtectedRoute props={{ path: "/Store/Order" }} />
+            {/* <ProtectedRoute props={{ path: "/Store/Order" }} /> */}
             <StoreHeader />
             {(!order || order.length === 0) && (
                 <div className="AlignCenter fs17 bold">

@@ -13,7 +13,7 @@ import { useHistory } from "react-router";
 const Cart = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { cart, err, suc } = useSelector((state) => state.store);
+    const { cart, err, suc, trial } = useSelector((state) => state.store);
     var totalCostCalc = 0;
     const placeOrderHandler = async (e) => {
         if (cart && cart.length > 0) {
@@ -43,7 +43,10 @@ const Cart = () => {
         }
     };
     useEffect(() => {
-        if (cart === undefined) dispatch(cartAction());
+        if (cart === undefined && trial < 2) {
+            dispatch(cartAction());
+            dispatch({ type: "STORE_INC_TRIAL" });
+        }
         if (err !== undefined)
             toast.error(err, {
                 position: "bottom-left",
@@ -65,8 +68,7 @@ const Cart = () => {
                 progress: undefined,
             });
         dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, cart, err, suc]);
-    console.log(cart);
+    }, [dispatch, cart, err, suc, trial]);
     return (
         <div className="Cart">
             <ProtectedRoute props={{ path: "/Store/Cart" }} />

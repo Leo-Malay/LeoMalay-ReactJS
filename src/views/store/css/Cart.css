@@ -1,35 +1,81 @@
 .Cart-Container {
-    width: 100%;
-    display: inline-flex;
     text-align: center;
-    margin-top: 10px;
-}
-.Cart-Container .Left {
-    width: 66%;
-}
-.Cart-Container .Right {
-    width: 35%;
-}
-.Cart-Container .Left #title,
-.Cart-Container .Right #title,
-.Cart-Container .Left #subtitle,
-.Cart-Container .Right #subtitle {
-    margin: 5px;
 }
 .Cart-Container .Left table {
     text-align: left;
 }
-.Cart-Container .Right table {
-    width: 100%;
-}
-.Cart-Container .Left td {
-    padding: 10px 0px;
-}
-.Cart-Container .Right td,
-.Cart-Container .Right th {
-    padding: 3px 0px;
-}
 .Cart-Container .Right td.itemname {
     text-align: left;
-    padding-left: 10px;
+}
+.Cart-Container .Right input {
+    font-weight: 600;
+    padding: 5px 20px;
+}
+/* PC */
+@media only screen and (min-width: 600px) {
+    .Cart-Container {
+        display: inline-flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .Cart-Container .Left {
+        width: 66%;
+    }
+    .Cart-Container .Right {
+        width: 35%;
+    }
+    .Cart-Container .Left #title,
+    .Cart-Container .Right #title,
+    .Cart-Container .Left #subtitle,
+    .Cart-Container .Right #subtitle {
+        margin: 5px;
+    }
+    .Cart-Container .Right table {
+        width: 100%;
+    }
+    .Cart-Container .Left td {
+        padding: 10px 0px;
+    }
+    .Cart-Container .Right td,
+    .Cart-Container .Right th {
+        padding: 3px 0px;
+    }
+    .Cart-Container .Right td.itemname {
+        padding-left: 10px;
+    }
+}
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .Cart-Container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .Cart-Container .Left {
+        width: 95%;
+        font-size: 12px;
+        margin: 20px auto;
+    }
+    .Cart-Container .Right {
+        width: 95%;
+        margin: 20px auto;
+    }
+    .Cart-Container .Left #title,
+    .Cart-Container .Right #title,
+    .Cart-Container .Left #subtitle,
+    .Cart-Container .Right #subtitle {
+        margin: 5px;
+    }
+    .Cart-Container .Right table {
+        width: 100%;
+    }
+    .Cart-Container .Left td {
+        padding: 5px 0px;
+    }
+    .Cart-Container .Right td,
+    .Cart-Container .Right th {
+        padding: 3px 0px;
+    }
+    .Cart-Container .Right td.itemname {
+        padding-left: 5px;
+    }
 }

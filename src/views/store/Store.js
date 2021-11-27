@@ -6,7 +6,7 @@ import { Home } from "./redux/storeAction";
 import { toast } from "react-toastify";
 const Store = () => {
     const dispatch = useDispatch();
-    const { home, err, suc } = useSelector((state) => state.store);
+    const { home, err, suc, trial } = useSelector((state) => state.store);
     var dict = {};
     const getCategoryDict = (data) => {
         if (data === undefined) return;
@@ -20,7 +20,10 @@ const Store = () => {
     };
     getCategoryDict(home);
     useEffect(() => {
-        if (home === undefined) dispatch(Home());
+        if (home === undefined && trial < 2) {
+            dispatch(Home());
+            dispatch({ type: "STORE_INC_TRIAL" });
+        }
         if (err !== undefined)
             toast.error(err, {
                 position: "bottom-left",
@@ -42,7 +45,7 @@ const Store = () => {
                 progress: undefined,
             });
         dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, err, suc, home]);
+    }, [dispatch, err, suc, home, trial]);
     return (
         <div className="Store">
             <StoreHeader />
