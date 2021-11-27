@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -32,9 +32,7 @@ const RemoveAccount = () => {
     return (
         <div className="RemoveAccount">
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
-            <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
+            <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">Remove Account</p>
                 <br />

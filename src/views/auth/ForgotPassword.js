@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { updatePassword } from "./redux/authActions";
@@ -42,9 +42,7 @@ const ForgotPassword = () => {
     }, [data, err, suc, dispatch]);
     return (
         <div className="UpdatePassword">
-            <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
+            <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">
                     {showCode ? "Confirm Code" : "Update Password"}

@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -30,9 +30,7 @@ const NewAccount = () => {
     return (
         <div className="NewAccount">
             {isAuthenticated && <Redirect to="/Auth/Account" />}
-            <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
+            <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p className="fs10 bold">New Account</p>
                 <br />

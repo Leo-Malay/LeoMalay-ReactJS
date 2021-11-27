@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
@@ -38,14 +38,7 @@ const Login = () => {
     }, [err, dispatch, isAuthenticated, redirect, history]);
     return (
         <div className="Login">
-            <Header
-                props={{
-                    title: "LeoAuth",
-                    color: "error",
-                    type: "Auth",
-                    redirect,
-                }}
-            />
+            <AuthHeader />
             <form method="POST" action="#" onSubmit={submitHandler}>
                 <p id="Header">Login</p>
                 <br />

@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../components/Element";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,9 +58,7 @@ const Account = () => {
     return (
         <div className="Account">
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}
-            <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
+            <AuthHeader />
             <p
                 className="fs15 bold"
                 style={{

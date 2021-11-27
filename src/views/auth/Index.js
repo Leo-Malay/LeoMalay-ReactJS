@@ -1,10 +1,8 @@
-import Header from "../../components/Header";
+import AuthHeader from "./component/AuthHeader";
 const Index = () => {
     return (
         <div className="AuthIndex">
-            <Header
-                props={{ title: "LeoAuth", color: "error", type: "Auth" }}
-            />
+            <AuthHeader />
             <div className="sec1">
                 <p className="AlignCenter title bold">LeoAuth</p>
                 <p className="AlignCenter fs12 bold">
