@@ -1,40 +1,86 @@
-.OrderCard {
-    width: 520px;
-    margin: 10px;
-    box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.1);
-    padding: 10px;
+/* PC */
+@media only screen and (min-width: 600px) {
+    .OrderCard {
+        width: 520px;
+        margin: 10px;
+        box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+    .OrderCard table {
+        font-size: 14px;
+        width: 100%;
+    }
+    .OrderCard table#body {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    .OrderCard table thead th,
+    .OrderCard table thead td,
+    .OrderCard table tbody th,
+    .OrderCard table tbody td,
+    .OrderCard table tfoot th,
+    .OrderCard table tfoot td {
+        padding: 5px 10px;
+    }
+    .OrderCard table thead th,
+    .OrderCard table tfoot th {
+        width: 100px;
+    }
+    .OrderCard table thead td,
+    .OrderCard table tfoot td {
+        width: 400px;
+    }
+    .OrderCard table tbody th#col1,
+    .OrderCard table tbody td#col1 {
+        width: 300px;
+    }
+    .OrderCard table tbody th#col2,
+    .OrderCard table tbody td#col2,
+    .OrderCard table tbody th#col3,
+    .OrderCard table tbody td#col3 {
+        width: 100px;
+    }
 }
-.OrderCard table {
-    font-size: 14px;
-    width: 100%;
-}
-.OrderCard table#body {
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-}
-.OrderCard table thead th,
-.OrderCard table thead td,
-.OrderCard table tbody th,
-.OrderCard table tbody td,
-.OrderCard table tfoot th,
-.OrderCard table tfoot td {
-    padding: 5px 10px;
-}
-.OrderCard table thead th,
-.OrderCard table tfoot th {
-    width: 100px;
-}
-.OrderCard table thead td,
-.OrderCard table tfoot td {
-    width: 400px;
-}
-.OrderCard table tbody th#col1,
-.OrderCard table tbody td#col1 {
-    width: 300px;
-}
-.OrderCard table tbody th#col2,
-.OrderCard table tbody td#col2,
-.OrderCard table tbody th#col3,
-.OrderCard table tbody td#col3 {
-    width: 100px;
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .OrderCard {
+        width: 100%;
+        padding: 5px;
+        margin: 10px 0px;
+        box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.1);
+    }
+    .OrderCard table {
+        font-size: 13px;
+        width: 100%;
+    }
+    .OrderCard table#body {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    .OrderCard table thead th,
+    .OrderCard table thead td,
+    .OrderCard table tbody th,
+    .OrderCard table tbody td,
+    .OrderCard table tfoot th,
+    .OrderCard table tfoot td {
+        padding: 5px;
+    }
+    .OrderCard table thead th,
+    .OrderCard table tfoot th {
+        width: 20%;
+    }
+    .OrderCard table thead td,
+    .OrderCard table tfoot td {
+        width: 80%;
+    }
+    .OrderCard table tbody th#col1,
+    .OrderCard table tbody td#col1 {
+        width: 60%;
+    }
+    .OrderCard table tbody th#col2,
+    .OrderCard table tbody td#col2,
+    .OrderCard table tbody th#col3,
+    .OrderCard table tbody td#col3 {
+        width: 20%;
+    }
 }

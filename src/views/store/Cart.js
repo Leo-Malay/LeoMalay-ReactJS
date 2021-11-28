@@ -7,13 +7,13 @@ import {
     PlaceOrder,
     Order as orderAction,
 } from "./redux/storeAction";
-import { toast } from "react-toastify";
 import { ProtectedRoute } from "../../Security";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 const Cart = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { cart, err, suc, trial } = useSelector((state) => state.store);
+    const { cart, trial } = useSelector((state) => state.store);
     var totalCostCalc = 0;
     const placeOrderHandler = async (e) => {
         if (cart && cart.length > 0) {
@@ -47,28 +47,7 @@ const Cart = () => {
             dispatch(cartAction());
             dispatch({ type: "STORE_INC_TRIAL" });
         }
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        if (suc !== undefined)
-            toast.success(suc, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, cart, err, suc, trial]);
+    }, [dispatch, cart, trial]);
     return (
         <div className="Cart">
             <ProtectedRoute props={{ path: "/Store/Cart" }} />

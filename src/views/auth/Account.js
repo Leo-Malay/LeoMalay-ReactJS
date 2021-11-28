@@ -4,12 +4,9 @@ import { LinkButton } from "../../components/Element";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updateAccount } from "./redux/authActions";
-import { toast } from "react-toastify";
 const Account = () => {
     const dispatch = useDispatch();
-    const { isAuthenticated, data, err, suc } = useSelector(
-        (state) => state.auth
-    );
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
     const [email, setEmail] = useState("");
@@ -33,28 +30,7 @@ const Account = () => {
         if (data?.state) setState(data?.state);
         if (data?.country) setCountry(data?.country);
         if (data?.pincode) setPincode(data?.pincode);
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        if (suc !== undefined)
-            toast.success(suc, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        dispatch({ type: "CLEAR_ERR" });
-    }, [data, dispatch, err, suc]);
+    }, [data, dispatch]);
     return (
         <div className="Account">
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}

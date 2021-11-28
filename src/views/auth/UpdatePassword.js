@@ -3,12 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { updatePassword } from "./redux/authActions";
-import { toast } from "react-toastify";
 const UpdatePassword = () => {
     const dispatch = useDispatch();
-    const { isAuthenticated, data, err, suc } = useSelector(
-        (state) => state.auth
-    );
+    const { isAuthenticated, data } = useSelector((state) => state.auth);
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [cNewPassword, setCNewPassword] = useState("");
@@ -18,30 +15,7 @@ const UpdatePassword = () => {
             return alert("Both Password Must Match!");
         dispatch(updatePassword(oldPassword, newPassword));
     };
-    useEffect(() => {
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        if (suc !== undefined) {
-            toast.success(suc, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        }
-        dispatch({ type: "CLEAR_ERR" });
-    }, [data, err, suc, dispatch]);
+    useEffect(() => {}, [data, dispatch]);
     return (
         <div className="UpdatePassword">
             {!isAuthenticated && <Redirect to="/Auth/Login/0" />}

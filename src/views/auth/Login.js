@@ -3,39 +3,25 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "./redux/authActions";
 import { useHistory, useParams } from "react-router";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 const Login = () => {
     const { redirect } = useParams();
     const history = useHistory();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuthenticated, err, isLoading } = useSelector(
-        (state) => state.auth
-    );
+    const { isAuthenticated, isLoading } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
     const submitHandler = async (e) => {
         e.preventDefault();
         dispatch(login(username, password));
     };
     useEffect(() => {
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        dispatch({ type: "CLEAR_ERR" });
         if (isAuthenticated) {
             if (redirect !== "0")
                 return history.push(decodeURIComponent(redirect));
             else return history.push("/Auth/Account");
         }
-    }, [err, dispatch, isAuthenticated, redirect, history]);
+    }, [dispatch, isAuthenticated, redirect, history]);
     return (
         <div className="Login">
             <AuthHeader />

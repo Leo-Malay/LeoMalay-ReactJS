@@ -3,10 +3,9 @@ import ProductCard from "./components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Home } from "./redux/storeAction";
-import { toast } from "react-toastify";
 const Store = () => {
     const dispatch = useDispatch();
-    const { home, err, suc, trial } = useSelector((state) => state.store);
+    const { home, trial } = useSelector((state) => state.store);
     var dict = {};
     const getCategoryDict = (data) => {
         if (data === undefined) return;
@@ -24,28 +23,7 @@ const Store = () => {
             dispatch(Home());
             dispatch({ type: "STORE_INC_TRIAL" });
         }
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        if (suc !== undefined)
-            toast.success(suc, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, err, suc, home, trial]);
+    }, [dispatch, home, trial]);
     return (
         <div className="Store">
             <StoreHeader />

@@ -1,12 +1,18 @@
 .Order .OrderContainer {
-    width: 100%;
-    margin: 10px 15px;
+    width: 90%;
+    /* background-color: #000; */
     display: inline-flex;
     flex-wrap: wrap;
 }
-/* For Mobile View */
+/* PC */
+@media only screen and (min-width: 600px) {
+    .Order .OrderContainer {
+        margin: 10px auto;
+    }
+}
+/* Mobile */
 @media only screen and (max-width: 600px) {
     .Order .OrderContainer {
-        margin: 5px;
+        margin: 3px auto;
     }
 }

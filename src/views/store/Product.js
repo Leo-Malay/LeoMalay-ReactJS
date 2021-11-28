@@ -4,11 +4,10 @@ import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { AddCart, Product as productAction } from "./redux/storeAction";
-import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 const Product = () => {
     const { id } = useParams();
-    const { product, err, suc } = useSelector((state) => state.store);
+    const { product } = useSelector((state) => state.store);
     const dispatch = useDispatch();
     const AddToCartHandler = (e) => {
         e.preventDefault();
@@ -17,28 +16,7 @@ const Product = () => {
     useEffect(() => {
         if (product === undefined || product._id !== id)
             dispatch(productAction(id));
-        if (err !== undefined)
-            toast.error(err, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        if (suc !== undefined)
-            toast.success(suc, {
-                position: "bottom-left",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        dispatch({ type: "STORE_ERRSUC_CLEAR" });
-    }, [dispatch, id, suc, err, product]);
+    }, [dispatch, id, product]);
     return (
         <div className="Product">
             <StoreHeader />
