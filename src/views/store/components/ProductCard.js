@@ -15,14 +15,14 @@ const ProductCard = ({ props }) => {
     return (
         <div className="ProductCard">
             <img src={image} alt="Product" id="Image" />
-            <p className="fs6 bold" id="Name">
+            <p className="bold" id="Name">
                 {props?.name}
             </p>
             <div className="Inline PriceCon">
-                <p className="primary-nohover fs3 bold" id="Price">
+                <p className="primary-nohover bold" id="Price">
                     ${props?.price}
                 </p>
-                <p className="secondary-nohover fs3 bold" id="Rating">
+                <p className="secondary-nohover bold" id="Rating">
                     {props?.rating === -1 ? "" : props?.rating}&#9733;
                 </p>
             </div>

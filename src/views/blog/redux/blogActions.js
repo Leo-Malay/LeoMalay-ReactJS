@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:8501";
+import { url } from "../../../config/url.config";
 
 export const Home = () => async (dispatch) => {
     dispatch({ type: "BLOG_REQUEST" });

@@ -71,16 +71,6 @@ const Cart = () => {
                             cart.map((ele, i) => {
                                 return <CartItem props={ele} key={i} />;
                             })}
-                        <CartItem
-                            props={{
-                                productId: "abbba",
-                                productName: "Helicopter Helicopter",
-                                price: 999,
-                                qty: 3,
-                                buyQtyLimit: 4,
-                            }}
-                            key={-1}
-                        />
                     </div>
                     <div className="Right">
                         <hr />

@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:8501";
+import { url } from "../../../config/url.config";
 const errHandler = (type, dispatch) => {
     dispatch({
         type,

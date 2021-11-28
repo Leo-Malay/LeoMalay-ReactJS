@@ -58,6 +58,13 @@
         border: 2px solid;
         width: fit-content;
     }
+    .ProductCard #Name {
+        font-size: 20px;
+    }
+    .ProductCard #Price,
+    .ProductCard #Rating {
+        font-size: 12px;
+    }
     .ProductCard #Name,
     .ProductCard #Price,
     .ProductCard #Rating {
@@ -90,6 +97,13 @@
     .ProductCard #Rating {
         border: 2px solid;
         width: fit-content;
+    }
+    .ProductCard #Name {
+        font-size: 25px;
+    }
+    .ProductCard #Price,
+    .ProductCard #Rating {
+        font-size: 15px;
     }
     .ProductCard #Name,
     .ProductCard #Price,

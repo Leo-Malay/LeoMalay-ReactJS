@@ -21,7 +21,6 @@ const CartItem = ({ props }) => {
         );
         setUpdated(false);
     };
-
     return (
         <div className="CartItem Inline">
             <img
