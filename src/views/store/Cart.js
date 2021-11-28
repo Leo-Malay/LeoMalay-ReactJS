@@ -67,22 +67,20 @@ const Cart = () => {
                         <p className="fs11 bold" id="title">
                             Cart
                         </p>
-                        <table
-                            border={0}
-                            style={{ width: "95%", margin: "auto" }}
-                        >
-                            <tbody>
-                                <tr>
-                                    <th style={{ width: "55%" }}>Name</th>
-                                    <th style={{ width: "15%" }}>Quantity</th>
-                                    <th style={{ width: "15%" }}>Cost</th>
-                                </tr>
-                                {cart !== undefined &&
-                                    cart.map((ele, i) => {
-                                        return <CartItem props={ele} key={i} />;
-                                    })}
-                            </tbody>
-                        </table>
+                        {cart !== undefined &&
+                            cart.map((ele, i) => {
+                                return <CartItem props={ele} key={i} />;
+                            })}
+                        <CartItem
+                            props={{
+                                productId: "abbba",
+                                productName: "Helicopter Helicopter",
+                                price: 999,
+                                qty: 3,
+                                buyQtyLimit: 4,
+                            }}
+                            key={-1}
+                        />
                     </div>
                     <div className="Right">
                         <hr />

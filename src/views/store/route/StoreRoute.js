@@ -9,6 +9,7 @@ import VendorProduct from "../vendor/Product";
 import VendorOrder from "../vendor/Order";
 // Importing the CSS.
 import "../css/Cart.css";
+import "../css/CartItem.css";
 import "../css/Index.css";
 import "../css/Order.css";
 import "../css/OrderCard.css";

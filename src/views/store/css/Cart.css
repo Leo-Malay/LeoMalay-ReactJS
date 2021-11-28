@@ -1,9 +1,6 @@
 .Cart-Container {
     text-align: center;
 }
-.Cart-Container .Left table {
-    text-align: left;
-}
 .Cart-Container .Right td.itemname {
     text-align: left;
 }
@@ -32,9 +29,6 @@
     }
     .Cart-Container .Right table {
         width: 100%;
-    }
-    .Cart-Container .Left td {
-        padding: 10px 0px;
     }
     .Cart-Container .Right td,
     .Cart-Container .Right th {
@@ -67,9 +61,6 @@
     }
     .Cart-Container .Right table {
         width: 100%;
-    }
-    .Cart-Container .Left td {
-        padding: 5px 0px;
     }
     .Cart-Container .Right td,
     .Cart-Container .Right th {
