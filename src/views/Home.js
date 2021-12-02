@@ -12,30 +12,30 @@ const Home = () => {
             </div>
             <div className="sec2">
                 <p className="AlignCenter title bold">What</p>
-                <p className="AlignJustify fs10 bold">
+                <p className="AlignJustify fs7 bold">
                     Hello World. I have made this website after observing the
                     world connecting too rapidly but still having some diversity
                     in the range of services offered by the companies. So to
                     cope up with the fast changing world, I hereby like you to
-                    introduce to LeoMalay which is a compliation of all the
+                    introduce to LeoMalay which is a compilation of all the
                     services offered over the internet. From Shopping to Paying,
-                    From SocialMedia to Cafeteria, From Yesterday to Tomorrow. I
-                    plan on developing all the services from scratch.
+                    From Social Media to Cafeteria, From Yesterday to Tomorrow.
+                    I plan on developing all the services from scratch.
                 </p>
             </div>
             <div className="sec3">
                 <p className="AlignCenter title bold">Why</p>
-                <p className="AlignJustify fs10 bold">
+                <p className="AlignJustify fs7 bold">
                     I am developing all of this services, as I will be able to
                     learn how to manage such a large project and will be able to
-                    learn many differet things. I am using ReactJS for the
+                    learn many different things. I am using ReactJS for the
                     Front-End and ExpressJS along with MongoDB as a database for
-                    the BackEnd. Am Also Palnning on developing all the mobile
+                    the BackEnd. I am also planning on developing all the mobile
                     apps for the services and products available on the website.
                 </p>
             </div>
             <div className="sec4">
-                <p className="AlignLeft fs17 bold">
+                <p className="AlignLeft fs15 bold">
                     Wanna See My Other Projects?
                 </p>
                 <p className="AlignLeft fs6 bold">Head over to my GitHub.</p>
@@ -51,10 +51,10 @@ const Home = () => {
                 </div>
                 <br />
                 <br />
-                <p className="AlignRight fs17 bold">Wanna Hire Me?</p>
+                <p className="AlignRight fs15 bold">Wanna Hire Me?</p>
                 <p className="AlignRight fs6 bold">
-                    Send me a mail, I would be very happy to work
-                    <br /> with you/your company
+                    Send me a mail, I would be very happy to work with you/your
+                    company
                 </p>
                 <div className="AlignRight">
                     <br />
@@ -68,10 +68,10 @@ const Home = () => {
                 </div>
                 <br />
                 <br />
-                <p className="AlignLeft fs17 bold">Want Help?</p>
+                <p className="AlignLeft fs15 bold">Want Help?</p>
                 <p className="AlignLeft fs6 bold">
-                    I am always ready to help. you can contact me
-                    <br /> via Mail, LinkedIn, Instagram
+                    I am always ready to help, you can contact me via Mail,
+                    LinkedIn, Instagram
                 </p>
                 <div className="AlignLeft">
                     <br />

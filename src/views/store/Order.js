@@ -50,32 +50,12 @@ const Order = () => {
                             pendingOrder.map((ele, i) => {
                                 return <OrderCard key={i} props={ele} />;
                             })}
-                        <OrderCard
-                            key={-1}
-                            props={{
-                                _id: "abbba",
-                                address: "something sus",
-                                order: [
-                                    {
-                                        productId: "abbbbba",
-                                        productName: "Sus Among Us",
-                                        qty: 12,
-                                        price: 1234,
-                                    },
-                                    {
-                                        productId: "abbbbba",
-                                        productName: "Sus Among Us",
-                                        qty: 12,
-                                        price: 1234,
-                                    },
-                                ],
-                            }}
-                        />
                     </div>
                 </div>
             )}
             {order && order.length > 0 && (
                 <div className="AlignCenter" id="previous-orders">
+                    <br />
                     <p className="fs12 bold" id="Ordertitle">
                         Previous Orders
                     </p>

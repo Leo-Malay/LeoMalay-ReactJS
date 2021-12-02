@@ -67,7 +67,7 @@ const CartItem = ({ props }) => {
                             <td>{props.price}</td>
                         </tr>
                         <tr>
-                            <th>TotalAmount</th>
+                            <th>Total Amount</th>
                             <td>{props.price * qty}</td>
                         </tr>
                         <tr>

@@ -62,7 +62,7 @@ const OrderCard = ({ props }) => {
                             <tr key={item?.productId}>
                                 <td id="col1">{item?.productName}</td>
                                 <td id="col2">{item?.qty}</td>
-                                <td id="col3">{item?.price}</td>
+                                <td id="col3">${item?.price}</td>
                             </tr>
                         );
                     })}
@@ -73,7 +73,7 @@ const OrderCard = ({ props }) => {
                 <tfoot>
                     <tr>
                         <th>Total Cost</th>
-                        <td>{props?.totalCost}</td>
+                        <td>${props?.totalCost}</td>
                     </tr>
                     <tr>
                         <th>PayId(Type)</th>

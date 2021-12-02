@@ -32,7 +32,6 @@ export const logout = () => async (dispatch) => {
         if (res.data.success) dispatch({ type: "LOGOUT_SUCCESS" });
         else dispatch({ type: "LOGOUT_FAILURE", data: res.data.msg });
     } catch (error) {
-        console.log(error);
         errHandler("LOGOUT_FAILURE", dispatch);
     }
 };
@@ -55,13 +54,12 @@ export const newAccount =
             errHandler("NEW_ACCOUNT_FAILURE", dispatch);
         }
     };
-export const account = () => async (dispatch) => {
+export const Account = () => async (dispatch) => {
     dispatch({ type: "AUTH_REQUEST" });
     try {
         const res = await axios.get(url + "/Auth/Account", {
             withCredentials: true,
         });
-
         if (res.data.success)
             dispatch({ type: "ACCOUNT_FETCH_SUCCESS", data: res.data.data });
         else dispatch({ type: "ACCOUNT_FETCH_FAILURE", data: res.data.msg });
@@ -80,9 +78,8 @@ export const updateAccount =
                     withCredentials: true,
                 }
             );
-            console.log(res);
             if (res.data.success) {
-                dispatch(account());
+                dispatch(Account());
                 dispatch({
                     type: "UPDATE_ACCOUNT_SUCCESS",
                     data: res.data.msg,
@@ -129,7 +126,6 @@ export const removeAccount = (password) => async (dispatch) => {
             });
         else dispatch({ type: "REMOVE_ACCOUNT_FAILURE", data: res.data.msg });
     } catch (error) {
-        console.log(error);
         errHandler("REMOVE_ACCOUNT_FAILURE", dispatch);
     }
 };

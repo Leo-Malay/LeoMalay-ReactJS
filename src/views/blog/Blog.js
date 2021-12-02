@@ -22,14 +22,14 @@ const Blog = () => {
         <div className="Blog">
             <BlogHeader />
             <div className="CategoryContainer AlignCenter">
-                <p className="category fs2 primary-nohover">
+                <p className="category fs3 primary-nohover">
                     Filter by Catergory
                 </p>
                 {["Technology", "FrameWork", "Algorithm", "UI/UX", "DIY"].map(
                     (ele, i) => {
                         return (
                             <p
-                                className="category fs2 secondary-nohover"
+                                className="category fs3 secondary-nohover"
                                 key={i}
                                 nodevalue={ele}
                                 onClick={(e) =>

@@ -68,7 +68,7 @@ const Product = () => {
                             <td className="fs3">{product?.soldBy}</td>
                         </tr>
                         <tr>
-                            <th>Specification</th>
+                            <th>Specs</th>
                             <td className="fs3">
                                 <ul>
                                     {product?.specs.map((ele, i) => {

@@ -6,17 +6,17 @@ const BlogCard = ({ props }) => {
         <div className="BlogCard">
             <Link to={"/Blog/Read/" + props.id}>
                 <img src={image} alt="Blog" />
-                <p className="fs5 bold" id="title">
+                <p className="fs8 bold" id="title">
                     {props.title}
                 </p>
                 <div className="Inline" id="subCard">
-                    <p className="fs2 bold" id="author">
+                    <p className="fs3 bold" id="author">
                         By {props.author || "Anonymous"}
                     </p>
-                    <p className="fs2 bold" id="date">
+                    <p className="fs3 bold" id="date">
                         {new Date(props.date).toLocaleDateString()}
                     </p>
-                    <p className="fs2 bold" id="like">
+                    <p className="fs3 bold" id="like">
                         {props.like.length}❤️
                     </p>
                 </div>

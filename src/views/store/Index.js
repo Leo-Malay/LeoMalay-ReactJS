@@ -5,7 +5,7 @@ const Index = () => {
         <div className="StoreIndex">
             <StoreHeader />
             <div className="sec1">
-                <p className="AlignCenter fs17 bold">Welcome to the</p>
+                <p className="AlignCenter fs8 bold">Welcome to the</p>
                 <p className="AlignCenter title bold">LeoStore</p>
                 <br />
                 <center>
@@ -18,27 +18,27 @@ const Index = () => {
                 </center>
             </div>
             <div className="sec2">
-                <p className="AlignLeft fs13 bold">Easy {"&"} Fast</p>
+                <p className="AlignLeft fs10 bold">Easy {"&"} Fast</p>
                 <br />
-                <p className="AlignRight fs13 bold">Express Delivery</p>
+                <p className="AlignRight fs10 bold">Express Delivery</p>
                 <br />
-                <p className="AlignLeft fs13 bold">
+                <p className="AlignLeft fs10 bold">
                     Fresh Veggies {"&"} Milk Items
                 </p>
                 <br />
-                <p className="AlignRight fs13 bold">Secure Payment</p>
+                <p className="AlignRight fs10 bold">Secure Payment</p>
                 <br />
-                <p className="AlignLeft fs13 bold">24/7 Help-Support</p>
+                <p className="AlignLeft fs10 bold">24/7 Help-Support</p>
                 <br />
-                <p className="AlignRight fs13 bold">Verified Products</p>
+                <p className="AlignRight fs10 bold">Verified Products</p>
             </div>
             <div className="sec3">
-                <p className="AlignCenter fs17 bold">
+                <p className="AlignCenter fs14 bold">
                     Dear Customer, We offer several services on our store.
                 </p>
                 <br />
-                <p className="AlignCenter fs5">
-                    You can Subscribe to certian items that you require daily,
+                <p className="AlignCenter fs6">
+                    You can Subscribe to certain items that you require daily,
                     and they will be delivered to you in the morning everyday.
                     <br />
                     All the vegetables and milk products comes from your local
@@ -49,17 +49,17 @@ const Index = () => {
                 </p>
             </div>
             <div className="sec4">
-                <p className="AlignCenter fs17 bold">
+                <p className="AlignCenter fs14 bold">
                     Dear Vendor, Want to join our growing network?
                 </p>
                 <br />
-                <p className="AlignCenter fs5">
+                <p className="AlignCenter fs6">
                     Mail us your application along with basic details and your
-                    selling certificate issued by the goverment and having an
-                    atleast 1 year from expiry. We will send an inspections team
+                    selling certificate issued by the government and having an
+                    atleast 1 year from expiry. We will send an inspection team
                     to your address and they will confirm all the details
-                    provided by you. You will be required to meet certian
-                    expecations of our Quality Regulations.
+                    provided by you. You will be required to meet certain
+                    expectations of our Quality Regulations.
                 </p>
             </div>
         </div>

@@ -53,10 +53,10 @@ const Cart = () => {
             <ProtectedRoute props={{ path: "/Store/Cart" }} />
             <StoreHeader />
             {(!cart || cart.length === 0) && (
-                <div className="AlignCenter bold fs17">
+                <div className="AlignCenter bold fs15">
                     <br />
                     <br />
-                    Head over to the store and add somethings into the cart :)
+                    Head over to the store and add some things into the cart :)
                     <br />
                     <br />
                 </div>

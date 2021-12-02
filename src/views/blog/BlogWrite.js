@@ -87,7 +87,7 @@ const BlogWrite = () => {
                     minLength={200}
                     required
                 />
-                <p className="fs2 bold">
+                <p className="fs5 bold">
                     Length: {description.replaceAll(" ", "").length}, Words:{" "}
                     {description.split(" ").length}
                 </p>
@@ -100,7 +100,7 @@ const BlogWrite = () => {
             <br />
             {description.split("#newPara$").map((ele, i) => {
                 return (
-                    <p className="AlignJustify fs4 preview" key={i}>
+                    <p className="AlignJustify fs8 preview" key={i}>
                         {ele}
                         <br />
                         <br />

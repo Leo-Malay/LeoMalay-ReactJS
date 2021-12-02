@@ -15,6 +15,9 @@
 .Product-section table tr td {
     width: 80%;
 }
+.Product-section table tr td ul {
+    margin-left: 10px;
+}
 .Product-section table tr th {
     width: 20%;
 }

@@ -28,7 +28,7 @@ const SocialHeader = () => {
                 draggable: true,
                 progress: undefined,
             });
-        dispatch({ type: "STORE_ERRSUC_CLEAR" });
+        dispatch({ type: "CLEAR_ERR" });
     }, [dispatch, err, suc]);
     return (
         <Header
