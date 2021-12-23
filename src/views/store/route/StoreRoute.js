@@ -4,6 +4,7 @@ import Cart from "../Cart";
 import Product from "../Product";
 import Store from "../Store";
 import Order from "../Order";
+import Pay from "../Pay";
 import VendorDashboard from "../vendor/Dashboard";
 import VendorProduct from "../vendor/Product";
 import VendorOrder from "../vendor/Order";
@@ -24,6 +25,7 @@ const StoreRoute = () => {
             <Route exact path="/Store/Product/:id" component={Product} />
             <Route path="/Store/Cart" component={Cart} />
             <Route path="/Store/Order" component={Order} />
+            <Route path="/Store/Pay" component={Pay} />
             {/* Vendor Page */}
             <Route path="/Store/Vendor/Dashboard" component={VendorDashboard} />
             <Route path="/Store/Vendor/Product" component={VendorProduct} />
