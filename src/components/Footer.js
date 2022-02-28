@@ -1,5 +1,7 @@
 import "../css/HeaderFooter.css";
 import { PageLink } from "./Element";
+import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const Footer = ({ props }) => {
     return (
         <div className="Footer">
@@ -32,7 +34,20 @@ const Footer = ({ props }) => {
                     }}
                 />
             </div>
-
+            <div className="SocialLinks">
+                <Link to="/">
+                    <BsFacebook id="icons" />
+                </Link>
+                <Link to="/">
+                    <BsInstagram id="icons" />
+                </Link>
+                <Link to="/">
+                    <BsTwitter id="icons" />
+                </Link>
+                <Link to="/">
+                    <BsLinkedin id="icons" />
+                </Link>
+            </div>
             <p id="desc">&copy; 2021 Malay Bhavsar</p>
         </div>
     );

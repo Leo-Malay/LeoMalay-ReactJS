@@ -35,6 +35,12 @@
     font-size: 20px;
     font-weight: 600;
 }
+.Footer a #icons {
+    margin-bottom: 10px;
+    padding: 1px 10px;
+    height: 20px;
+    width: 20px;
+}
 .Footer #desc {
     font-size: 10px;
     font-weight: 600;
@@ -42,51 +48,43 @@
 .Footer .NavLink {
     margin: 10px 0px;
 }
-/* PC */
-@media only screen and (min-width: 600px) {
-    .Header .LeftMenu .MobileView {
-        display: none;
-    }
+.Header .dropbtn {
+    background-color: var(--primary);
+    color: white;
+    font-size: 18px;
+    vertical-align: top;
 }
-/* Mobile */
-@media only screen and (max-width: 600px) {
-    .Header .LeftMenu .PCView {
-        display: none;
-    }
-    .dropbtn {
-        background-color: var(--primary);
-        color: white;
-        padding: 4px 8px;
-        font-size: 14px;
-        border: none;
-        vertical-align: top;
-    }
-    .dropdown {
-        position: relative;
-        display: block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        width: fit-content;
-        right: 0;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-    .dropdown-content a {
-        color: black;
-        padding: 8px 20px;
-        text-decoration: none;
-        display: block;
-    }
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    .dropbtn:hover .dropdown {
-        background-color: var(--primary);
-    }
+.Header .dropbtn #icon {
+    vertical-align: middle;
+    padding: 3px;
+    height: 25px;
+    width: 25px;
+}
+.Header .dropdown {
+    position: relative;
+    display: block;
+}
+.Header .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: fit-content;
+    right: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.Header .dropdown-content a {
+    color: black;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: block;
+}
+.Header .dropdown-content a:hover {
+    background-color: #ddd;
+}
+.Header .dropdown:hover .dropdown-content {
+    display: block;
+}
+.Header .dropbtn:hover .dropdown {
+    background-color: var(--primary);
 }

@@ -1,23 +1,67 @@
 .ProductCard {
     width: 300px;
-    height: fit-content;
+    height: 300px;
     margin: 10px;
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 0px rgb(0, 0, 0, 0.15);
     display: inline-block;
-    text-align: center;
     overflow: hidden;
-    padding-bottom: 10px;
 }
 .ProductCard #Image {
-    height: 250px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
 }
-.ProductCard #Name {
+.ProductCard .content {
+    position: relative;
+    text-align: justify;
+    padding: 2px 10px;
+}
+.ProductCard .content #Name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.ProductCard .content #Price {
+    font-size: 25px;
+}
+.ProductCard .content #Price #discount {
+    font-size: 10px;
+    background-color: var(--error);
+    color: #fff;
+    padding: 1px 10px;
+}
+.ProductCard .content button.like,
+.ProductCard .content button.quickCart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    bottom: -25px;
+}
+.ProductCard .content button.like {
+    background-color: var(--success);
+    right: 10px;
+}
+.ProductCard .content button.quickCart {
+    background-color: var(--primary);
+    right: 50px;
+}
+.ProductCard .content #Rating {
+    position: absolute;
+    left: 10px;
+    bottom: -25px;
+}
+.ProductCard .content button.like #icon,
+.ProductCard .content button.quickCart #icon {
+    margin-top: 6px;
+    width: 12px;
+    height: 12px;
+    color: #fff;
+}
+
+/*
+
 .ProductCard #Price,
 .ProductCard #Rating {
     border: 2px solid;
@@ -42,7 +86,6 @@
 .ProductCard #Price {
     padding-top: 5px;
 }
-/* PC */
 @media only screen and (min-width: 600px) {
     .ProductCard {
         width: 300px;
@@ -83,7 +126,7 @@
         padding-top: 5px;
     }
 }
-/* Mobile */
+
 @media only screen and (max-width: 600px) {
     .ProductCard {
         width: 90%;
@@ -123,3 +166,4 @@
         padding-top: 5px;
     }
 }
+*/
