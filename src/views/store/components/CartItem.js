@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { AddCart, RemoveCart } from "../redux/storeAction";
 import image from "../../../assets/iphone.jfif";
+import { GrAdd, GrTrash } from "react-icons/gr";
+import { IoRemove } from "react-icons/io5";
 const CartItem = ({ props }) => {
     const dispatch = useDispatch();
     const [qty, setQty] = useState(props.qty);
-    const [updated, setUpdated] = useState(false);
     const removeHandler = (e) => {
         e.preventDefault();
         dispatch(RemoveCart(props.productId));
@@ -19,8 +19,40 @@ const CartItem = ({ props }) => {
                 parseInt(e.target.attributes.nodevalue.nodeValue)
             )
         );
-        setUpdated(false);
     };
+    return (
+        <div className="CartItem Inline">
+            <img src={image || props?.image} alt="Product" />
+            <div className="content">
+                <p className="Name">{props.productName}</p>
+                <p className="Price">${props.price}</p>
+                <p className="Rating"></p>
+                <div className="quantity Inline">
+                    <button
+                        onClick={() => {
+                            if (qty > 1) setQty(qty - 1);
+                            saveHandler();
+                        }}
+                    >
+                        <IoRemove id="icon" />
+                    </button>
+                    <p className="qty">{qty}</p>
+                    <button
+                        onClick={() => {
+                            if (qty < props.buyQtyLimit) setQty(qty + 1);
+                            saveHandler();
+                        }}
+                    >
+                        <GrAdd id="icon" />
+                    </button>
+                    <button onClick={removeHandler}>
+                        <GrTrash id="icon" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+    /*
     return (
         <div className="CartItem Inline">
             <img
@@ -98,5 +130,6 @@ const CartItem = ({ props }) => {
             </div>
         </div>
     );
+    */
 };
 export default CartItem;

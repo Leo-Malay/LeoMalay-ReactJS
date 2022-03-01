@@ -1,4 +1,24 @@
-/* PC */
+@keyframes OrderIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(10deg);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    15% {
+        transform: rotate(0deg);
+    }
+}
+.OrderCard #icon {
+    height: 40px;
+    width: 40px;
+    animation: OrderIcon 3s infinite linear;
+}
+
+/*
 @media only screen and (min-width: 600px) {
     .OrderCard {
         width: 520px;
@@ -41,7 +61,6 @@
         width: 100px;
     }
 }
-/* Mobile */
 @media only screen and (max-width: 600px) {
     .OrderCard {
         width: 100%;
@@ -84,3 +103,4 @@
         width: 20%;
     }
 }
+*/

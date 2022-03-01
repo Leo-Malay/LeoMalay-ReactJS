@@ -48,6 +48,19 @@ const Store = () => {
                                     />
                                 );
                             })}
+                            {dict[ele].map((ele1, j) => {
+                                return (
+                                    <ProductCard
+                                        key={j}
+                                        props={{
+                                            id: ele1._id,
+                                            name: ele1.name,
+                                            price: ele1.price,
+                                            rating: ele1.rating,
+                                        }}
+                                    />
+                                );
+                            })}
                         </div>
                     );
                 })}

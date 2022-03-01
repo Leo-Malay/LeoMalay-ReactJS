@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { LinkButton } from "../../../components/Element";
 import { CancelOrder, Order } from "../redux/storeAction";
+import { FiPackage } from "react-icons/fi";
 const OrderCard = ({ props }) => {
     const dispatch = useDispatch();
     const { err, suc } = useSelector((state) => state.store);
@@ -35,6 +36,19 @@ const OrderCard = ({ props }) => {
             });
         dispatch({ type: "STORE_ERRSUC_CLEAR" });
     }, [dispatch, err, suc]);
+    return (
+        <div className="OrderCard Inline">
+            <FiPackage id="icon" />
+            <div className="content">
+                <p className="">OrderId</p>
+                <p className=""></p>
+                <p className=""></p>
+                <p className=""></p>
+                <p className=""></p>
+            </div>
+        </div>
+    );
+    /*
     return (
         <div className=" AlignLeft OrderCard" key={props?._id}>
             <table id="head">
@@ -138,5 +152,6 @@ const OrderCard = ({ props }) => {
             </table>
         </div>
     );
+    */
 };
 export default OrderCard;

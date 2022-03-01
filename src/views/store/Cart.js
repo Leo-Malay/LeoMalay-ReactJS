@@ -1,6 +1,6 @@
 import StoreHeader from "./components/StoreHeader";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CartItem from "./components/CartItem";
 import {
     Cart as cartAction,
@@ -13,8 +13,7 @@ import { toast } from "react-toastify";
 const Cart = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const { cart, trial } = useSelector((state) => state.store);
-    var totalCostCalc = 0;
+    const { cart, trial, totalCost } = useSelector((state) => state.store);
     const placeOrderHandler = async (e) => {
         if (cart && cart.length > 0) {
             e.preventDefault();
@@ -23,7 +22,7 @@ const Cart = () => {
                     "CC1234",
                     new Date().toISOString(),
                     "CreditCard",
-                    totalCostCalc,
+                    totalCost,
                     "Will be delivered to your address here"
                 )
             );
@@ -49,7 +48,7 @@ const Cart = () => {
         }
     }, [dispatch, cart, trial]);
     return (
-        <div className="Cart">
+        <div className="Cart Center">
             <ProtectedRoute props={{ path: "/Store/Cart" }} />
             <StoreHeader />
             {(!cart || cart.length === 0) && (
@@ -62,77 +61,34 @@ const Cart = () => {
                 </div>
             )}
             {cart && cart.length > 0 && (
-                <div className="Cart-Container">
-                    <div className="Left">
-                        <p className="fs11 bold" id="title">
-                            Cart
-                        </p>
+                <div className="Container">
+                    <p className="fs11 bold" id="title">
+                        Cart
+                    </p>
+                    <div className="top">
+                        <p className="subTotalTitle">Payable Amount</p>
+                        <p className="subTotal">${200 || totalCost}</p>
+                        <button onClick={placeOrderHandler}>
+                            Proceed to Payment
+                        </button>
+                    </div>
+                    <div className="bottom">
                         {cart !== undefined &&
                             cart.map((ele, i) => {
                                 return <CartItem props={ele} key={i} />;
                             })}
-                    </div>
-                    <div className="Right">
-                        <hr />
-                        <p className="fs11 bold" id="title">
-                            LeoStore
-                        </p>
-                        <p id="subtitle">By Malay Bhavsar (Leo-Malay)</p>
-                        <table border={0}>
-                            <tbody>
-                                <tr>
-                                    <th style={{ width: "60%" }}>
-                                        <hr />
-                                        Name
-                                        <hr />
-                                    </th>
-                                    <th style={{ width: "20%" }}>
-                                        <hr />
-                                        Cost
-                                        <hr />
-                                    </th>
-                                </tr>
-                                {cart !== undefined &&
-                                    cart.map((ele) => {
-                                        totalCostCalc += ele.qty * ele.price;
-                                        return (
-                                            <tr key={ele.productId}>
-                                                <td
-                                                    className="itemname"
-                                                    style={{ width: "60%" }}
-                                                >
-                                                    {ele.productName}
-                                                </td>
-                                                <td style={{ width: "20%" }}>
-                                                    {ele.qty * ele.price}
-                                                </td>
-                                            </tr>
-                                        );
-                                    })}
-                                <tr>
-                                    <th style={{ width: "60%" }}>
-                                        <br />
-                                        <hr />
-                                        Amount to be Paid
-                                        <hr />
-                                    </th>
-
-                                    <td style={{ width: "20%" }}>
-                                        <br />
-                                        <hr />
-                                        {totalCostCalc || 0}
-                                        <hr />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <br />
-                        <input
-                            type="button"
-                            value="Proceed To Pay"
-                            className="success-nohover"
-                            onClick={placeOrderHandler}
-                        />
+                        {cart !== undefined &&
+                            cart.map((ele, i) => {
+                                return <CartItem props={ele} key={i} />;
+                            })}
+                        {cart !== undefined &&
+                            cart.map((ele, i) => {
+                                return <CartItem props={ele} key={i} />;
+                            })}
+                        {cart !== undefined &&
+                            cart.map((ele, i) => {
+                                return <CartItem props={ele} key={i} />;
+                            })}
                     </div>
                 </div>
             )}
