@@ -1,3 +1,4 @@
+import React from "react";
 import { LinkButton } from "./Element";
 
 const HomeListElement = ({ props }) => {

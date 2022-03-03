@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AddCart, RemoveCart } from "../redux/storeAction";
 import image from "../../../assets/iphone.jfif";
@@ -22,7 +22,7 @@ const CartItem = ({ props }) => {
     };
     return (
         <div className="CartItem Inline">
-            <img src={image || props?.image} alt="Product" />
+            <img src={image || props.image} alt="Product" />
             <div className="content">
                 <p className="Name">{props.productName}</p>
                 <p className="Price">${props.price}</p>
@@ -56,7 +56,7 @@ const CartItem = ({ props }) => {
     return (
         <div className="CartItem Inline">
             <img
-                src={props.image === "null" ? image : props?.image}
+                src={props.image === "null" ? image : props.image}
                 alt="Product"
             />
             <div>

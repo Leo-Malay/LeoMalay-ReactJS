@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import BlogHeader from "./components/BlogHeader";
 import "./css/index.css";

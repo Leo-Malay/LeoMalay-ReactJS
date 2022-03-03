@@ -2,7 +2,7 @@ import StoreHeader from "./components/StoreHeader";
 import image from "../../assets/iphone.jfif";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { AddCart, Product as productAction } from "./redux/storeAction";
 import { Link } from "react-router-dom";
 const Product = () => {
@@ -22,30 +22,30 @@ const Product = () => {
             <StoreHeader />
             <div className="Product-section">
                 <p className="fs14 bold" id="title">
-                    {product?.name}
+                    {product.name}
                 </p>
                 <img src={image} alt="Product" />
                 <p className="fs3" id="description">
-                    {product?.description}
+                    {product.description}
                 </p>
                 <br />
-                {product?.isAvailable && (
+                {product.isAvailable && (
                     <input
                         type="button"
                         value="Product is Available"
                         className="primary-nohover LinkButton"
                     />
                 )}
-                {!product?.isAvailable && (
+                {!product.isAvailable && (
                     <input
                         type="button"
                         value="Product is Not Available at the Moment"
                         className="error-nohover LinkButton"
                     />
                 )}
-                {product?.isAvailable && (
+                {product.isAvailable && (
                     <Link
-                        value={product?._id}
+                        value={product._id}
                         to="/Store"
                         className="success-nohover LinkButton"
                         onClick={AddToCartHandler}
@@ -57,21 +57,21 @@ const Product = () => {
                     <tbody>
                         <tr>
                             <th>Price</th>
-                            <td className="fs3">${product?.price}</td>
+                            <td className="fs3">${product.price}</td>
                         </tr>
                         <tr>
                             <th>Rating</th>
-                            <td className="fs3">{product?.rating}&#9733;</td>
+                            <td className="fs3">{product.rating}&#9733;</td>
                         </tr>
                         <tr>
                             <th>Sold By</th>
-                            <td className="fs3">{product?.soldBy}</td>
+                            <td className="fs3">{product.soldBy}</td>
                         </tr>
                         <tr>
                             <th>Specs</th>
                             <td className="fs3">
                                 <ul>
-                                    {product?.specs.map((ele, i) => {
+                                    {product.specs.map((ele, i) => {
                                         return <li key={i}>{ele}</li>;
                                     })}
                                 </ul>
@@ -80,11 +80,11 @@ const Product = () => {
                         <tr>
                             <th>Reviews</th>
                             <td>
-                                {product?.reviews.map((ele) => {
+                                {product.reviews.map((ele) => {
                                     return (
                                         <div
                                             className="ReviewCard"
-                                            key={ele?.review_id}
+                                            key={ele.review_id}
                                         >
                                             <p className="fs3 bold" id="title">
                                                 {ele.auth_id}

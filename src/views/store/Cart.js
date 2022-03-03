@@ -1,6 +1,6 @@
 import StoreHeader from "./components/StoreHeader";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import CartItem from "./components/CartItem";
 import {
     Cart as cartAction,

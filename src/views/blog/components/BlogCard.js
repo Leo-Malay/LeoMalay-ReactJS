@@ -1,4 +1,5 @@
 import "../css/BlogCard.css";
+import React from "react";
 import image from "../../../assets/iphone.jfif";
 import { Link } from "react-router-dom";
 const BlogCard = ({ props }) => {

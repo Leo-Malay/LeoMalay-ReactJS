@@ -1,5 +1,5 @@
 import AuthHeader from "./component/AuthHeader";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { updatePassword } from "./redux/authActions";
 const ForgotPassword = () => {

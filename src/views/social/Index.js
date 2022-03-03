@@ -1,3 +1,4 @@
+import React from "react";
 import SocialHeader from "./components/SocialHeader";
 import { Link } from "react-router-dom";
 import "./css/index.css";

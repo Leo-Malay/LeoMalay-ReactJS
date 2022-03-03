@@ -1,5 +1,5 @@
 import AuthHeader from "./component/AuthHeader";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LinkButton } from "../../components/Element";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -21,15 +21,15 @@ const Account = () => {
         dispatch(updateAccount(al1, al2, city, state, country, pincode));
     };
     useEffect(() => {
-        if (data?.fname) setFname(data?.fname);
-        if (data?.lname) setLname(data?.lname);
-        if (data?.email) setEmail(data?.email);
-        if (data?.al1) setAl1(data?.al1);
-        if (data?.al2) setAl2(data?.al2);
-        if (data?.city) setCity(data?.city);
-        if (data?.state) setState(data?.state);
-        if (data?.country) setCountry(data?.country);
-        if (data?.pincode) setPincode(data?.pincode);
+        if (data.fname) setFname(data.fname);
+        if (data.lname) setLname(data.lname);
+        if (data.email) setEmail(data.email);
+        if (data.al1) setAl1(data.al1);
+        if (data.al2) setAl2(data.al2);
+        if (data.city) setCity(data.city);
+        if (data.state) setState(data.state);
+        if (data.country) setCountry(data.country);
+        if (data.pincode) setPincode(data.pincode);
     }, [data, dispatch]);
     return (
         <div className="Account">
@@ -43,8 +43,7 @@ const Account = () => {
                     marginBottom: 40,
                 }}
             >
-                Welcome{" "}
-                {(data?.fname || "Guest") + " " + (data?.lname || "User")}
+                Welcome {(data.fname || "Guest") + " " + (data.lname || "User")}
             </p>
             <form>
                 <p id="Header">General</p>

@@ -1,7 +1,7 @@
 import StoreHeader from "./components/StoreHeader";
 import ProductCard from "./components/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Home } from "./redux/storeAction";
 const Store = () => {
     const dispatch = useDispatch();

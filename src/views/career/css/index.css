@@ -1,0 +1,22 @@
+.CareerIndex .sec1,
+.CareerIndex .sec2,
+.CareerIndex .sec3 {
+    padding: 10vw 5vw;
+    color: var(--white);
+}
+.CareerIndex .sec1,
+.CareerIndex .sec3 {
+    background-color: var(--primary);
+}
+.CareerIndex .sec2 {
+    background-color: var(--black);
+}
+.CareerIndex .sec4 {
+    padding: 10vw 5vw;
+}
+.CareerIndex .title {
+    font-size: 10vw;
+}
+.CareerIndex a.btn {
+    padding: 5px 20px;
+}

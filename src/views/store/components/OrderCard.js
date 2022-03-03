@@ -1,8 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { LinkButton } from "../../../components/Element";
 import { CancelOrder, Order } from "../redux/storeAction";
 import { FiPackage } from "react-icons/fi";
 const OrderCard = ({ props }) => {
@@ -10,7 +8,7 @@ const OrderCard = ({ props }) => {
     const { err, suc } = useSelector((state) => state.store);
     const cancelHandler = async (e) => {
         e.preventDefault();
-        await dispatch(CancelOrder(props?._id));
+        await dispatch(CancelOrder(props._id));
         await dispatch(Order());
     };
     useEffect(() => {
@@ -50,16 +48,16 @@ const OrderCard = ({ props }) => {
     );
     /*
     return (
-        <div className=" AlignLeft OrderCard" key={props?._id}>
+        <div className=" AlignLeft OrderCard" key={props._id}>
             <table id="head">
                 <thead>
                     <tr>
                         <th>OrderId</th>
-                        <td>{props?._id}</td>
+                        <td>{props._id}</td>
                     </tr>
                     <tr>
                         <th>Address</th>
-                        <td>{props?.address}</td>
+                        <td>{props.address}</td>
                     </tr>
                 </thead>
             </table>
@@ -71,12 +69,12 @@ const OrderCard = ({ props }) => {
                         <th id="col2">Quantity</th>
                         <th id="col3">Cost</th>
                     </tr>
-                    {props?.order.map((item) => {
+                    {props.order.map((item) => {
                         return (
-                            <tr key={item?.productId}>
-                                <td id="col1">{item?.productName}</td>
-                                <td id="col2">{item?.qty}</td>
-                                <td id="col3">${item?.price}</td>
+                            <tr key={item.productId}>
+                                <td id="col1">{item.productName}</td>
+                                <td id="col2">{item.qty}</td>
+                                <td id="col3">${item.price}</td>
                             </tr>
                         );
                     })}
@@ -87,20 +85,20 @@ const OrderCard = ({ props }) => {
                 <tfoot>
                     <tr>
                         <th>Total Cost</th>
-                        <td>${props?.totalCost}</td>
+                        <td>${props.totalCost}</td>
                     </tr>
                     <tr>
                         <th>PayId(Type)</th>
-                        <td>{props?.payId + " (" + props?.payType + ")"}</td>
+                        <td>{props.payId + " (" + props.payType + ")"}</td>
                     </tr>
                     <tr>
                         <th>PayDate</th>
-                        <td>{props?.payDate}</td>
+                        <td>{props.payDate}</td>
                     </tr>
                     <tr>
                         <th>Status</th>
                         <td>
-                            {props?.outForDelivery && (
+                            {props.outForDelivery && (
                                 <LinkButton
                                     props={{
                                         value: "Out for Delivery",
@@ -109,7 +107,7 @@ const OrderCard = ({ props }) => {
                                     }}
                                 />
                             )}
-                            {props?.pending && (
+                            {props.pending && (
                                 <LinkButton
                                     props={{
                                         value: "Pending",
@@ -118,7 +116,7 @@ const OrderCard = ({ props }) => {
                                     }}
                                 />
                             )}
-                            {props?.pending && (
+                            {props.pending && (
                                 <Link
                                     to="/Store/Order"
                                     onClick={cancelHandler}
@@ -128,7 +126,7 @@ const OrderCard = ({ props }) => {
                                     Cancel Order
                                 </Link>
                             )}
-                            {props?.isDelivered && (
+                            {props.isDelivered && (
                                 <LinkButton
                                     props={{
                                         value: "Delivered",
@@ -137,7 +135,7 @@ const OrderCard = ({ props }) => {
                                     }}
                                 />
                             )}
-                            {props?.isCancelled && (
+                            {props.isCancelled && (
                                 <LinkButton
                                     props={{
                                         value: "Cancelled",

@@ -2,7 +2,7 @@ import StoreHeader from "./components/StoreHeader";
 import OrderCard from "./components/OrderCard";
 import { ProtectedRoute } from "../../Security";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Order as orderAction } from "./redux/storeAction";
 const Order = () => {
     const dispatch = useDispatch();

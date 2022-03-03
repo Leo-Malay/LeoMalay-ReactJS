@@ -1,3 +1,4 @@
+import React from "react";
 import SocialHeader from "./components/SocialHeader";
 const Message = () => {
     return (

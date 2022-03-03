@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router";
 import SocialPost from "./components/Post";
 import SocialHeader from "./components/SocialHeader";

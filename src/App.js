@@ -8,12 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 /** Importing Routes */
 import AuthRoute from "./views/auth/route/AuthRoute";
 import BlogRoute from "./views/blog/route/BlogRoute";
+import CareerRoute from "./views/career/route/CareerRoute";
 import StoreRoute from "./views/store/route/StoreRoute";
 import SocialRoute from "./views/social/route/SocialRoute";
 /** Important Components */
 import Home from "./views/Home";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Account } from "./views/auth/redux/authActions";
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
             {/** Views */}
             <AuthRoute />
             <BlogRoute />
+            <CareerRoute />
             <StoreRoute />
             <SocialRoute />
             {/** Footer */}

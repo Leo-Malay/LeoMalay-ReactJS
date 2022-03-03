@@ -1,5 +1,5 @@
 import AuthHeader from "./component/AuthHeader";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { removeAccount } from "./redux/authActions";
@@ -15,7 +15,7 @@ const RemoveAccount = () => {
         dispatch(removeAccount(Password));
     };
     useEffect(() => {
-        if (data?.username) setUsername(data?.username);
+        if (data.username) setUsername(data.username);
     }, [data, dispatch]);
     return (
         <div className="RemoveAccount">

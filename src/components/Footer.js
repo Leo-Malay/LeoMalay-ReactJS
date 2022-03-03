@@ -1,3 +1,4 @@
+import React from "react";
 import "../css/HeaderFooter.css";
 import { PageLink } from "./Element";
 import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";

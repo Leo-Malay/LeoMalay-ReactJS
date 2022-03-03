@@ -1,3 +1,4 @@
+import React from "react";
 import StoreHeader from "../components/StoreHeader";
 import { ProtectedRoute } from "../../../Security";
 const VendorDashboard = () => {
